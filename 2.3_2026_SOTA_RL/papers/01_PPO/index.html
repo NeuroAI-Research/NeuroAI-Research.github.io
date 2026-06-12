@@ -1,0 +1,2453 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../2.2_2026_Embodied_AI/papers/02_D4RT_DeepMind/">
+      
+      
+        <link rel="next" href="../02_SAC/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>1 2017 PPO - NeuroAI Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../js/main.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-2017-ppo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeuroAI Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 2017 PPO
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeuroAI Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeuroAI Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../creator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.1 Guiding Principles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0.1 Guiding Principles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 NeuroAI Hassabis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 Brain Evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 2005 Theoretical Neuroscience Dayan
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1.1 2005 Theoretical Neuroscience Dayan
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience_Dayan/01_Neural_Encoding_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Neural Encoding I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience_Dayan/02_Neural_Encoding_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Neural Encoding II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience_Dayan/03_Neural_Decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Neural Decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience_Dayan/04_Information_Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Information Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience_Dayan/07_Network_Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Network Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience_Dayan/08_Plasticity_and_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Plasticity and Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience_Dayan/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Classical Conditioning and Reinforcement Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience_Dayan/10_Representational_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Representational Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 2026 SOTA LLM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.1 2026 SOTA LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_2026_SOTA_LLM/01_2017_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_2026_SOTA_LLM/papers/01_Attention_Is_All_You_Need/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Attention Is All You Need
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_2026_SOTA_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_2026_SOTA_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_2026_SOTA_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_2026_SOTA_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 Qwen3-VL Technical Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_2026_SOTA_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 The Big LLM Architecture Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_2026_SOTA_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2024 DeepSeek-V3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 2026 Embodied AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.2 2026 Embodied AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_2026_Embodied_AI/papers/01_Spatial_Intelligence_Survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2025 Spatial Intelligence Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_2026_Embodied_AI/papers/02_D4RT_DeepMind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2025 D4RT: Dynamic 4D Reconstruction and Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 2026 SOTA RL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.3 2026 SOTA RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 PPO
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 PPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gemini-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-background-policy-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Background: Policy Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Background: Policy Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-policy-gradient-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Policy Gradient Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-trust-region-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Trust Region Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-clipped-surrogate-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Clipped Surrogate Objective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-adaptive-kl-penalty-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Adaptive KL Penalty Coefficient
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-comparison-of-surrogate-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Comparison of Surrogate Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-comparison-to-other-algorithms-in-the-continuous-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Comparison to Other Algorithms in the Continuous Domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-showcase-in-the-continuous-domain-humanoid-running-and-steering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Showcase in the Continuous Domain: Humanoid Running and Steering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-comparison-to-other-algorithms-on-the-atari-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Comparison to Other Algorithms on the Atari Domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_SAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 2026 Brain Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3.1 2026 Brain Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_2026_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Brain vs MPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gemini-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gemini Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-background-policy-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Background: Policy Optimization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Background: Policy Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-policy-gradient-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Policy Gradient Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-trust-region-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Trust Region Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-clipped-surrogate-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Clipped Surrogate Objective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-adaptive-kl-penalty-coefficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Adaptive KL Penalty Coefficient
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 Algorithm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-comparison-of-surrogate-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Comparison of Surrogate Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-comparison-to-other-algorithms-in-the-continuous-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Comparison to Other Algorithms in the Continuous Domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-showcase-in-the-continuous-domain-humanoid-running-and-steering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Showcase in the Continuous Domain: Humanoid Running and Steering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-comparison-to-other-algorithms-on-the-atari-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Comparison to Other Algorithms on the Atari Domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-2017-ppo">1 2017 PPO</h1>
+<ul>
+<li><a href="https://arxiv.org/pdf/1707.06347">Proximal Policy Optimization Algorithms</a></li>
+</ul>
+<h2 id="gemini-overview">Gemini Overview</h2>
+<ul>
+<li>Proximal Policy Optimization (PPO) was specifically designed to bridge the gap between <strong>Vanilla Policy Gradient</strong> (which is simple but unstable and data-inefficient) and <strong>TRPO</strong> (which is stable but mathematically complex and incompatible with shared network architectures).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Feature / Aspect</th>
+<th>Vanilla Policy Gradient</th>
+<th>Trust Region Policy Optimization (TRPO)</th>
+<th>PPO Innovations &amp; Advantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Objective Function</strong></td>
+<td>$L^{PG}(\theta) = E_t[ \log \pi_\theta (a_t|s_t) A_t] $</td>
+<td><span class="arithmatex">\(L^{CPI}(\theta) = E_t[ r_t(\theta) A_t ]\)</span> subject to a hard mean KL constraint (<span class="arithmatex">\(\le \delta\)</span>).</td>
+<td><strong>Clipped Surrogate Objective (<span class="arithmatex">\(L^{CLIP}\)</span>):</strong> Pessimistic bound that clips the probability ratio <span class="arithmatex">\(r_t(\theta)\)</span> within <span class="arithmatex">\([1-\epsilon, 1+\epsilon]\)</span>, eliminating incentives for destructively large updates without hard constraints.</td>
+</tr>
+<tr>
+<td><strong>Optimization Method</strong></td>
+<td>First-order (Stochastic Gradient Ascent).</td>
+<td>Second-order approximation (Conjugate Gradient method + Fisher Information Matrix computation).</td>
+<td><strong>First-order Optimization:</strong> Solved using standard gradient ascent (like Adam), making it vastly <strong>simpler to implement</strong> and computationally cheaper per step.</td>
+</tr>
+<tr>
+<td><strong>Data / Sample Efficiency</strong></td>
+<td><strong>Poor.</strong> Performs only one gradient update per data sample; multiple updates on the same trajectory lead to collapse.</td>
+<td><strong>Good.</strong> Safe, large steps allowed by the trust region, but second-order calculations are slow in wall-clock time.</td>
+<td><strong>High (Mini-batch Updates):</strong> Safely allows <strong>multiple epochs of mini-batch updates</strong> on the same batch of collected trajectory data, greatly increasing sample efficiency.</td>
+</tr>
+<tr>
+<td><strong>Architecture Compatibility</strong></td>
+<td>Fully compatible.</td>
+<td><strong>Incompatible</strong> with shared parameters (Policy &amp; Value networks) or architectures utilizing noise (e.g., Dropout).</td>
+<td><strong>Fully Compatible:</strong> Seamlessly handles joint architectures. The overall objective cleanly combines the policy loss, value function error (<span class="arithmatex">\(L^{VF}\)</span>), and an exploration entropy bonus (<span class="arithmatex">\(S\)</span>).</td>
+</tr>
+<tr>
+<td><strong>Alternative Method</strong></td>
+<td>N/A</td>
+<td>Uses a fixed KL penalty variant (<span class="arithmatex">\(L^{KLPEN}\)</span>), but a single <span class="arithmatex">\(\beta\)</span> coefficient fails to work across different tasks.</td>
+<td><strong>Adaptive KL Penalty:</strong> Alternatively introduces a dynamically scaling penalty coefficient <span class="arithmatex">\(\beta\)</span> that adjusts automatically if the KL divergence drifts from a target value (<span class="arithmatex">\(d_{\text{targ}}\)</span>).</td>
+</tr>
+<tr>
+<td><strong>Overall Balance</strong></td>
+<td>Simple, but unstable and data-inefficient.</td>
+<td>Stable and data-efficient, but mathematically complex and rigid.</td>
+<td><strong>Favorable Balance:</strong> Strikes the optimal trade-off between <strong>sample complexity, implementation simplicity, and wall-clock execution time.</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Key Takeaway:<ul>
+<li>The core innovation of PPO is achieving the <strong>reliability and step-size boundaries of TRPO</strong> while throwing away the complex second-order math. </li>
+<li>By switching to a first-order optimization with <strong>clipping</strong>, PPO enables <strong>multi-epoch mini-batch training</strong> on the same data sample, which drastically boosts sample efficiency and makes it robust enough to use a single neural network for both policy and value predictions.</li>
+</ul>
+</li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<ul>
+<li>We propose a new family of policy gradient methods for reinforcement learning, which alternate between sampling data through interaction with the environment, and optimizing a "surrogate" (代理的) objective function using stochastic gradient ascent. <ul>
+<li>Whereas standard policy gradient methods perform one gradient update per data sample, we propose a novel objective function that enables multiple epochs of <strong>mini-batch updates</strong>.</li>
+<li>The new methods, which we call proximal policy optimization (PPO), have some of the benefits of <strong>trust region policy optimization (TRPO)</strong>, but they are <ul>
+<li>much simpler to implement, </li>
+<li>more general, </li>
+<li>and have better sample complexity (empirically). </li>
+</ul>
+</li>
+<li>Our experiments test PPO on a collection of benchmark tasks, including simulated robotic locomotion and Atari game playing, and we show that PPO outperforms other <strong>online</strong> policy gradient methods, and overall strikes a favorable balance between sample complexity, simplicity, and wall-time.</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-introduction">1 Introduction</h2>
+<ul>
+<li>
+<p>In recent years, several different approaches have been proposed for reinforcement learning with neural network function approximators. </p>
+<ul>
+<li>The leading contenders are <ul>
+<li><strong>deep Q-learning</strong>,</li>
+<li><strong>“vanilla” policy gradient</strong> methods, </li>
+<li><strong>trust region / natural policy gradient</strong> methods </li>
+</ul>
+</li>
+<li>However, there is room for improvement in developing a method that is scalable (to large models and parallel implementations), data efficient, and robust (i.e., successful on a variety of problems without hyperparameter tuning). <ul>
+<li><strong>Q-learning</strong> (with function approximation) <strong>fails on many simple problems and is poorly understood</strong>,<ul>
+<li>While <strong>DQN</strong> works well on game environments like the Arcade Learning Environment with <strong>discrete action spaces</strong>, it has not been demonstrated to perform well on <strong>continuous control</strong> benchmarks such as those in OpenAI Gym and described by Duan et al.</li>
+</ul>
+</li>
+<li><strong>vanilla policy gradient</strong> methods have poor data efficiency and robustness; </li>
+<li><strong>trust region policy optimization (TRPO)</strong> is relatively complicated, and is not compatible with architectures that include noise (such as dropout) or parameter sharing (between the policy and value function, or with auxiliary tasks).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>This paper seeks to improve the current state of affairs by introducing an algorithm that attains the data efficiency and reliable performance of <strong>TRPO</strong>, while using only first-order optimization.</p>
+<ul>
+<li>We propose a novel objective with clipped probability ratios, which forms a pessimistic estimate (i.e., lower bound) of the performance of the policy. </li>
+<li>To optimize policies, we alternate between <ul>
+<li>sampling data from the policy </li>
+<li>and performing several epochs of optimization on the sampled data.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Our experiments compare the performance of various different versions of the surrogate objective, and find that <strong>the version with the clipped probability ratios performs best.</strong> </p>
+<ul>
+<li>We also compare PPO to several previous algorithms from the literature. </li>
+<li>On continuous control tasks, it performs better than the algorithms we compare against. </li>
+<li>On Atari, it performs significantly better (in terms of sample complexity) than <strong>A2C</strong> and similarly to <strong>ACER</strong> though it is much simpler.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-background-policy-optimization">2 Background: Policy Optimization</h2>
+<h3 id="21-policy-gradient-methods">2.1 Policy Gradient Methods</h3>
+<ul>
+<li>
+<p>Policy gradient methods work by computing an estimator of the policy gradient and plugging it into a stochastic gradient ascent algorithm. </p>
+</li>
+<li>
+<p>The most commonly used gradient estimator has the form</p>
+</li>
+</ul>
+<div class="arithmatex">\[ g = E_t [ \nabla_\theta \log \pi_\theta (a_t | s_t) A_t ] \]</div>
+<ul>
+<li>where <span class="arithmatex">\(\pi_\theta\)</span> is a stochastic policy </li>
+<li>
+<p>and <span class="arithmatex">\(A_t\)</span> is an estimator of the advantage function at timestep <span class="arithmatex">\(t\)</span></p>
+</li>
+<li>
+<p>Here, the expectation <span class="arithmatex">\(E_t[...]\)</span> indicates the empirical average over a finite batch of samples, in an algorithm that alternates between sampling and optimization. </p>
+</li>
+<li>
+<p>Implementations that use automatic differentiation software work by constructing an objective function whose gradient is the policy gradient estimator; the estimator <span class="arithmatex">\(g\)</span> is obtained by differentiating the objective</p>
+</li>
+</ul>
+<div class="arithmatex">\[ L^{PG}(\theta) = E_t[ \log \pi_\theta (a_t|s_t) A_t ] \]</div>
+<ul>
+<li>While it is appealing to perform multiple steps of optimization on this loss <span class="arithmatex">\(L^{PG}\)</span> using the same trajectory, doing so is not well-justified, and empirically it often leads to destructively large policy updates (see Section 6.1; results are not shown but were similar or worse than the "no clipping or penalty" setting).</li>
+</ul>
+<h3 id="22-trust-region-methods">2.2 Trust Region Methods</h3>
+<ul>
+<li>In <code>TRPO</code>, an objective function (the “surrogate” objective) is maximized subject to a <strong>constraint on the size of the policy update</strong>. Specifically, </li>
+</ul>
+<div class="arithmatex">\[
+r_t(\theta) :=  { \pi_\theta (a_t|s_t) \over \pi_{\theta_\text{old}} (a_t|s_t) } \\[5pt]
+\text{maximize}_\theta \quad \boxed{ L^{CPI}(\theta) := E_t \left[ r_t(\theta) A_t \right] } \\[5pt]
+\text{subject to} \quad E_t[ \text{KL}[ \pi_{\theta_\text{old}} (\cdot|s_t), \pi_\theta (\cdot|s_t) ] ] \le \delta
+\]</div>
+<ul>
+<li>Here, <span class="arithmatex">\(\theta_\text{old}\)</span> is the vector of policy parameters before the update. </li>
+<li>
+<p>The superscript <span class="arithmatex">\(CPI\)</span> refers to <strong>Conservative Policy Iteration</strong>, where this objective was proposed. </p>
+</li>
+<li>
+<p>This problem can efficiently be approximately solved using the <strong>conjugate gradient algorithm</strong>, after making a linear approximation to the objective and a quadratic approximation to the constraint.</p>
+</li>
+<li>
+<p>The theory justifying TRPO actually suggests using a penalty instead of a constraint, i.e., solving the unconstrained optimization problem</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+\text{maximize}_\theta \quad L^{KLPEN}(\theta) := E_t \left[
+    r_t(\theta) A_t
+    - \beta \text{KL}[ \pi_{\theta_\text{old}} (\cdot|s_t), \pi_\theta (\cdot|s_t) ]
+\right]
+\]</div>
+<ul>
+<li>
+<p>for some coefficient <span class="arithmatex">\(\beta\)</span>. </p>
+</li>
+<li>
+<p>This follows from the fact that a certain surrogate objective (which computes the max KL over states instead of the mean) forms a lower bound (i.e., a pessimistic bound) on the performance of the policy <span class="arithmatex">\(\pi\)</span>. </p>
+</li>
+<li>
+<p>TRPO uses a hard constraint rather than a penalty because it is hard to choose a single value of <span class="arithmatex">\(\beta\)</span> that performs well across different problems — or even within a single problem, where the the characteristics change over the course of learning. </p>
+</li>
+<li>
+<p>Hence, to achieve our goal of a first-order algorithm that emulates the monotonic improvement of TRPO, experiments show that it is not sufficient to simply choose a fixed penalty coefficient <span class="arithmatex">\(\beta\)</span> and optimize the penalized objective Equation with SGD; additional modifications are required.</p>
+</li>
+</ul>
+<h2 id="3-clipped-surrogate-objective">3 Clipped Surrogate Objective</h2>
+<ul>
+<li>
+<p><strong>Without a constraint, maximization of <span class="arithmatex">\(L^{CPI}\)</span> would lead to an excessively large policy update; hence, we now consider how to modify the objective, to penalize changes to the policy that move <span class="arithmatex">\(r_t(\theta)\)</span> away from 1.</strong></p>
+</li>
+<li>
+<p>The main objective we propose is the following:</p>
+</li>
+</ul>
+<div class="arithmatex">\[ r^{clip} \equiv \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \\[5pt]
+L^{CLIP}(\theta) = E_t[ \min( r_t(\theta) A_t,  r^{clip} A_t ) ] \]</div>
+<ul>
+<li>
+<p>where epsilon is a hyperparameter, say, <span class="arithmatex">\(\epsilon = 0.2\)</span> </p>
+</li>
+<li>
+<p>The motivation for this objective is as follows. </p>
+<ul>
+<li>The first term inside the <code>min</code> is <span class="arithmatex">\(L^{CPI}\)</span></li>
+<li>The second term <span class="arithmatex">\(r^{clip} A_t\)</span> modifies the surrogate objective by clipping the probability ratio, which removes the incentive for moving <span class="arithmatex">\(r_t\)</span> outside of the interval <span class="arithmatex">\([1 − \epsilon, 1 + \epsilon]\)</span>. </li>
+<li>Finally, we take the minimum of the clipped and unclipped objective, <strong>so the final objective is a lower bound (i.e., a pessimistic bound)</strong> on the unclipped objective. </li>
+<li>With this scheme, we only ignore the change in probability ratio when it would make the objective improve, and we include it when it makes the objective worse. </li>
+</ul>
+</li>
+<li>
+<p>Note that <span class="arithmatex">\(L^{CLIP}(\theta) = L^{CPI}(\theta)\)</span> to first order around <span class="arithmatex">\(\theta_\text{old}\)</span> (i.e., where <span class="arithmatex">\(r = 1\)</span>), however, they become different as <span class="arithmatex">\(\theta\)</span> moves away from <span class="arithmatex">\(\theta_\text{old}\)</span>. </p>
+</li>
+<li>
+<p>Figure 1 plots a single term (i.e., a single <span class="arithmatex">\(t\)</span>) in <span class="arithmatex">\(L^{CLIP}\)</span>; note that the probability ratio <span class="arithmatex">\(r\)</span> is clipped at <span class="arithmatex">\(1 − \epsilon\)</span> or <span class="arithmatex">\(1 + \epsilon\)</span> depending on whether the advantage is positive or negative.</p>
+</li>
+<li>
+<p>Figure 2 provides another source of intuition about the surrogate objective <span class="arithmatex">\(L^{CLIP}\)</span>.</p>
+<ul>
+<li>It shows how several objectives vary as we interpolate along the policy update direction, obtained by proximal policy optimization (the algorithm we will introduce shortly) on a continuous control problem. </li>
+<li><strong>We can see that <span class="arithmatex">\(L^{CLIP}\)</span> is a lower bound on <span class="arithmatex">\(L^{CPI}\)</span>, with a penalty for having too large of a policy update.</strong></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../imgs/01_PPO_Surrogate_Objectives.png" /></p>
+<h2 id="4-adaptive-kl-penalty-coefficient">4 Adaptive KL Penalty Coefficient</h2>
+<ul>
+<li>
+<p><strong>Another approach, which can be used as an alternative to the clipped surrogate objective, or in addition to it,</strong></p>
+<ul>
+<li>is to use a penalty on KL divergence, and to adapt the penalty coefficient so that we achieve some target value of the KL divergence <span class="arithmatex">\(d_\text{targ}\)</span> each policy update. </li>
+<li><strong>In our experiments, we found that the KL penalty performed worse than the clipped surrogate objective, however, we’ve included it here because it’s an important baseline.</strong></li>
+</ul>
+</li>
+<li>
+<p>In the simplest instantiation of this algorithm, we perform the following steps in each policy update:</p>
+<ul>
+<li>Using several epochs of <strong>minibatch</strong> SGD, optimize the KL-penalized objective <span class="arithmatex">\(L^{KLPEN}(\theta)\)</span></li>
+<li>Compute <span class="arithmatex">\(d = E_t[ \text{KL} ]\)</span><ul>
+<li>If <span class="arithmatex">\(d &lt; d_\text{targ} / 1.5\)</span>, <span class="arithmatex">\(\beta \gets \beta / 2\)</span></li>
+<li>If <span class="arithmatex">\(d &gt; d_\text{targ} \times 1.5\)</span>, <span class="arithmatex">\(\beta \gets \beta \times 2\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The updated <span class="arithmatex">\(\beta\)</span> is used for the next policy update. </p>
+</li>
+<li>With this scheme, we occasionally see policy updates where the KL divergence is significantly different from <span class="arithmatex">\(d_\text{targ}\)</span>, however, these are rare, and <span class="arithmatex">\(\beta\)</span> quickly adjusts. </li>
+<li>The parameters <span class="arithmatex">\(1.5\)</span> and <span class="arithmatex">\(2\)</span> above are chosen heuristically, but the algorithm is not very sensitive to them. </li>
+<li>The initial value of <span class="arithmatex">\(\beta\)</span> is a another hyperparameter but is not important in practice because the algorithm quickly adjusts it.</li>
+</ul>
+<h2 id="5-algorithm">5 Algorithm</h2>
+<ul>
+<li>
+<p>The surrogate losses from the previous sections can be computed and differentiated with a minor change to a typical policy gradient implementation. </p>
+<ul>
+<li>For implementations that use automatic differentiation, one simply constructs the loss <span class="arithmatex">\(L^{CLIP}\)</span> or <span class="arithmatex">\(L^{KLPEN}\)</span> instead of <span class="arithmatex">\(L^{PG}\)</span>, and one performs multiple steps of stochastic gradient ascent on this objective.</li>
+</ul>
+</li>
+<li>
+<p>Most techniques for computing <strong>variance-reduced advantage-function</strong> estimators make use a learned state-value function <span class="arithmatex">\(V(s)\)</span>; for example, <strong>generalized advantage estimation</strong>, or the finite-horizon estimators. </p>
+</li>
+<li>
+<p>If using a neural network architecture that shares parameters between the policy and value function, we must use a loss function that combines the policy surrogate and a value function error term. </p>
+</li>
+<li>This objective can further be augmented by adding an entropy bonus to ensure sufficient exploration, as suggested in past work</li>
+<li>Combining these terms, we obtain the following objective, which is (approximately) maximized each iteration:</li>
+</ul>
+<div class="arithmatex">\[ L_t^{CLIP+VF+S}(\theta) = E_t[ L_t^{CLIP}(\theta) - c_1 L_t^{VF}(\theta) + c_2 S[\pi_\theta](s_t) ] \\[5pt]
+L_t^{VF} = (V_\theta(s_t) - V_t^\text{targ})^2 \]</div>
+<ul>
+<li>where <span class="arithmatex">\(c_1, c_2\)</span> are coefficients, </li>
+<li>and <span class="arithmatex">\(S\)</span> denotes an <strong>entropy bonus</strong>, </li>
+</ul>
+<hr />
+<ul>
+<li>One style of policy gradient implementation, popularized in [Mni+16] and well-suited for use with recurrent neural networks, runs the policy for <span class="arithmatex">\(T\)</span> timesteps (<strong>where <span class="arithmatex">\(T\)</span> is much less than the episode length</strong>), and uses the collected samples for an update. <ul>
+<li>This style requires an advantage estimator that <strong>does not look beyond timestep <span class="arithmatex">\(T\)</span>.</strong> </li>
+<li>The estimator used by [Mni+16] is</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ A_t = -V(s_t) + r_t + \gamma r_{t+1} + ... + \gamma^{T-t+1} r_{T-1} + \gamma^{T-t} V(s_T) \]</div>
+<ul>
+<li>
+<p>where <span class="arithmatex">\(t\)</span> specifies the time index in <span class="arithmatex">\([0, T]\)</span>, within a given length-<span class="arithmatex">\(T\)</span> trajectory segment. </p>
+</li>
+<li>
+<p>Generalizing this choice, we can use a <strong>truncated version of Generalized Advantage Estimation</strong>, which reduces to equation above when <span class="arithmatex">\(\lambda = 1\)</span>:</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+A_t = \delta_t + (\gamma \lambda) \delta_{t+1} + ... + (\gamma \lambda)^{T-t+1} \delta_{T-1} \\[5pt]
+\delta_t := r_t + \gamma V(s_{t+1}) - V(s_t)
+\]</div>
+<ul>
+<li>A proximal policy optimization (PPO) algorithm that uses fixed-length trajectory segments is shown below. <ul>
+<li>Each iteration, each of <span class="arithmatex">\(N\)</span> <strong>(parallel) actors</strong> collect <span class="arithmatex">\(T\)</span> timesteps of data. </li>
+<li>Then we construct the surrogate loss on these <span class="arithmatex">\(NT\)</span> timesteps of data, and optimize it with <strong>mini-batch Adam</strong>, for <span class="arithmatex">\(K\)</span> epochs.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Algorithm 1 PPO, Actor-Critic Style</strong><ul>
+<li>for iteration = 1, 2, . . . do<ul>
+<li>for actor = 1, 2, . . . , N do<ul>
+<li>Run policy <span class="arithmatex">\(\pi_{\theta_\text{old}}\)</span> in environment for <span class="arithmatex">\(T\)</span> timesteps</li>
+<li>Compute advantage estimates <span class="arithmatex">\(A_1, ..., A_T\)</span></li>
+</ul>
+</li>
+<li>Optimize surrogate <span class="arithmatex">\(L\)</span> wrt <span class="arithmatex">\(\theta\)</span>, with <span class="arithmatex">\(K\)</span> epochs and <strong>minibatch</strong> size <span class="arithmatex">\(M \le NT\)</span></li>
+<li><span class="arithmatex">\(\theta_\text{old} \gets \theta\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="6-experiments">6 Experiments</h2>
+<h3 id="61-comparison-of-surrogate-objectives">6.1 Comparison of Surrogate Objectives</h3>
+<ul>
+<li>
+<p>First, we compare several different surrogate objectives under different hyperparameters. Here, we compare the surrogate objective <span class="arithmatex">\(L^{CLIP}\)</span> to several natural variations and ablated versions.</p>
+</li>
+<li>
+<p>For the KL penalty, one can either use a fixed penalty coefficient <span class="arithmatex">\(\beta\)</span> or an adaptive coefficient as described in Section 4 using target KL value <span class="arithmatex">\(d_\text{targ}\)</span>. </p>
+<ul>
+<li>Note that we also tried clipping in log space, but found the performance to be no better.</li>
+</ul>
+</li>
+<li>
+<p>Because we are searching over hyperparameters for each algorithm variant, we chose a computationally cheap benchmark to test the algorithms on. </p>
+<ul>
+<li>Namely, we used 7 simulated robotics tasks implemented in OpenAI Gym, which use the <code>MuJoCo</code> physics engine. </li>
+<li>We do one million timesteps of training on each one. </li>
+<li>Besides the hyperparameters used for clipping (<span class="arithmatex">\(\epsilon\)</span>) and the KL penalty (<span class="arithmatex">\(\beta, d_\text{targ}\)</span>), which we search over, the other hyperparameters are provided in in Table 3.</li>
+</ul>
+</li>
+<li>
+<p>To represent the policy, we used a <strong>fully-connected MLP</strong> with two hidden layers of <span class="arithmatex">\(64\)</span> units, and <code>tanh</code> nonlinearities, outputting the mean of a Gaussian distribution, with variable standard deviations, following [Sch+15b; Dua+16]. </p>
+<ul>
+<li><strong>We don’t share parameters between the policy and value function (so coefficient <span class="arithmatex">\(c_1\)</span> is irrelevant), and we don’t use an entropy bonus.</strong></li>
+</ul>
+</li>
+<li>
+<p>Each algorithm was run on all 7 environments, with 3 random seeds on each. </p>
+<ul>
+<li>We scored each run of the algorithm by computing the average total reward of the last 100 episodes. </li>
+<li>We shifted and scaled the scores for each environment so that the random policy gave a score of <span class="arithmatex">\(0\)</span> and the best result was set to <span class="arithmatex">\(1\)</span>, and averaged over 21 runs to produce a single scalar for each algorithm setting.</li>
+</ul>
+</li>
+<li>
+<p>The results are shown in Table 1. </p>
+<ul>
+<li>Note that the score is negative for the setting without clipping or penalties, because for one environment (half cheetah) it leads to a very negative score, which is worse than the initial random policy.</li>
+</ul>
+</li>
+</ul>
+<h3 id="62-comparison-to-other-algorithms-in-the-continuous-domain">6.2 Comparison to Other Algorithms in the Continuous Domain</h3>
+<ul>
+<li>Next, we compare PPO (with the “clipped” surrogate objective from Section 3) to several other methods from the literature, which are considered to be effective for continuous problems. <ul>
+<li>We compared against tuned implementations of the following algorithms: <ul>
+<li><strong>Trust Region Policy Optimization</strong> [Sch+15b], </li>
+<li><strong>cross-entropy method (CEM)</strong> [SL06], </li>
+<li><strong>Vanilla Policy Gradient</strong> with adaptive step-size</li>
+<li><strong>A2C</strong> [Mni+16], </li>
+<li><strong>A2C with trust region</strong> [Wan+16]. <ul>
+<li>A2C stands for <strong>advantage actor critic</strong>, and is a synchronous version of A3C, which we found to have the same or better performance than the asynchronous version. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For PPO, we used the hyperparameters from the previous section, with <span class="arithmatex">\(\epsilon = 0.2\)</span>. </li>
+<li><strong>We see that PPO outperforms the previous methods on almost all the continuous control environments.</strong></li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../imgs/01_PPO_benchmark.png" /></p>
+<h3 id="63-showcase-in-the-continuous-domain-humanoid-running-and-steering">6.3 Showcase in the Continuous Domain: Humanoid Running and Steering</h3>
+<ul>
+<li>To showcase the performance of PPO on high-dimensional continuous control problems, we train on a set of problems involving a 3D humanoid, where the robot must <ul>
+<li>run, steer, and get up off the ground, </li>
+<li>possibly while being pelted (连续攻击) by cubes. </li>
+</ul>
+</li>
+<li>The three tasks we test on are <ul>
+<li><code>RoboschoolHumanoid</code>: forward locomotion only, </li>
+<li><code>RoboschoolHumanoidFlagrun</code>: position of target is randomly varied every 200 timesteps or whenever the goal is reached, </li>
+<li><code>RoboschoolHumanoidFlagrunHarder</code>, where the robot is pelted by cubes and needs to get up off the ground. </li>
+</ul>
+</li>
+<li>
+<p>See Figure 5 for still frames of a learned policy, and Figure 4 for learning curves on the three tasks. </p>
+</li>
+<li>
+<p>Hyperparameters are provided in Table 4. </p>
+</li>
+<li>In concurrent work, Heess et al. used the adaptive KL variant of PPO (Section 4) to learn locomotion policies for 3D robots.</li>
+</ul>
+<h3 id="64-comparison-to-other-algorithms-on-the-atari-domain">6.4 Comparison to Other Algorithms on the Atari Domain</h3>
+<ul>
+<li>We also ran PPO on the Arcade Learning Environment benchmark and compared against well-tuned implementations of A2C and ACER. <ul>
+<li>For all three algorithms, we used the same policy network architecture as used in [Mni+16]. </li>
+<li>The hyperparameters for PPO are provided in Table 5. </li>
+<li>For the other two algorithms, we used hyperparameters that were tuned to maximize performance on this benchmark.</li>
+<li>A table of results and learning curves for all 49 games is provided in Appendix B. </li>
+<li>We consider the following two scoring metrics: <ul>
+<li>average reward per episode over entire training period (which favors fast learning), and </li>
+<li>average reward per episode over last 100 episodes of training (which favors final performance). </li>
+</ul>
+</li>
+<li>Table 2 shows the number of games “won” by each algorithm, where we compute the victor by averaging the scoring metric across three trials.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">A2C</th>
+<th style="text-align: center;">ACER</th>
+<th style="text-align: center;">PPO</th>
+<th style="text-align: center;">Tie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">(1) avg. episode reward over all of training</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;"><strong>30</strong></td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">(2) avg. episode reward over last 100 episodes</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>28</strong></td>
+<td style="text-align: center;">19</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-conclusion">7 Conclusion</h2>
+<ul>
+<li>We have introduced proximal policy optimization, a family of policy optimization methods that use multiple epochs of stochastic gradient ascent to perform each policy update. </li>
+<li>These methods have the stability and reliability of trust-region methods but are much simpler to implement, requiring only few lines of code change to a vanilla policy gradient implementation, applicable in more general settings (for example, when using a joint architecture for the policy and value function), and have better overall performance.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
