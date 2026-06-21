@@ -12,7 +12,7 @@
         <link rel="prev" href="../../../2.2_2026_Embodied_AI/papers/02_D4RT_DeepMind/">
       
       
-        <link rel="next" href="../02_SAC/">
+        <link rel="next" href="../02_SAC_v1/">
       
       
         
@@ -227,14 +227,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../creator/" class="md-nav__link">
+      <a href="../../../Ricky/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Creator
+    Creator (Ricky Ding)
   
 
     
@@ -1545,14 +1545,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../02_SAC/" class="md-nav__link">
+      <a href="../02_SAC_v1/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    2 2018 SAC
+    2 2018 SAC v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_SAC_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_DreamerV3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2023 DreamerV3
   
 
     
@@ -2258,6 +2314,16 @@ A_t = \delta_t + (\gamma \lambda) \delta_{t+1} + ... + (\gamma \lambda)^{T-t+1} 
 </ul>
 </li>
 </ul>
+<div class="arithmatex">\[
+\delta_t := r_t + \gamma V(s_{t+1}) - V(s_t) \\[5pt]
+A_t = \delta_t + (\gamma \lambda) \delta_{t+1} + ... + (\gamma \lambda)^{T-t+1} \delta_{T-1} \\[10pt]
+r_t(\theta) :=  { \pi_\theta (a_t|s_t) \over \pi_{\theta_\text{old}} (a_t|s_t) } \\[5pt]
+r^{clip} \equiv \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \\[5pt]
+L^{CLIP}(\theta) = E_t[ \min( r_t(\theta) A_t,  r^{clip} A_t ) ] \\[10pt]
+L_t^{VF} = (V_\theta(s_t) - V_t^\text{targ})^2 \\[5pt]
+{\color{red} \text{!!! maximize:}}\\[5pt]
+L_t^{CLIP+VF+S}(\theta) = E_t[ L_t^{CLIP}(\theta) - c_1 L_t^{VF}(\theta) + c_2 S[\pi_\theta](s_t) ]
+\]</div>
 <hr />
 <h2 id="6-experiments">6 Experiments</h2>
 <h3 id="61-comparison-of-surrogate-objectives">6.1 Comparison of Surrogate Objectives</h3>
