@@ -1,0 +1,2448 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/">
+      
+      
+        <link rel="next" href="../02_ViT_Vision_Transformer/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>1 2017 Transformer - NeuroAI Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../js/main.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-2017-transformer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeuroAI Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 2017 Transformer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeuroAI Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeuroAI Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ricky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creator (Ricky)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.1 Guiding Principles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0.1 Guiding Principles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 NeuroAI Hassabis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 Brain Evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Neural Encoding I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.1_2005_Theoretical_Neuroscience/02_Neural_Encoding_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Neural Encoding II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.1_2005_Theoretical_Neuroscience/03_Neural_Decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Neural Decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.1_2005_Theoretical_Neuroscience/04_Information_Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Information Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.1_2005_Theoretical_Neuroscience/07_Network_Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Network Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.1_2005_Theoretical_Neuroscience/08_Plasticity_and_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Plasticity and Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.1_2005_Theoretical_Neuroscience/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Classical Conditioning and Reinforcement Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Representational Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 LLM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.1 LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3-model-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Model Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Model Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-encoder-and-decoder-stacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Encoder and Decoder Stacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Attention
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Attention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-scaled-dot-product-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 Scaled Dot-Product Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Multi-Head Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-position-wise-feed-forward-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Position-wise Feed-Forward Networks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-positional-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Positional Encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrades
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2021-rope-rotary-positional-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2021 RoPE: Rotary Positional Embeddings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2019-rmsnorm-root-mean-square-layer-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2019 RMSNorm: Root Mean Square Layer Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020-swiglu-swish-gated-linear-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2020 SwiGLU: Swish-Gated Linear Unit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2023-gqa-grouped-query-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2023 GQA: Grouped-Query Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020-qk-norm-query-key-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2020 QK-Norm: Query-Key Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 Qwen3-VL Technical Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 The Big LLM Architecture Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2024 DeepSeek-V3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 Embodied AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.2 Embodied AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.2_Embodied_AI/papers/01_Spatial_Intelligence_Survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2025 Spatial Intelligence Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.2_Embodied_AI/papers/02_D4RT_DeepMind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2025 D4RT: Dynamic 4D Reconstruction and Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 RL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.3 RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.3_RL/papers/01_PPO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 PPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2023 DreamerV3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 Brain Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3.1 Brain Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Brain vs MPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3-model-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Model Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Model Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-encoder-and-decoder-stacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Encoder and Decoder Stacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Attention
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Attention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-scaled-dot-product-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 Scaled Dot-Product Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-multi-head-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Multi-Head Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-position-wise-feed-forward-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Position-wise Feed-Forward Networks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-positional-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Positional Encoding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrades
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2021-rope-rotary-positional-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2021 RoPE: Rotary Positional Embeddings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2019-rmsnorm-root-mean-square-layer-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2019 RMSNorm: Root Mean Square Layer Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020-swiglu-swish-gated-linear-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2020 SwiGLU: Swish-Gated Linear Unit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2023-gqa-grouped-query-attention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2023 GQA: Grouped-Query Attention
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020-qk-norm-query-key-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2020 QK-Norm: Query-Key Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-2017-transformer">1 2017 Transformer</h1>
+<ul>
+<li><a href="../papers/01_Transformer/">Full Version</a></li>
+</ul>
+<h2 id="3-model-architecture">3 Model Architecture</h2>
+<p><img alt="" src="../imgs/01_Transformer_architecture.png" width="400" /></p>
+<h3 id="31-encoder-and-decoder-stacks">3.1 Encoder and Decoder Stacks</h3>
+<ul>
+<li>The <strong>encoder</strong> maps an input sequence of symbol representations <span class="arithmatex">\((x_1, ..., x_n)\)</span> to a sequence of continuous representations <span class="arithmatex">\(z = (z_1, ..., z_n)\)</span>. </li>
+<li>
+<p>Given <span class="arithmatex">\(z\)</span>, the <strong>decoder</strong> then generates an output sequence <span class="arithmatex">\((y_1, ..., y_m)\)</span> of symbols one element at a time. </p>
+</li>
+<li>
+<p>In addition to the two sub-layers in each encoder layer, <strong>the decoder inserts a third sub-layer, which performs multi-head attention over the output of the encoder stack.</strong> </p>
+</li>
+<li><strong>We also modify the self-attention sub-layer in the decoder stack to prevent positions from attending to subsequent positions.</strong> </li>
+</ul>
+<h3 id="32-attention">3.2 Attention</h3>
+<p><img alt="" src="../imgs/01_Attention.png" /></p>
+<ul>
+<li><strong>The output is computed as a weighted sum of the values, where the weight assigned to each value is computed by a compatibility function of the query with the corresponding key.</strong></li>
+</ul>
+<h4 id="321-scaled-dot-product-attention">3.2.1 Scaled Dot-Product Attention</h4>
+<ul>
+<li>Queries and Keys: dim <span class="arithmatex">\(d_k\)</span>, Values: dim <span class="arithmatex">\(d_v\)</span> </li>
+</ul>
+<div class="arithmatex">\[ \text{Attention}(Q, K, V) = \text{softmax}(
+{ Q K^T \over \sqrt{d_k} }) V \]</div>
+<ul>
+<li>we scale by <span class="arithmatex">\(1 / \sqrt{d_k}\)</span> because for large values of <span class="arithmatex">\(d_k\)</span>, the dot products grow large in magnitude, pushing the <code>softmax</code> function into regions where it has extremely small gradients</li>
+</ul>
+<h4 id="322-multi-head-attention">3.2.2 Multi-Head Attention</h4>
+<ul>
+<li>In the Transformer, the <strong>number of operations required to relate signals from two arbitrary input or output positions</strong> is reduced to a constant, albeit <strong>at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention</strong></li>
+<li>Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions. With a single attention head, averaging inhibits this.</li>
+</ul>
+<div class="arithmatex">\[
+\text{MultiHead}(Q, K, V ) = \text{Concat}(\text{head}_1, ..., \text{head}_h) W^O \\[5pt]
+\text{where } \text{ head}_i = \text{Attention}(QW^Q_i, KW^K_i, V W^V_i)
+\]</div>
+<ul>
+<li>
+<p>Where the projections are parameter matrices with <strong>shapes</strong>: </p>
+<ul>
+<li><span class="arithmatex">\(W^Q_i, W^K_i \quad (d_\text{model}, d_k)\)</span></li>
+<li><span class="arithmatex">\(W^V_i \quad (d_\text{model}, d_v)\)</span></li>
+<li><span class="arithmatex">\(W^O \quad (h d_v, d_\text{model})\)</span></li>
+</ul>
+</li>
+<li>
+<p>In this work we employ <span class="arithmatex">\(h = 8\)</span> parallel attention layers, or heads. For each of these we use <span class="arithmatex">\(d_k = d_v = d_\text{model}/h = 64\)</span>. </p>
+</li>
+</ul>
+<h3 id="33-position-wise-feed-forward-networks">3.3 Position-wise Feed-Forward Networks</h3>
+<div class="arithmatex">\[ \text{FFN}(x) = \text{ReLU}(x W_1 + b_1) W_2 + b_2 \]</div>
+<h3 id="35-positional-encoding">3.5 Positional Encoding</h3>
+<div class="arithmatex">\[
+{2\pi \over \lambda} \equiv {1 \over 10000^{ 2i / d_\text{model} }} \\[5pt]
+PE_{(pos, 2i)} = \sin({2\pi \over \lambda} pos) \\[5pt]
+PE_{(pos, 2i+1)} = \cos({2\pi \over \lambda} pos)
+\]</div>
+<ul>
+<li>where <span class="arithmatex">\(pos\)</span> is the position and <span class="arithmatex">\(i\)</span> is the dimension. <ul>
+<li>That is, each dimension of the positional encoding corresponds to a sinusoid. </li>
+<li>The wavelengths form a geometric progression from <span class="arithmatex">\(2\pi\)</span> to <span class="arithmatex">\(10000 \cdot 2\pi\)</span>. </li>
+</ul>
+</li>
+<li>We chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset <span class="arithmatex">\(k\)</span>, <span class="arithmatex">\(PE_{pos+k}\)</span> can be represented as a linear function of <span class="arithmatex">\(PE_{pos}\)</span>.</li>
+<li>We also experimented with using learned positional embeddings instead, and found that the two versions produced nearly identical results. We chose the sinusoidal version because it may allow the model to extrapolate to sequence lengths longer than the ones encountered during training.</li>
+</ul>
+<p><img alt="" src="../imgs/01_Attention_vs_others.png" /></p>
+<h2 id="upgrades">Upgrades</h2>
+<h3 id="2021-rope-rotary-positional-embeddings">2021 RoPE: Rotary Positional Embeddings</h3>
+<ul>
+<li>
+<p>First introduced in the paper <a href="https://arxiv.org/pdf/2104.09864">RoFormer: Enhanced Transformer with Rotary Position Embedding (Su et al., 2021)</a></p>
+<ul>
+<li>Represent a fundamental shift from adding positional information to <strong>rotating</strong> it within the attention mechanism </li>
+</ul>
+</li>
+<li>
+<p>The Mathematical Core: Complex Rotation</p>
+<ul>
+<li>The fundamental innovation of RoPE is that it encodes absolute position by applying a rotation to the query (<span class="arithmatex">\(q\)</span>) and key (<span class="arithmatex">\(k\)</span>) vectors in a way that their dot product depends only on the <strong>relative distance</strong> between them</li>
+</ul>
+</li>
+<li>
+<p>For a 2D vector <span class="arithmatex">\(x = [x_1, x_2]^\top\)</span>, RoPE applies a rotation matrix <span class="arithmatex">\(R_{\Theta, m}\)</span> based on the token's position <span class="arithmatex">\(m\)</span>:</p>
+</li>
+</ul>
+<div class="arithmatex">\[ R_{\Theta, m} = \begin{pmatrix} \cos(m\theta) &amp; -\sin(m\theta) \\ \sin(m\theta) &amp; \cos(m\theta) \end{pmatrix} \]</div>
+<ul>
+<li>When applied to a query <span class="arithmatex">\(q\)</span> at position <span class="arithmatex">\(m\)</span> and a key <span class="arithmatex">\(k\)</span> at position <span class="arithmatex">\(n\)</span>, the attention score (dot product) becomes:</li>
+</ul>
+<div class="arithmatex">\[ q_m^\top k_n = (R_{\Theta, m} q)^\top (R_{\Theta, n} k) = q^\top (R_{\Theta, m}^\top R_{\Theta, n}) k = q^\top R_{\Theta, n-m} k \]</div>
+<ul>
+<li>
+<p>This mathematical identity proves that the model effectively ignores absolute position and focuses strictly on the relative distance <span class="arithmatex">\(\Delta = n-m\)</span></p>
+</li>
+<li>
+<p>High-Dimensional Implementation</p>
+<ul>
+<li>In modern LLMs, the hidden dimension <span class="arithmatex">\(d\)</span> is broken into <span class="arithmatex">\(d/2\)</span> pairs of 2D subspaces. </li>
+<li>Each subspace <span class="arithmatex">\(j\)</span> is rotated at a different frequency <span class="arithmatex">\(\theta_j\)</span>:</li>
+</ul>
+<div class="arithmatex">\[\theta_j = 10000^{-2j/d} \qquad j \in \{0, 1, \dots, d/2 - 1\}\]</div>
+<ul>
+<li>Low-index dimensions rotate quickly (fine-grained local position), while high-index dimensions rotate slowly (coarse long-range position)</li>
+</ul>
+</li>
+<li>
+<p>Scientific Properties &amp; Benefits</p>
+<ul>
+<li><strong>Long-Term Decay:</strong> A critical property of RoPE is that as relative distance <span class="arithmatex">\(|m-n|\)</span> increases, the expected value of the dot product between query and key vectors naturally decreases. This mimics human language, where nearby words usually have more mutual relevance than distant ones</li>
+<li><strong>Context Extrapolation:</strong> Because RoPE uses a continuous functional form (sine/cosine) rather than a learned lookup table, it can handle sequence lengths (e.g., 128k or 1M tokens) that were never seen during the initial training phase</li>
+<li><strong>Optimization Stability:</strong> By isolating position into the attention mechanism rather than mixing it with semantic signal in the hidden state, RoPE prevents "positional memorization" and improves gradient flow in deep networks</li>
+</ul>
+</li>
+</ul>
+<h3 id="2019-rmsnorm-root-mean-square-layer-normalization">2019 RMSNorm: Root Mean Square Layer Normalization</h3>
+<ul>
+<li>
+<p>The Timeline</p>
+<ul>
+<li><a href="https://arxiv.org/pdf/1607.06450">LayerNorm (2016)</a>: Proposed by Jimmy Lei Ba, et al. (University of Toronto). It was designed to solve the internal covariate shift in RNNs and later became the backbone of the 2017 Transformer.</li>
+<li><a href="https://arxiv.org/pdf/1910.07467">RMSNorm (2019)</a>: Proposed by Biao Zhang and Rico Sennrich. It gained massive popularity around 2023–2024 with the Llama series and is now the default for almost all high-performance LLMs in 2026.</li>
+</ul>
+</li>
+<li>
+<p><strong>LayerNorm (LN)</strong></p>
+<ul>
+<li>LayerNorm centers the activations by subtracting the mean and then scales them by the standard deviation. For an input vector <span class="arithmatex">\(x\)</span> of dimension <span class="arithmatex">\(d\)</span>:</li>
+</ul>
+<div class="arithmatex">\[ \mu = \frac{1}{d} \sum_{i=1}^{d} x_i, \quad \sigma = \sqrt{\frac{1}{d} \sum_{i=1}^{d} (x_i - \mu)^2 + \epsilon} \\[5pt]
+\bar{x}_i = \frac{x_i - \mu}{\sigma } \cdot \gamma_i + \beta_i \]</div>
+<ul>
+<li><strong><span class="arithmatex">\(\gamma\)</span> (gain)</strong> and <strong><span class="arithmatex">\(\beta\)</span> (bias)</strong> are learnable parameters.</li>
+<li><strong>The Cost:</strong> Calculating <span class="arithmatex">\(\mu\)</span> requires a full pass over the data, and subtracting it requires another, making it computationally more "expensive" for hardware to parallelize.</li>
+</ul>
+</li>
+<li>
+<p><strong>RMSNorm</strong></p>
+<ul>
+<li>The authors of RMSNorm hypothesized that the <strong>re-centering</strong> (subtracting the mean) wasn't actually providing the stability—it was the <strong>re-scaling</strong>. RMSNorm simplifies this by calculating only the Root Mean Square:</li>
+</ul>
+<div class="arithmatex">\[ RMS(x) = \sqrt{\frac{1}{d} \sum_{i=1}^{d} x_i^2 + \epsilon} \\[5pt]
+\bar{x}_i = \frac{x_i}{RMS(x) } \cdot \gamma_i \]</div>
+<ul>
+<li><strong>The Benefit:</strong> Notice there is no <span class="arithmatex">\(\mu\)</span> and no <span class="arithmatex">\(\beta\)</span>.</li>
+<li><strong>The Efficiency:</strong> It reduces the computational overhead by roughly <strong>10–40%</strong> per normalization layer because it bypasses the mean-offset calculation.</li>
+</ul>
+</li>
+<li>
+<p>The Science: Why it works</p>
+<ul>
+<li>The primary goal of any normalization is to ensure that the "magnitude" of activations doesn't explode or vanish as they pass through dozens of layers.</li>
+<li><strong>Invariant Scaling:</strong> RMSNorm provides "re-scaling invariance." If the weights of a layer are scaled by a constant, the output remains normalized, which keeps the gradients stable.</li>
+<li><strong>Simplified Geometry:</strong> LayerNorm projects inputs onto a <span class="arithmatex">\(d-1\)</span> dimensional hyperplane (because of the mean subtraction) and then onto a sphere. RMSNorm simply projects them onto a <span class="arithmatex">\(d\)</span> dimensional sphere. In high-dimensional LLM space, that extra degree of freedom doesn't hurt performance; it actually helps speed up convergence.</li>
+<li><strong>Hardware Friendliness:</strong> In 2026, we optimize for <strong>SRAM-to-Register</strong> bandwidth. RMSNorm requires fewer intermediate variables to be stored in the GPU/TPU cache, allowing for faster "fused" kernels.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2020-swiglu-swish-gated-linear-unit">2020 SwiGLU: Swish-Gated Linear Unit</h3>
+<ul>
+<li>
+<p>Evolution of how models "filter" information:</p>
+<ul>
+<li><strong>2017:</strong> ReLU (The "Stone Age" - simple gating)</li>
+<li><strong>2020:</strong> GELU (The "Industrial Revolution" - smooth gating, used in GPT-3). <a href="https://arxiv.org/pdf/1606.08415">2016 Gaussian Error Linear Units</a></li>
+<li><strong>2020-2023:</strong> <a href="https://arxiv.org/pdf/2002.05202">SwiGLU</a> (The "Modern Era" - introduced by Noam Shazeer; popularized by Llama and PaLM).</li>
+<li><strong>2024-2026:</strong> Variations like <strong>dGated Linear Units</strong> are common, but SwiGLU remains the core SOTA backbone for efficiency.</li>
+</ul>
+</li>
+<li>
+<p>GELU is a single-branch function:</p>
+<div class="arithmatex">\[ \text{GELU}(x) = x \Phi(x) \approx x \cdot \sigma(1.702 \cdot x) \]</div>
+<ul>
+<li>Where <span class="arithmatex">\(\Phi(x) = P(X \le x)\)</span> is the cumulative distribution function of the standard normal distribution. It essentially "weights" the input by how likely it is to be "active."</li>
+</ul>
+</li>
+<li>
+<p>The SwiGLU Upgrade:</p>
+<ul>
+<li>SwiGLU is a <strong>Gated Linear Unit (GLU)</strong>. Instead of one linear transformation, it uses two in parallel, where one "gates" the other.</li>
+</ul>
+<div class="arithmatex">\[ \text{SwiGLU}(x, W, V, b, c) = \text{Swish}_\beta(xW + b) \otimes (xV + c) \]</div>
+<ul>
+<li>The symbol <span class="arithmatex">\(\otimes\)</span> denotes element-wise multiplication (Hadamard product).</li>
+</ul>
+</li>
+<li>
+<p>In modern SOTA implementations (where we drop the bias <span class="arithmatex">\(b\)</span> and <span class="arithmatex">\(c\)</span>), the operation is:</p>
+<div class="arithmatex">\[
+G = \text{SiLU}(xW_1) = (xW_1) \cdot \sigma(xW_1) \\[5pt]
+L = xW_3 \\[5pt]
+\text{output} = (G \otimes L) W_2
+\]</div>
+<ul>
+<li>Old FFN: <span class="arithmatex">\(x \xrightarrow{W_{up}} \text{GELU} \xrightarrow{W_{down}} \text{Output}\)</span></li>
+<li>SOTA FFN: <span class="arithmatex">\(x \xrightarrow{W_1, W_3} (\text{SiLU}(xW_1) \otimes xW_3) \xrightarrow{W_2} \text{Output}\)</span></li>
+</ul>
+</li>
+<li>
+<p>The Science: Why it Wins</p>
+<ul>
+<li>The "Bilinear" Advantage: Standard activations like ReLU or GELU are fixed functions. SwiGLU is <strong>bilinear</strong>—the "gate" is learned. By having a dedicated weight matrix (<span class="arithmatex">\(W_3\)</span>) for the value branch and another for the gate (<span class="arithmatex">\(W_1\)</span>), the model can more surgically decide which dimensions of the hidden state should pass through.</li>
+<li>Gradient Flow<ul>
+<li><strong>ReLU:</strong> Has a "dead zone" for <span class="arithmatex">\(x &lt; 0\)</span> where the gradient is exactly zero.</li>
+<li><strong>GELU/Swish:</strong> Are "stochastic-ish" smooth functions. They allow a small, negative gradient to flow, which helps with optimization.</li>
+<li><strong>SwiGLU:</strong> Because it’s a product of two learned projections, it creates a much more complex "loss landscape" that allows the model to learn sharper features during pre-training.</li>
+</ul>
+</li>
+<li>Parameter Efficiency<ul>
+<li>While SwiGLU uses <strong>three</strong> weight matrices (<span class="arithmatex">\(W_1, W_2, W_3\)</span>) instead of the two used in standard Transformers, researchers found that the performance gain is so high that you can actually reduce the hidden dimension (<span class="arithmatex">\(d_{ff}\)</span>) and still outperform a larger GELU-based model. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">ReLU (2017)</th>
+<th style="text-align: left;">GELU (2020)</th>
+<th style="text-align: left;">SwiGLU (SOTA)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Formula</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\max(0, x)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(x P(X \le x)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\((\text{SiLU}(xW) \cdot xV)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Shape</strong></td>
+<td style="text-align: left;">Sharp kink at 0</td>
+<td style="text-align: left;">Smooth curve</td>
+<td style="text-align: left;">Dynamic/Learned</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gating</strong></td>
+<td style="text-align: left;">Hard (On/Off)</td>
+<td style="text-align: left;">Probabilistic</td>
+<td style="text-align: left;">Learned Projection</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Compute Cost</strong></td>
+<td style="text-align: left;">Lowest</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">High (Extra Matrix)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SOTA Status</strong></td>
+<td style="text-align: left;">Obsolete</td>
+<td style="text-align: left;">Legacy (GPT-3/BERT)</td>
+<td style="text-align: left;"><strong>Standard (Llama/DeepSeek)</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Insight: SwiGLU as "Channel Attention"<ul>
+<li><strong>The core concept:</strong> SwiGLU is to the <strong>embedding dimension</strong> (channels) what Attention is to the <strong>sequence dimension</strong> (tokens). While the Attention mechanism assigns a weight to each token in a sequence to determine "where" to look, <strong>SwiGLU assigns a weight to each dimension of the embedding vector</strong> to determine "what" signal is valid.</li>
+<li>In a SOTA FFN (SwiGLU), we use a "neurons guarding neurons" approach:<ul>
+<li><strong>The Signal (<span class="arithmatex">\(xW_3\)</span>):</strong> A vector (a group of neurons) representing the raw candidate information.</li>
+<li><strong>The Gate (<span class="arithmatex">\(\text{SiLU}(xW_1)\)</span>):</strong> Another vector (another group of neurons) that acts as the controller.</li>
+<li><strong>The Interaction:</strong> The Gate vector decides which specific neurons in the Signal group are "valid signals" for the current context via element-wise multiplication.</li>
+</ul>
+</li>
+<li>Why it’s superior to Old Tech (GELU/ReLU)<ul>
+<li><strong>Old Tech:</strong> A neuron's validity was a lonely decision based only on its own value (<span class="arithmatex">\(f(x)\)</span>).</li>
+<li><strong>SwiGLU:</strong> A neuron's validity is a <strong>collaborative decision</strong>. One group of neurons provides the content, while another provides the contextual filter, allowing for much more surgical "conditional logic" within the model's internal representations.</li>
+</ul>
+</li>
+<li>In 2026, this "Feature Gating" is why SwiGLU models feel significantly more "intelligent" and context-aware than the GPT-3 era models of the same parameter count.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2023-gqa-grouped-query-attention">2023 GQA: Grouped-Query Attention</h3>
+<ul>
+<li>
+<p>The Core Problem: The Memory Wall</p>
+<ul>
+<li>In standard <strong>Multi-Head Attention (MHA)</strong>, every Query head has a corresponding Key and Value head. As context windows grow, the <strong>KV Cache</strong> (storing <span class="arithmatex">\(K\)</span> and <span class="arithmatex">\(V\)</span> for all tokens) becomes the primary memory bottleneck, often exceeding the model weights themselves.</li>
+</ul>
+</li>
+<li>
+<p>The Solution: </p>
+<ul>
+<li><strong>MHA (2017):</strong> <span class="arithmatex">\(H\)</span> Query heads, <span class="arithmatex">\(H\)</span> Key heads, <span class="arithmatex">\(H\)</span> Value heads. (Highest quality, highest memory).</li>
+<li><strong>MQA (2019):</strong> <span class="arithmatex">\(H\)</span> Query heads, <strong>1</strong> Key head, <strong>1</strong> Value head. (Lowest memory, lower quality).</li>
+<li><strong>GQA (2023-2026):</strong> <span class="arithmatex">\(H\)</span> Query heads, <strong><span class="arithmatex">\(G\)</span></strong> Key/Value heads (where <span class="arithmatex">\(1 &lt; G &lt; H\)</span>).</li>
+</ul>
+</li>
+<li>
+<p>The Math:</p>
+<ul>
+<li><strong>Grouping:</strong> Divide <span class="arithmatex">\(H\)</span> Query heads into <span class="arithmatex">\(G\)</span> groups. Each group size is <span class="arithmatex">\(S = H/G\)</span>.</li>
+<li><strong>Shared Projection:</strong> For each group <span class="arithmatex">\(g \in \{1 \dots G\}\)</span>, all Queries <span class="arithmatex">\(Q_{g,1} \dots Q_{g,S}\)</span> share the same <span class="arithmatex">\(K_g\)</span> and <span class="arithmatex">\(V_g\)</span>.</li>
+<li><strong>Broadcasting:</strong> During the attention score calculation:</li>
+</ul>
+<div class="arithmatex">\[ \text{Attention}(Q_{g,s}, K_g, V_g) = \text{softmax}\left(\frac{Q_{g,s} K_g^T}{\sqrt{d_k}}\right) V_g \]</div>
+<ul>
+<li>Mathematically, we <strong>broadcast</strong> (repeat) the <span class="arithmatex">\(K\)</span> and <span class="arithmatex">\(V\)</span> heads <span class="arithmatex">\(S\)</span> times to match the <span class="arithmatex">\(Q\)</span> count before the dot product.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2020-qk-norm-query-key-normalization">2020 QK-Norm: Query-Key Normalization</h3>
+<ul>
+<li>
+<p>Background</p>
+<ul>
+<li>Original idea from the 2020 paper <a href="https://arxiv.org/pdf/2010.04245">Query-Key Normalization for Transformers</a></li>
+<li>Gained huge popularity in 2024–2025 in models like OLMo, Qwen, Llama variants, MiniMax, etc.</li>
+<li>It's one of those "tiny change, massive impact" upgrades — basically mandatory now for stable large-scale training.</li>
+</ul>
+</li>
+<li>
+<p>In standard attention, the dot product <span class="arithmatex">\(QK^T\)</span> can grow very large as <span class="arithmatex">\(d_{head}\)</span> increases. Since <code>Softmax</code> is an exponential function, large input values lead to extreme "peaky" distributions where one token gets 99.9% of the attention. This "saturates" the gradients (making them near zero).</p>
+</li>
+<li>
+<p><strong>QK-Norm</strong> changes the attention score calculation to:</p>
+</li>
+</ul>
+<div class="arithmatex">\[ \text{Attention} = \text{Softmax}\left( \frac{\text{RMSNorm}(Q) \cdot \text{RMSNorm}(K)^T}{\sqrt{d_{head}}} \right) V \]</div>
+<ul>
+<li>
+<p>By forcing the <span class="arithmatex">\(Q\)</span> and <span class="arithmatex">\(K\)</span> vectors to lie on a hypersphere (fixed radius) before the dot product, you ensure that the logit values remain within a predictable, stable range, regardless of how the weights are initialized or how much training has progressed.</p>
+</li>
+<li>
+<p><strong>The Science</strong></p>
+<ul>
+<li><strong>Entropy Maintenance:</strong> It prevents "entropy collapse," where the model becomes too certain about its attention early on and stops learning new relationships.</li>
+<li><strong>Precision Stability:</strong> In FP16 or BF16 training, exploding attention logits often cause numerical overflow (<code>Inf</code>). QK-Norm keeps values small, making it essential for low-precision 2026 training regimes.</li>
+<li><strong>Magnitude/Direction Separation:</strong> It forces the model to learn relationships based on the <strong>angle</strong> (semantic direction) between tokens rather than the raw <strong>magnitude</strong> of the activations.</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+    
+  </body>
+</html>

@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../08_Plasticity_and_Learning/">
+      
+      
+        <link rel="next" href="../10_Representational_Learning/">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>NeuroAI Research</title>
+        <title>9 Classical Conditioning and Reinforcement Learning - NeuroAI Research</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -44,9 +48,9 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/js/main.css">
+      <link rel="stylesheet" href="../../js/main.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#9-classical-conditioning-and-reinforcement-learning" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -75,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+    <a href="../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -95,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              9 Classical Conditioning and Reinforcement Learning
             
           </span>
         </div>
@@ -173,7 +182,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+    <a href="../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -191,7 +200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -218,7 +227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Ricky/" class="md-nav__link">
+      <a href="../../Ricky/" class="md-nav__link">
         
   
   
@@ -339,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
+      <a href="../../0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
         
   
   
@@ -367,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
+      <a href="../../0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
         
   
   
@@ -407,18 +416,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -439,7 +450,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -457,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/" class="md-nav__link">
+      <a href="../01_Neural_Encoding_I/" class="md-nav__link">
         
   
   
@@ -485,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/02_Neural_Encoding_II/" class="md-nav__link">
+      <a href="../02_Neural_Encoding_II/" class="md-nav__link">
         
   
   
@@ -513,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/03_Neural_Decoding/" class="md-nav__link">
+      <a href="../03_Neural_Decoding/" class="md-nav__link">
         
   
   
@@ -541,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/04_Information_Theory/" class="md-nav__link">
+      <a href="../04_Information_Theory/" class="md-nav__link">
         
   
   
@@ -569,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/07_Network_Models/" class="md-nav__link">
+      <a href="../07_Network_Models/" class="md-nav__link">
         
   
   
@@ -597,7 +608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/08_Plasticity_and_Learning/" class="md-nav__link">
+      <a href="../08_Plasticity_and_Learning/" class="md-nav__link">
         
   
   
@@ -622,10 +633,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Classical Conditioning and Reinforcement Learning
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -641,6 +679,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#92-classical-conditioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Classical Conditioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-static-action-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Static Action Choice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-sequential-action-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Sequential Action Choice
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -653,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/" class="md-nav__link">
+      <a href="../10_Representational_Learning/" class="md-nav__link">
         
   
   
@@ -735,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/01_Transformer/" class="md-nav__link">
+      <a href="../../2.1_LLM/01_Transformer/" class="md-nav__link">
         
   
   
@@ -763,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
+      <a href="../../2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
         
   
   
@@ -791,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+      <a href="../../2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
         
   
   
@@ -819,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+      <a href="../../2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
         
   
   
@@ -894,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/01_Transformer/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/01_Transformer/" class="md-nav__link">
         
   
   
@@ -922,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
         
   
   
@@ -950,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
         
   
   
@@ -978,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
         
   
   
@@ -1006,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
         
   
   
@@ -1034,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
         
   
   
@@ -1062,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
         
   
   
@@ -1199,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.2_Embodied_AI/papers/01_Spatial_Intelligence_Survey/" class="md-nav__link">
+      <a href="../../2.2_Embodied_AI/papers/01_Spatial_Intelligence_Survey/" class="md-nav__link">
         
   
   
@@ -1227,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.2_Embodied_AI/papers/02_D4RT_DeepMind/" class="md-nav__link">
+      <a href="../../2.2_Embodied_AI/papers/02_D4RT_DeepMind/" class="md-nav__link">
         
   
   
@@ -1364,7 +1455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.3_RL/papers/01_PPO/" class="md-nav__link">
+      <a href="../../2.3_RL/papers/01_PPO/" class="md-nav__link">
         
   
   
@@ -1392,7 +1483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
+      <a href="../../2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
         
   
   
@@ -1420,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
+      <a href="../../2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
         
   
   
@@ -1448,7 +1539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
+      <a href="../../2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
         
   
   
@@ -1585,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
+      <a href="../../3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
         
   
   
@@ -1638,6 +1729,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#92-classical-conditioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Classical Conditioning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-static-action-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Static Action Choice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-sequential-action-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Sequential Action Choice
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1650,8 +1784,229 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="9-classical-conditioning-and-reinforcement-learning">9 Classical Conditioning and Reinforcement Learning</h1>
+<h2 id="92-classical-conditioning">9.2 Classical Conditioning</h2>
+<ul>
+<li>
+<p>The Biology: From Pavlov to Dopamine</p>
+<ul>
+<li>Classical conditioning is the process by which animals learn to associate stimuli with rewards or punishments</li>
+<li>The Behavioral Foundation<ul>
+<li><strong>Unconditioned Stimulus (US):</strong> A stimulus that naturally triggers a response, such as food</li>
+<li><strong>Unconditioned Response (UR):</strong> The natural reaction to a US, such as salivating when receiving food</li>
+<li><strong>Conditioned Stimulus (CS):</strong> A neutral cue (like a bell) that, through learning, begins to elicit a response</li>
+<li><strong>Conditioned Response (CR):</strong> The learned response to the CS, marking the animal's expectation of a reward</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The Neural Mechanism: Dopamine in the VTA</p>
+<ul>
+<li>Computational models suggest that the <strong>midbrain dopamine system</strong>, specifically the <strong>Ventral Tegmental Area (VTA)</strong>, encodes the <strong>prediction error (<span class="arithmatex">\(\delta\)</span>)</strong></li>
+<li><strong>Early Training:</strong> Dopaminergic neurons fire vigorously upon receiving an unexpected reward</li>
+<li><strong>Late Training:</strong> After learning, neurons fire at the time of the <strong>stimulus</strong> (the predictor) but stay at baseline when the reward actually arrives, as it is no longer a "surprise"</li>
+<li><strong>Omission:</strong> If an expected reward is denied, dopamine activity is inhibited below its basal firing rate at the exact time the reward was predicted</li>
+</ul>
+</li>
+<li>
+<p>A. The Rescorla-Wagner Rule (The Delta Rule)</p>
+<ul>
+<li>This model provides a concise account of how animals learn a linear prediction of reward based on the presence of stimuli</li>
+<li><span class="arithmatex">\(v\)</span>: The expected reward</li>
+<li><span class="arithmatex">\(u\)</span>: A binary stimulus variable (1 if present, 0 if absent)</li>
+<li><span class="arithmatex">\(w\)</span>: The strength of the association (weight)</li>
+<li><span class="arithmatex">\(\delta\)</span>: The prediction error</li>
+<li><span class="arithmatex">\(\epsilon\)</span>: The learning rate</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ v = w \cdot u \\[5pt]
+\delta = r - v \\[5pt]
+w \rightarrow w + \epsilon \delta u \]</div>
+<ul>
+<li>
+<p>B. Temporal Difference (TD) Learning</p>
+<ul>
+<li>TD learning <strong>extends</strong> the Rescorla-Wagner rule to account for the <strong>timing</strong> of rewards within a trial</li>
+<li>The model treats <span class="arithmatex">\(v(t)\)</span> as a prediction of the <strong>total future reward</strong> expected from time <span class="arithmatex">\(t\)</span> until the end of the trial (<span class="arithmatex">\(T\)</span>)</li>
+</ul>
+<div class="arithmatex">\[ v(t) \approx \langle \sum_{\tau=0}^{T-t} r(t+\tau) \rangle \]</div>
+<ul>
+<li><span class="arithmatex">\(v(t)\)</span> is calculated using a discrete time version of a linear filter</li>
+</ul>
+<div class="arithmatex">\[ v(t) = \sum_{\tau=0} w(\tau) u(t-\tau) \]</div>
+<ul>
+<li>Because future rewards are unknown, the model uses the next step's prediction (<span class="arithmatex">\(v(t+1)\)</span>) to calculate the error</li>
+</ul>
+<div class="arithmatex">\[ \delta(t) = r(t) + v(t+1) - v(t) \\[5pt]
+w(\tau) \rightarrow w(\tau) + \epsilon \delta(t) u(t-\tau)\]</div>
+</li>
+<li>
+<p>Explaining Behavioral Phenomena</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Paradigm</th>
+<th style="text-align: left;">Behavioral Result</th>
+<th style="text-align: left;">Mathematical Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Blocking</strong></td>
+<td style="text-align: left;">Pre-training stimulus <span class="arithmatex">\(s_1\)</span> prevents learning stimulus <span class="arithmatex">\(s_2\)</span></td>
+<td style="text-align: left;">Since <span class="arithmatex">\(w_1 = r\)</span>, the prediction <span class="arithmatex">\(v\)</span> is already correct; thus <span class="arithmatex">\(\delta = 0\)</span> and <span class="arithmatex">\(w_2\)</span> never increases</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Extinction</strong></td>
+<td style="text-align: left;">A learned response decays when the reward is removed</td>
+<td style="text-align: left;">If <span class="arithmatex">\(r=0\)</span>, then <span class="arithmatex">\(\delta\)</span> is negative, causing the weight <span class="arithmatex">\(w\)</span> to exponentially decay toward 0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Overshadowing</strong></td>
+<td style="text-align: left;">One stimulus is learned more strongly than another when paired</td>
+<td style="text-align: left;">This is modeled by giving the two stimuli different learning rates (<span class="arithmatex">\(\epsilon\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Secondary Conditioning</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(s_2\)</span> predicts <span class="arithmatex">\(s_1\)</span>, which predicts reward. <span class="arithmatex">\(s_2\)</span> now evokes reward expectation</td>
+<td style="text-align: left;"><strong>TD Learning</strong> explains this: the positive <span class="arithmatex">\(\delta\)</span> spike at the time of <span class="arithmatex">\(s_1\)</span> acts as a reward to drive the learning of <span class="arithmatex">\(s_2\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="93-static-action-choice">9.3 Static Action Choice</h2>
+<ul>
+<li>
+<p>Biological Context: Bee Foraging</p>
+<ul>
+<li>The primary biological model is a bee choosing between different colored flowers (blue and yellow) to find nectar</li>
+<li><strong>Learning Preference:</strong> Bees preferentially land on the flower color that delivers more reward</li>
+<li><strong>Adaptability:</strong> If reward characteristics are swapped, bees quickly adjust their preferences</li>
+<li><strong>Risk Aversion:</strong> Real bumblebees often prefer a "constant" flower (reliable <span class="arithmatex">\(2~\mu l\)</span> of nectar) over a "variable" flower that has the same mean reward but higher uncertainty</li>
+<li><strong>Subjective Utility:</strong> This risk-averse behavior is modeled mathematically by assuming bees value nectar based on a <strong>concave utility function</strong> rather than raw volume, meaning the "utility" of a variable reward is perceived as lower than a steady one</li>
+</ul>
+</li>
+<li>
+<p>Mathematical Framework: Stochastic Choice</p>
+<ul>
+<li>The decision process is modeled as a <strong>stochastic two-armed bandit problem</strong></li>
+<li>The model bee does not choose a flower deterministically but follows a probability distribution</li>
+<li>To decide between blue (<span class="arithmatex">\(b\)</span>) and yellow (<span class="arithmatex">\(y\)</span>), the model uses the <strong>softmax distribution</strong>:</li>
+</ul>
+<div class="arithmatex">\[ P[b] = \frac{\exp(\beta m_b)}{\exp(\beta m_b) + \exp(\beta m_y)} \]</div>
+<ul>
+<li><strong>Action Values (<span class="arithmatex">\(m_b, m_y\)</span>):</strong> These parameters represent the "value" or preference for each action, adjusted through learning</li>
+<li><strong>Exploration-Exploitation Parameter (<span class="arithmatex">\(\beta\)</span>):</strong> This constant controls the randomness of choice:<ul>
+<li><strong>Large <span class="arithmatex">\(\beta\)</span> (Exploitation):</strong> The bee almost always chooses the flower with the higher <span class="arithmatex">\(m\)</span> value</li>
+<li><strong>Small <span class="arithmatex">\(\beta\)</span> (Exploration):</strong> The bee's actions are more random, allowing it to sample different flowers to see if reward conditions have changed</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Two Learning Models (The "Actors")</p>
+<ul>
+<li>The chapter compares two mathematical methods for how the bee updates its action values (<span class="arithmatex">\(m\)</span>) based on rewards (<span class="arithmatex">\(r\)</span>)</li>
+</ul>
+</li>
+<li>
+<p>A. The Indirect Actor</p>
+<ul>
+<li>This model learns the <strong>average reward</strong> for each action</li>
+<li><strong>The Delta Rule:</strong> When a bee visits a flower and receives reward <span class="arithmatex">\(r\)</span>, it updates the value (<span class="arithmatex">\(m\)</span>) using a prediction error (<span class="arithmatex">\(\delta\)</span>):</li>
+</ul>
+<div class="arithmatex">\[ m \rightarrow m + \epsilon(r - m) \]</div>
+<ul>
+<li><strong>Mechanism:</strong> <span class="arithmatex">\(m\)</span> eventually tracks the average nectar volume <span class="arithmatex">\(\langle r \rangle\)</span></li>
+<li>The policy is "indirect" because it is mediated by these estimated values</li>
+</ul>
+</li>
+<li>
+<p>B. The Direct Actor</p>
+<ul>
+<li>This model bypasses estimating average rewards and instead adjusts <span class="arithmatex">\(m\)</span> values to directly <strong>maximize the total expected reward</strong></li>
+<li><strong>Stochastic Gradient Ascent:</strong> The <span class="arithmatex">\(m\)</span> values are updated so that, over time, the change is proportional to the gradient of the expected reward</li>
+<li><strong>Learning Rule:</strong> When action <span class="arithmatex">\(a\)</span> is taken, the values are updated as:</li>
+</ul>
+<div class="arithmatex">\[ m_{a'} \rightarrow m_{a'} + \epsilon(\delta_{aa'} - P[a'])(r_a - \bar{r}) \]</div>
+<ul>
+<li><span class="arithmatex">\(\delta_{aa'}\)</span> is <span class="arithmatex">\(1\)</span> if <span class="arithmatex">\(a=a'\)</span> and <span class="arithmatex">\(0\)</span> otherwise</li>
+<li>The Error Term <span class="arithmatex">\((\delta_{aa'} - P[a'])\)</span>: This compares what you did (<span class="arithmatex">\(\delta\)</span>) with what you expected to do (<span class="arithmatex">\(P\)</span>). If you took an action you usually don't take (low <span class="arithmatex">\(P\)</span>) and got a huge reward, the update to <span class="arithmatex">\(m\)</span> will be very large.</li>
+<li><span class="arithmatex">\(\bar{r}\)</span> is a reference reward like the mean reward</li>
+<li>The Reward Term <span class="arithmatex">\((r_a - \bar{r})\)</span>: This determines the direction of the change. If the reward was better than the baseline (<span class="arithmatex">\(r &gt; \bar{r}\)</span>), you increase the probability of that action. If it was worse than the baseline, you decrease it.</li>
+<li>Update All Weights: Unlike the Indirect Actor, the Direct Actor updates all action values on every trial, even for the flowers it didn't visit.</li>
+<li><strong>Performance:</strong> While theoretically sound, the direct actor often learns more slowly than the indirect actor and can struggle to adapt when reward characteristics swap</li>
+</ul>
+</li>
+</ul>
+<h2 id="94-sequential-action-choice">9.4 Sequential Action Choice</h2>
+<ul>
+<li>
+<p>The Mathematical Mechanics</p>
+<ul>
+<li>The "actor-critic" model operates by interleaving two distinct learning steps: evaluating how good a state is (the critic) and improving the choice of actions (the actor)</li>
+</ul>
+</li>
+<li>
+<p>The Critic: Policy Evaluation</p>
+<ul>
+<li>The critic estimates the total future reward, <span class="arithmatex">\(v(u)\)</span>, for a location <span class="arithmatex">\(u\)</span>. It updates its weight <span class="arithmatex">\(w(u)\)</span> using the <strong>temporal difference (TD) learning rule</strong>:</li>
+</ul>
+<div class="arithmatex">\[ \delta = r_a(u) + \gamma v(u') - v(u) \\[5pt] 
+w(u) \rightarrow w(u) + \epsilon \delta \]</div>
+<ul>
+<li><span class="arithmatex">\(\delta\)</span> measures the difference between the actual outcome (immediate reward <span class="arithmatex">\(r_a\)</span> plus the value of the next state <span class="arithmatex">\(v(u')\)</span>) and the expected outcome (<span class="arithmatex">\(v(u)\)</span>)</li>
+<li><strong><span class="arithmatex">\(\epsilon\)</span>:</strong> learning rate</li>
+<li>To account for time, rewards received later are weighted less using a discount factor <span class="arithmatex">\(\gamma \in [0, 1]\)</span></li>
+</ul>
+</li>
+<li>
+<p>The Actor: Policy Improvement</p>
+<ul>
+<li>The actor decides which action to take (e.g., turning left or right) using a <strong>softmax distribution</strong></li>
+<li>The probability of choosing action <span class="arithmatex">\(a'\)</span> at location <span class="arithmatex">\(u\)</span> is determined by its action value <span class="arithmatex">\(m_{a'}(u)\)</span></li>
+</ul>
+<div class="arithmatex">\[ m_{a'}(u) \rightarrow m_{a'}(u) + \epsilon(\delta_{aa'} - P[a'; u])\delta \]</div>
+<ul>
+<li><strong><span class="arithmatex">\(\delta_{aa'}\)</span>:</strong> This is 1 if action <span class="arithmatex">\(a'\)</span> was the one actually chosen, and 0 otherwise</li>
+<li><strong><span class="arithmatex">\(P[a'; u]\)</span>:</strong> The current probability of taking action <span class="arithmatex">\(a'\)</span></li>
+<li><strong><span class="arithmatex">\(\delta\)</span>:</strong> The same prediction error from the critic. If <span class="arithmatex">\(\delta\)</span> is positive (the result was better than expected), the action value <span class="arithmatex">\(m\)</span> for the chosen action increases, making that action more likely in the future</li>
+</ul>
+</li>
+<li>
+<p>Biological Implementation</p>
+<ul>
+<li><strong>Dopamine Gating:</strong> The <span class="arithmatex">\(\delta\)</span> term is believed to be represented by <strong>dopamine neurons</strong> in the VTA or substantia nigra. These neurons release dopamine onto the <strong>striatum</strong> (part of the basal ganglia)</li>
+<li><strong>The Three-Term Rule:</strong> Synaptic learning in the striatum is "gated" by this dopamine signal. The three terms are:<ol>
+<li>The input (state vector <span class="arithmatex">\(u\)</span> from hippocampal place cells)</li>
+<li>The output (the action chosen by the actor cell)</li>
+<li>The reinforcement signal (<span class="arithmatex">\(\delta\)</span> provided by dopamine)</li>
+</ol>
+</li>
+<li><strong>Hippocampal Place Cells:</strong> These provide the spatial "state vector" <span class="arithmatex">\(u\)</span> used in the equations to help the animal identify its current location in the maze</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1688,16 +2043,16 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": ["content.code.copy", "content.code.annotate"], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
       
-        <script src="/js/katex.js"></script>
+        <script src="../../js/katex.js"></script>
       
     
   </body>

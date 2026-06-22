@@ -9,21 +9,25 @@
       
       
       
+        <link rel="prev" href="../02_Neural_Encoding_II/">
+      
+      
+        <link rel="next" href="../04_Information_Theory/">
       
       
         
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>NeuroAI Research</title>
+        <title>3 Neural Decoding - NeuroAI Research</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -44,9 +48,9 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/js/main.css">
+      <link rel="stylesheet" href="../../js/main.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#3-neural-decoding" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -75,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+    <a href="../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -95,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              3 Neural Decoding
             
           </span>
         </div>
@@ -173,7 +182,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+    <a href="../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -191,7 +200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -218,7 +227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Ricky/" class="md-nav__link">
+      <a href="../../Ricky/" class="md-nav__link">
         
   
   
@@ -339,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
+      <a href="../../0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
         
   
   
@@ -367,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
+      <a href="../../0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
         
   
   
@@ -407,18 +416,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -439,7 +450,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -457,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/" class="md-nav__link">
+      <a href="../01_Neural_Encoding_I/" class="md-nav__link">
         
   
   
@@ -485,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/02_Neural_Encoding_II/" class="md-nav__link">
+      <a href="../02_Neural_Encoding_II/" class="md-nav__link">
         
   
   
@@ -510,10 +521,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/03_Neural_Decoding/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Neural Decoding
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -529,6 +567,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-encoding-and-decoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Encoding and Decoding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-discrimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Discrimination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-population-decoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Population Decoding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-spike-train-decoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Spike-Train Decoding
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -541,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/04_Information_Theory/" class="md-nav__link">
+      <a href="../04_Information_Theory/" class="md-nav__link">
         
   
   
@@ -569,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/07_Network_Models/" class="md-nav__link">
+      <a href="../07_Network_Models/" class="md-nav__link">
         
   
   
@@ -597,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/08_Plasticity_and_Learning/" class="md-nav__link">
+      <a href="../08_Plasticity_and_Learning/" class="md-nav__link">
         
   
   
@@ -625,7 +727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+      <a href="../09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
         
   
   
@@ -653,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/" class="md-nav__link">
+      <a href="../10_Representational_Learning/" class="md-nav__link">
         
   
   
@@ -735,7 +837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/01_Transformer/" class="md-nav__link">
+      <a href="../../2.1_LLM/01_Transformer/" class="md-nav__link">
         
   
   
@@ -763,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
+      <a href="../../2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
         
   
   
@@ -791,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+      <a href="../../2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
         
   
   
@@ -819,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+      <a href="../../2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
         
   
   
@@ -894,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/01_Transformer/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/01_Transformer/" class="md-nav__link">
         
   
   
@@ -922,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
         
   
   
@@ -950,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
         
   
   
@@ -978,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
         
   
   
@@ -1006,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
         
   
   
@@ -1034,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
         
   
   
@@ -1062,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+      <a href="../../2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
         
   
   
@@ -1199,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.2_Embodied_AI/papers/01_Spatial_Intelligence_Survey/" class="md-nav__link">
+      <a href="../../2.2_Embodied_AI/papers/01_Spatial_Intelligence_Survey/" class="md-nav__link">
         
   
   
@@ -1227,7 +1329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.2_Embodied_AI/papers/02_D4RT_DeepMind/" class="md-nav__link">
+      <a href="../../2.2_Embodied_AI/papers/02_D4RT_DeepMind/" class="md-nav__link">
         
   
   
@@ -1364,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.3_RL/papers/01_PPO/" class="md-nav__link">
+      <a href="../../2.3_RL/papers/01_PPO/" class="md-nav__link">
         
   
   
@@ -1392,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
+      <a href="../../2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
         
   
   
@@ -1420,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
+      <a href="../../2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
         
   
   
@@ -1448,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
+      <a href="../../2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
         
   
   
@@ -1585,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
+      <a href="../../3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
         
   
   
@@ -1638,6 +1740,60 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-encoding-and-decoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Encoding and Decoding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-discrimination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Discrimination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-population-decoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Population Decoding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-spike-train-decoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Spike-Train Decoding
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1650,8 +1806,201 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="3-neural-decoding">3 Neural Decoding</h1>
+<h2 id="31-encoding-and-decoding">3.1 Encoding and Decoding</h2>
+<ul>
+<li>
+<p><strong>The Core Problem: The Stochastic Bridge</strong></p>
+<ul>
+<li>The brain doesn’t see the world directly; it only sees spikes. Because neurons are <strong>stochastic</strong> (the same stimulus produces different spike counts every time), a single response <span class="arithmatex">\(r\)</span> is ambiguous. Decoding is the statistical process of estimating the stimulus <span class="arithmatex">\(s\)</span> that most likely caused the observed response <span class="arithmatex">\(r\)</span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Biological Context</strong>:</p>
+<ul>
+<li>This chapter sets the stage for how sensory systems (like vision or touch) must deal with noise. It defines the "Ideal Observer" — a <strong>mathematical benchmark</strong> used to see how much information is actually available in a neural signal, <strong>regardless of how the brain eventually uses it</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Prior <span class="arithmatex">\(p[s]\)</span>:</strong> The probability of a stimulus occurring in the environment.</p>
+</li>
+<li>
+<p><strong>The Likelihood <span class="arithmatex">\(p[r|s]\)</span>:</strong> The probability of a specific neural response given a stimulus (the "encoding" model).</p>
+</li>
+<li>
+<p><strong>The Evidence <span class="arithmatex">\(p[r]\)</span>:</strong> The total probability of seeing response <span class="arithmatex">\(r\)</span> across all possible stimuli:</p>
+</li>
+</ul>
+<div class="arithmatex">\[ p[r] = \sum_{s} p[r|s] \; p[s] \]</div>
+<ul>
+<li><strong>Bayes’ Theorem (The Decoder):</strong> The fundamental tool to find the probability of a stimulus given a response:</li>
+</ul>
+<div class="arithmatex">\[ p[s|r] = \frac{p[r|s] \; p[s]}{p[r]} \]</div>
+<h2 id="32-discrimination">3.2 Discrimination</h2>
+<ul>
+<li>
+<p><strong>The Core Problem: Choosing Between Two Evils</strong></p>
+<ul>
+<li>Discrimination is a "forced-choice" version of decoding. Instead of estimating a continuous value, the observer must decide between two options (e.g., Was the motion Up or Down?). </li>
+<li>The problem is the <strong>overlap</strong>: if the response distributions for "Up" and "Down" overlap, there is no perfect threshold; you must accept a trade-off between missing a signal and seeing a ghost.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Biology: The Newsome-Movshon Experiment</strong></p>
+<ul>
+<li><strong>The Stimulus:</strong> Monkeys watch "Random-Dot Kinematograms." <strong>Coherence</strong> is the percentage of dots moving together.</li>
+<li><strong>The Recording:</strong> Researchers record from <strong>Area MT</strong> (motion-sensitive neurons).</li>
+<li><strong>The Discovery:</strong> By comparing the <strong>Neurometric curve</strong> (how well a single neuron discriminates) to the <strong>Psychometric curve</strong> (how well the monkey discriminates), they found that <strong>a single neuron is often as accurate as the entire animal</strong>.</li>
+<li><strong>The "Anti-Neuron":</strong> To simulate the choice, researchers compare a neuron preferring the "plus" direction with a hypothetical "anti-neuron" preferring the "minus" direction.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Math (Signal Detection Theory)</strong></p>
+</li>
+<li>
+<p><strong>Discriminability (<span class="arithmatex">\(d'\)</span>):</strong> Quantifies how "separated" the distributions are in units of standard deviation (<span class="arithmatex">\(\sigma\)</span>):</p>
+</li>
+</ul>
+<div class="arithmatex">\[ d' = \frac{\langle r \rangle_+ - \langle r \rangle_-}{\sigma} \]</div>
+<ul>
+<li><strong>The Decision Rule:</strong> A threshold <span class="arithmatex">\(z\)</span> is chosen. If <span class="arithmatex">\(r \geq z\)</span>, we choose (+).<ul>
+<li><strong>False Alarm Rate (<span class="arithmatex">\(\alpha\)</span>):</strong> The probability of choosing (+) when the stimulus was actually (-):</li>
+<li><strong>Hit Rate (<span class="arithmatex">\(\beta\)</span>):</strong> The probability of choosing (+) when the stimulus was actually (+):</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ \alpha = P[r \geq z | -] = \int_{z}^{\infty} p(r|-) \, dr \\[10pt]
+ \beta = P[r \geq z | +] = \int_{z}^{\infty} p(r|+) \, dr \]</div>
+<ul>
+<li><strong>ROC Curve:</strong> A plot of <span class="arithmatex">\(\beta\)</span> vs <span class="arithmatex">\(\alpha\)</span> as <span class="arithmatex">\(z\)</span> varies. The <strong>Area Under the Curve (AUC)</strong> is the probability that the observer will correctly identify the stimulus in a two-alternative forced-choice (2AFC) task.</li>
+</ul>
+<div class="arithmatex">\[ \text{Let } r_+ \sim p(r|+) \quad \text{and} \quad r_- \sim p(r|-) \\[10pt]
+P[\text{correct}] := P(r_+ &gt; r_-) = \text{(derivation)} = \int_{0}^{1} \beta(\alpha) \, d\alpha = \text{AUC} \]</div>
+<ul>
+<li><strong>Likelihood Ratio (<span class="arithmatex">\(L(r)\)</span>):</strong> The mathematically optimal way to decide (Neyman-Pearson Lemma). If this ratio exceeds a certain value, the choice is (+):</li>
+</ul>
+<div class="arithmatex">\[ L(r) = \frac{p[r|+]}{p[r|-]} \]</div>
+<h2 id="33-population-decoding">3.3 Population Decoding</h2>
+<ul>
+<li>
+<p>Main Idea:</p>
+<ul>
+<li>The core concept is that while individual neurons are variable and have limited selectivity, a <strong>population</strong> of neurons with overlapping tuning curves can represent information with high accuracy</li>
+<li>Decoding is the process of estimating the original stimulus value based on the observed spike-count firing rates of these neurons</li>
+</ul>
+</li>
+<li>
+<p>Biological examples:</p>
+<ul>
+<li><strong>Cricket Cercal System:</strong> Crickets use four specific interneurons to sense the direction of air currents (wind). These neurons have <strong>cosine tuning curves</strong>, meaning their firing rate is proportional to the cosine of the angle between the wind direction and the neuron's preferred direction</li>
+<li><strong>Monkey Primary Motor Cortex (M1):</strong> Similar to the cricket, neurons in the monkey's M1 cortex encode the direction of arm movements using <strong>cosine-like tuning</strong>. However, unlike the cricket's four orthogonal neurons, M1 contains thousands of neurons with preferred directions pointing in all possible directions, creating a highly redundant representation.</li>
+</ul>
+</li>
+<li>
+<p>A. The Vector Method (Population Vector)</p>
+<ul>
+<li><strong>For neurons with cosine tuning</strong>, the stimulus (represented as a vector <span class="arithmatex">\(\vec{v}\)</span>) can be estimated by a weighted sum of the neurons' preferred direction vectors <span class="arithmatex">\(\vec{c}_a\)</span></li>
+<li><span class="arithmatex">\(r_0\)</span>: background rate</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ \vec{v}_{pop} = \sum_{a=1}^{N} \left( \frac{r - r_0}{r_{max}} \right)_a \vec{c}_a \]</div>
+<ul>
+<li>B. Optimal Decoding: <strong>maximize Bayes’ formula:</strong></li>
+</ul>
+<div class="arithmatex">\[ p[s|r] = \frac{p[r|s] \; p[s]}{p[r]} \]</div>
+<ul>
+<li><strong>Maximum Likelihood (ML) Estimation:</strong> <ul>
+<li>If the prior <span class="arithmatex">\(p[s]\)</span> is constant, we find the <span class="arithmatex">\(s\)</span> that maximizes <span class="arithmatex">\(p[r|s]\)</span></li>
+<li>For a population with <strong>Poisson variability</strong> and <strong>Gaussian tuning curves of equal width</strong>, the ML estimate is simply the firing-rate weighted average of preferred values:</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ s_{ML} = \frac{\sum r_a s_a}{\sum r_a} \]</div>
+<ul>
+<li>
+<p><strong>Maximum A Posteriori (MAP) Estimation:</strong> </p>
+<ul>
+<li>This method chooses the <span class="arithmatex">\(s\)</span> that maximizes <span class="arithmatex">\(p[s|r]\)</span>, allowing the inclusion of prior knowledge about the stimulus distribution</li>
+</ul>
+</li>
+<li>
+<p>The accuracy of any decoding scheme is limited by the <strong>Fisher Information</strong> (<span class="arithmatex">\(I_F(s)\)</span>) through the <strong>Cramér-Rao bound</strong></p>
+<ul>
+<li><strong>Fisher Information for Poisson Neurons:</strong> (This shows that neurons contribute most to decoding accuracy where their tuning curves have the <strong>steepest slope</strong>, rather than where their firing rate is highest)</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ I_F(s) = T \sum_{a=1}^{N} \frac{f'_a(s)^2}{f_a(s)} \]</div>
+<h2 id="34-spike-train-decoding">3.4 Spike-Train Decoding</h2>
+<ul>
+<li>
+<p><strong>The Problem: Static vs. Dynamic Stimuli</strong></p>
+<ul>
+<li>Previous methods in the chapter dealt with "static" stimulus values using spike-count firing rates. However, if a stimulus changes during a trial (like the velocity of a moving object), a simple count doesn't provide enough information to reconstruct the stimulus over time. </li>
+</ul>
+</li>
+<li>
+<p><strong>The Solution: Linear Reconstruction from Spike Times</strong></p>
+<ul>
+<li>Instead of counting spikes, we treat each spike as a discrete event carrying information about the stimulus. The proposed solution is to <strong>assign a specific "shape" or kernel (<span class="arithmatex">\(K\)</span>) to every spike</strong>. To estimate the stimulus at any given moment, you simply <strong>sum up all these kernels</strong>.</li>
+</ul>
+</li>
+<li>
+<p>The Biology: Fly H1 Neurons and "Anti-Neurons" (detects visual motion)</p>
+<ul>
+<li><strong>Half-Wave Rectification:</strong> A single H1 neuron only responds to motion in one direction.</li>
+<li><strong>The "Anti-Neuron" Pair:</strong> To reconstruct full motion, the system uses a pair of neurons (one on each side of the fly). One responds to <span class="arithmatex">\(s(t)\)</span>, and the other to <span class="arithmatex">\(-s(t)\)</span>. </li>
+<li><strong>Result:</strong> By summing the kernels from the H1 neuron and subtracting the kernels from its "anti-neuron" partner, the fly can accurately track velocity.</li>
+</ul>
+</li>
+<li>
+<p>The goal of the math is to find the <strong>optimal kernel</strong> (<span class="arithmatex">\(K\)</span>) that minimizes the squared difference between the estimated stimulus (<span class="arithmatex">\(s_{est}\)</span>) and the actual stimulus (<span class="arithmatex">\(s\)</span>)</p>
+</li>
+<li>
+<p><strong>The Stimulus Estimate</strong> is the sum of kernels minus an offset to ensure the average is zero:</p>
+</li>
+</ul>
+<div class="arithmatex">\[ s_{est}(t-\tau_0) = \sum_{i=1}^{n} K(t-t_i) - \langle r \rangle \int_{-\infty}^{\infty} d\tau K(\tau) \]</div>
+<ul>
+<li><strong>The Optimal Kernel Equation</strong><ul>
+<li>To find the best <span class="arithmatex">\(K\)</span>, we solve an integral equation involving the spike-train autocorrelation (<span class="arithmatex">\(Q_{\rho\rho}\)</span>) and the cross-correlation between the rate and the stimulus (<span class="arithmatex">\(Q_{rs}\)</span>):</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ \int_{-\infty}^{\infty} d\tau' Q_{\rho\rho}(\tau-\tau') K(\tau') = Q_{rs}(\tau-\tau_0) \]</div>
+<ul>
+<li><strong>Simple Uncorrelated Spikes</strong><ul>
+<li>The kernel is simply the <strong>spike-triggered average</strong> (<span class="arithmatex">\(C\)</span>) of the stimulus, shifted by the delay:</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ K(\tau) = C(\tau_0 - \tau) \]</div>
+<ul>
+<li><strong>Complex Correlated Spikes: Frequency Domain Solution</strong><ul>
+<li>The optimal kernel is found using Fourier transforms (<span class="arithmatex">\(\tilde{Q}\)</span>):</li>
+<li>The denominator corrects for biases caused by correlations in the neuron's own firing patterns.</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ \tilde{K}(\omega) = \frac{\tilde{Q}_{rs}(\omega) \exp(i\omega\tau_0)}{\tilde{Q}_{\rho\rho}(\omega)} \]</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1688,16 +2037,16 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/", "features": ["content.code.copy", "content.code.annotate"], "search": "/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
       
-        <script src="/js/katex.js"></script>
+        <script src="../../js/katex.js"></script>
       
     
   </body>

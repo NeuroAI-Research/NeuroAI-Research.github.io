@@ -1,0 +1,2893 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01_PPO/">
+      
+      
+        <link rel="next" href="../02_SAC_v2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>2 2018 SAC v1 - NeuroAI Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../js/main.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-2018-sac-v1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeuroAI Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 2018 SAC v1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeuroAI Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeuroAI Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ricky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creator (Ricky)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.1 Guiding Principles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0.1 Guiding Principles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 NeuroAI Hassabis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 Brain Evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Neural Encoding I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/02_Neural_Encoding_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Neural Encoding II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/03_Neural_Decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Neural Decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/04_Information_Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Information Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/07_Network_Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Network Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/08_Plasticity_and_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Plasticity and Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Classical Conditioning and Reinforcement Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Representational Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 LLM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.1 LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 Qwen3-VL Technical Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 The Big LLM Architecture Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2024 DeepSeek-V3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 Embodied AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.2 Embodied AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_Embodied_AI/papers/01_Spatial_Intelligence_Survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2025 Spatial Intelligence Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_Embodied_AI/papers/02_D4RT_DeepMind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2025 D4RT: Dynamic 4D Reconstruction and Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 RL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.3 RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_PPO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 PPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Related Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-preliminaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Preliminaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Preliminaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Notation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-maximum-entropy-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Maximum Entropy Reinforcement Learning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-from-soft-policy-iteration-to-soft-actor-critic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. From Soft Policy Iteration to Soft Actor-Critic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. From Soft Policy Iteration to Soft Actor-Critic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-derivation-of-soft-policy-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Derivation of Soft Policy Iteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-soft-actor-critic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Soft Actor-Critic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-comparative-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Comparative Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ablation-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Ablation Study
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. Ablation Study">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stochastic-vs-deterministic-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stochastic vs. deterministic policy.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy evaluation.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reward scale.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-network-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target network update.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_SAC_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_DreamerV3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2023 DreamerV3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 Brain Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3.1 Brain Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Brain vs MPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#important" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Related Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-preliminaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Preliminaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Preliminaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Notation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-maximum-entropy-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Maximum Entropy Reinforcement Learning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-from-soft-policy-iteration-to-soft-actor-critic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. From Soft Policy Iteration to Soft Actor-Critic
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. From Soft Policy Iteration to Soft Actor-Critic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-derivation-of-soft-policy-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Derivation of Soft Policy Iteration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-soft-actor-critic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Soft Actor-Critic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-comparative-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Comparative Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-ablation-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Ablation Study
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. Ablation Study">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stochastic-vs-deterministic-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stochastic vs. deterministic policy.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Policy evaluation.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reward-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reward scale.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-network-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target network update.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-2018-sac-v1">2 2018 SAC v1</h1>
+<ul>
+<li>
+<p><a href="https://arxiv.org/pdf/1801.01290">Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor</a></p>
+</li>
+<li>
+<p>The source code of our SAC implementation and videos are available online.</p>
+<ul>
+<li><a href="https://github.com/haarnoja/sac">https://github.com/haarnoja/sac</a></li>
+<li><a href="https://www.youtube.com/watch?v=AMlKbCuYdS8&amp;t=34s">video</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="important">Important</h2>
+<p><img alt="" src="../../imgs/02_SAC_important.png" /></p>
+<ul>
+<li>Reward scale:<ul>
+<li><strong>Soft actor-critic is particularly sensitive to the scaling of the reward signal, because it serves the role of the temperature of the energy-based optimal policy and thus controls its stochasticity.</strong></li>
+<li><strong>In practice, we found reward scale to be the only hyperparameter that requires tuning, and its natural interpretation as the inverse of the temperature in the maximum entropy framework provides good intuition for how to adjust this parameter.</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<ul>
+<li>
+<p>Model-free deep reinforcement learning (RL) algorithms have been demonstrated on a range of challenging decision making and control tasks.</p>
+</li>
+<li>
+<p>However, these methods typically suffer from two major challenges: </p>
+<ul>
+<li>very high sample complexity </li>
+<li>and brittle convergence properties, which necessitate meticulous hyperparameter tuning. </li>
+</ul>
+</li>
+<li>
+<p>Both of these challenges severely limit the applicability of such methods to complex, real-world domains.</p>
+</li>
+<li>
+<p>In this paper, we propose soft actor-critic, an <strong>off-policy</strong> actor-critic deep RL algorithm based on the maximum entropy reinforcement learning framework. </p>
+<ul>
+<li><strong>In this framework, the actor aims to maximize expected reward while also maximizing entropy. That is, to succeed at the task while acting as randomly as possible.</strong> </li>
+<li>Prior deep RL methods based on this framework have been formulated as Q-learning methods. </li>
+<li>By combining <strong>off-policy updates</strong> with a stable stochastic actor-critic formulation, our method achieves state-of-the-art performance on a range of <strong>continuous control</strong> benchmark tasks, outperforming prior on-policy and off-policy methods. </li>
+<li>Furthermore, we demonstrate that, in contrast to other off-policy algorithms, our approach is very stable, achieving very similar performance across different random seeds.</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li>
+<p>Model-free deep reinforcement learning (RL) algorithms have been applied in a range of challenging domains, from games (Mnih et al., 2013; Silver et al., 2016) to robotic control (Schulman et al., 2015). </p>
+</li>
+<li>
+<p>The combination of RL and high-capacity function approximators such as neural networks holds the promise of automating a wide range of decision making and control tasks, but widespread adoption of these methods in real-world domains has been hampered by two major challenges. </p>
+<ul>
+<li>First, model-free deep RL methods are notoriously expensive in terms of their sample complexity. <ul>
+<li>Even relatively simple tasks can require millions of steps of data collection, and complex behaviors with high dimensional observations might need substantially more.</li>
+</ul>
+</li>
+<li>Second, these methods are often brittle with respect to their hyperparameters: learning rates, exploration constants, and other settings must be set carefully for different problem settings to achieve good results. </li>
+</ul>
+</li>
+<li>
+<p>Both of these challenges severely limit the applicability of model-free deep RL to real-world tasks.</p>
+</li>
+<li>
+<p><strong>One cause for the poor sample efficiency of deep RL methods is on-policy learning</strong>: </p>
+<ul>
+<li>some of the most commonly used deep RL algorithms, such as <ul>
+<li>TRPO (Schulman et al., 2015),</li>
+<li>PPO (Schulman et al., 2017b) </li>
+<li>or A3C (Mnih et al., 2016),</li>
+</ul>
+</li>
+<li><strong>require new samples to be collected for each gradient step.</strong></li>
+<li>This quickly becomes extravagantly (奢侈地) expensive, as the number of gradient steps and samples per step needed to learn an effective policy increases with task complexity. </li>
+</ul>
+</li>
+<li>
+<p><strong>Off-policy algorithms aim to reuse past experience.</strong> </p>
+<ul>
+<li><strong>This is not directly feasible with conventional policy gradient formulations, but is relatively straightforward for Q-learning based methods (Mnih et al., 2015).</strong> </li>
+<li>Unfortunately, the combination of off-policy learning and high-dimensional, nonlinear function approximation with neural networks presents a major challenge for stability and convergence (Bhatnagar et al.,2009). </li>
+<li>This challenge is further exacerbated (使恶化) in continuous state and action spaces, where a separate actor network is often used to perform the maximization in Q-learning. </li>
+<li>A commonly used algorithm in such settings, <strong>deep deterministic policy gradient (DDPG) (Lillicrap et al., 2015)</strong>, <ul>
+<li>provides for sample-efficient learning </li>
+<li>but is notoriously challenging to use due to its extreme brittleness and hyperparameter sensitivity (Duan et al., 2016; Henderson et al., 2017).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>We explore how to design an efficient and stable model-free deep RL algorithm for <strong>continuous state and action spaces</strong>. </p>
+<ul>
+<li>To that end, we draw on the maximum entropy framework, which augments the standard maximum reward reinforcement learning objective with an entropy maximization term (Ziebart et al., 2008; Toussaint, 2009; Rawlik et al., 2012; Fox et al., 2016; Haarnoja et al., 2017). </li>
+<li>Maximum entropy reinforcement learning alters the RL objective, though the original objective can be recovered using a temperature parameter (Haarnoja et al., 2017). </li>
+<li><strong>More importantly, the maximum entropy formulation provides a substantial improvement in exploration and robustness</strong>: as discussed by Ziebart (2010), maximum entropy policies are robust in the face of model and estimation errors, and as demonstrated by (Haarnoja et al., 2017), they improve exploration by acquiring diverse behaviors. </li>
+<li>Prior work has proposed model-free deep RL algorithms that perform on-policy learning with entropy maximization (O’Donoghue et al., 2016), as well as off-policy methods based on soft Q-learning and its variants (Schulman et al., 2017a; Nachum et al., 2017a; Haarnoja et al., 2017). <ul>
+<li>However, the on-policy variants suffer from poor sample complexity for the reasons discussed above, </li>
+<li>while the off-policy variants require complex approximate inference procedures in continuous action spaces.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>In this paper, we demonstrate that we can devise (设计) an off-policy maximum entropy actor-critic algorithm, which we call soft actor-critic (SAC), which provides for both sample efficient learning and stability. </p>
+<ul>
+<li>This algorithm extends readily to very complex, high-dimensional tasks, such as the <strong>Humanoid benchmark</strong> (Duan et al., 2016) with <strong>21 action dimensions</strong>, where off-policy methods such as <code>DDPG</code> typically struggle to obtain good results (Gu et al., 2016). </li>
+<li>SAC also avoids the complexity and potential instability associated with approximate inference in prior off-policy maximum entropy algorithms based on soft Q-learning (Haarnoja et al., 2017). </li>
+<li>We present a convergence proof for policy iteration in the maximum entropy framework, and then introduce a new algorithm based on an approximation to this procedure that can be practically implemented with deep neural networks, which we call soft actor-critic. </li>
+<li>We present empirical results that show that soft actor-critic attains a substantial improvement in both performance and sample efficiency over both off-policy and on-policy prior methods.</li>
+<li>We also compare to twin delayed deep deterministic (TD3) policy gradient algorithm (Fujimoto et al., 2018), which is a concurrent work that proposes a deterministic algorithm that substantially improves on DDPG.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-related-work">2. Related Work</h2>
+<ul>
+<li>
+<p>Our soft actor-critic algorithm incorporates three key ingredients: </p>
+<ul>
+<li>an actor-critic architecture with separate policy and value function networks, </li>
+<li>an off-policy formulation that enables reuse of previously collected data for efficiency, </li>
+<li>and entropy maximization to enable stability and exploration.</li>
+</ul>
+</li>
+<li>
+<p>We review prior works that draw on some of these ideas in this section. </p>
+</li>
+<li>
+<p>Actor-critic algorithms are typically derived starting from policy iteration, which alternates between </p>
+<ul>
+<li>policy evaluation — computing the value function for a policy</li>
+<li>and policy improvement — using the value function to obtain a better policy (Barto et al., 1983; Sutton &amp; Barto, 1998). </li>
+</ul>
+</li>
+<li>
+<p>In large-scale reinforcement learning problems, it is typically impractical to run either of these steps to convergence, and instead the value function and policy are optimized jointly.</p>
+</li>
+<li>
+<p>In this case, the policy is referred to as the actor, and the value function as the critic. </p>
+</li>
+<li>
+<p>Many actor-critic algorithms build on the standard, on-policy policy gradient formulation to update the actor (Peters &amp; Schaal, 2008), and many of them also consider the entropy of the policy, but instead of maximizing the entropy, they use it as an regularizer (Schulman et al., 2017b; 2015; Mnih et al., 2016; Gruslys et al., 2017). </p>
+<ul>
+<li>On-policy training tends to improve stability but results in poor sample complexity.</li>
+<li>There have been efforts to increase the sample efficiency while retaining robustness by incorporating off-policy samples and by using higher order variance reduction techniques (O’Donoghue et al., 2016; Gu et al., 2016). </li>
+<li>However, fully off-policy algorithms still attain better efficiency. </li>
+</ul>
+</li>
+<li>
+<p><strong>A particularly popular off-policy actor-critic method, DDPG (Lillicrap et al., 2015), which is a deep variant of the deterministic policy gradient (Silver et al., 2014) algorithm</strong>, </p>
+<ul>
+<li>uses a Q-function estimator to enable off-policy learning,</li>
+<li>and a deterministic actor that maximizes this Q-function.</li>
+<li>As such, this method can be viewed both as a deterministic actor-critic algorithm and an approximate Q-learning algorithm. </li>
+<li><strong>Unfortunately, the interplay between the deterministic actor network and the Q-function typically makes DDPG extremely difficult to stabilize and brittle to hyperparameter settings</strong> (Duan et al., 2016; Henderson et al., 2017).</li>
+<li>As a consequence, it is difficult to extend DDPG to complex, high-dimensional tasks, and on-policy policy gradient methods still tend to produce the best results in such settings (Gu et al., 2016). </li>
+</ul>
+</li>
+<li>
+<p>Our method instead combines off-policy actor-critic training with a <strong>stochastic actor</strong>, and further aims to maximize the entropy of this actor with an entropy maximization objective. </p>
+<ul>
+<li>We find that this actually results in a considerably more stable and scalable algorithm that, in practice, exceeds both the efficiency and final performance of DDPG. </li>
+<li>A similar method can be derived as a zero-step special case of stochastic value gradients (SVG(0)) (Heess et al., 2015). </li>
+<li>However, SVG(0) differs from our method in that it optimizes the standard maximum expected return objective, and it does not make use of a separate value network, which we found to make training more stable.</li>
+</ul>
+</li>
+<li>
+<p>Maximum entropy reinforcement learning optimizes policies to maximize both the expected return and the expected entropy of the policy. </p>
+<ul>
+<li>This framework has been used in many contexts, from <ul>
+<li>inverse reinforcement learning (Ziebart et al., 2008) </li>
+<li>to optimal control (Todorov, 2008; Toussaint, 2009; Rawlik et al., 2012). </li>
+</ul>
+</li>
+<li>In guided policy search (Levine &amp; Koltun, 2013; Levine et al., 2016), the maximum entropy distribution is used to guide policy learning towards high-reward regions. </li>
+<li>More recently, several papers have noted the connection between Q-learning and policy gradient methods in the framework of maximum entropy learning (O’Donoghue et al., 2016; Haarnoja et al., 2017; Nachum et al., 2017a; Schulman et al., 2017a). </li>
+<li>While most of the prior model-free works assume a discrete action space, Nachum et al. (2017b) approximate the maximum entropy distribution with a Gaussian and Haarnoja et al. (2017) with a sampling network trained to draw samples from the optimal policy. </li>
+<li>Although the soft Q-learning algorithm proposed by Haarnoja et al. (2017) has a value function and actor network, it is not a true actor-critic algorithm: the Q-function is estimating the optimal Q-function, and the actor does not directly affect the Q-function except through the data distribution. </li>
+<li>Hence, Haarnoja et al. (2017) motivates the actor network as an approximate sampler, rather than the actor in an actor-critic algorithm. </li>
+<li>Crucially, the convergence of this method hinges on how well this sampler approximates the true posterior. </li>
+<li>In contrast, we prove that our method converges to the optimal policy from a given policy class, regardless of the policy parameterization. </li>
+<li>Furthermore, these prior maximum entropy methods generally do not exceed the performance of state-of-the-art off-policy algorithms, such as DDPG, when learning from scratch, though they may have other benefits, such as improved exploration and ease of fine-tuning. </li>
+<li>In our experiments, we demonstrate that our soft actor-critic algorithm does in fact exceed the performance of prior state-of-the-art off-policy deep RL methods by a wide margin.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-preliminaries">3. Preliminaries</h2>
+<ul>
+<li>We first introduce notation and summarize the standard and maximum entropy reinforcement learning frameworks.</li>
+</ul>
+<h3 id="31-notation">3.1. Notation</h3>
+<ul>
+<li>We address policy learning in continuous action spaces.<ul>
+<li>We consider an infinite-horizon Markov decision process (MDP), defined by the tuple <span class="arithmatex">\((S, A, p, r)\)</span>, where the <ul>
+<li>state space <span class="arithmatex">\(S\)</span> </li>
+<li>and the action space <span class="arithmatex">\(A\)</span> are continuous, </li>
+<li>and the unknown state transition probability <span class="arithmatex">\(p: S \times S \times A \to [0, \infty)\)</span> represents the probability density of the next state <span class="arithmatex">\(s_{t+1} \in S\)</span> given the current state <span class="arithmatex">\(s_t \in S\)</span> and action <span class="arithmatex">\(a_t \in A\)</span>.</li>
+<li>The environment emits a bounded reward <span class="arithmatex">\(r: S \times A \to[r_{\min}, r_{\max}]\)</span> on each transition. </li>
+</ul>
+</li>
+<li>We will use <span class="arithmatex">\(\rho_\pi (s_t)\)</span> and <span class="arithmatex">\(\rho_\pi (s_t, a_t)\)</span> to denote the state and state-action marginals of the trajectory distribution induced by a policy <span class="arithmatex">\(\pi(a_t|s_t)\)</span>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="32-maximum-entropy-reinforcement-learning">3.2. Maximum Entropy Reinforcement Learning</h3>
+<ul>
+<li>Standard RL maximizes the expected sum of rewards</li>
+</ul>
+<div class="arithmatex">\[ \sum_t E_{ (s_t, a_t) \sim \rho_\pi } [ r(s_t, a_t) ] \]</div>
+<ul>
+<li>We will consider a more general maximum entropy objective (see e.g. Ziebart (2010)), which favors stochastic policies by augmenting the objective with the expected entropy of the policy over <span class="arithmatex">\(\rho_\pi(s_t)\)</span>:</li>
+</ul>
+<div class="arithmatex">\[ J(\pi) = \sum_{t=0}^T E_{ (s_t, a_t) \sim \rho_\pi } [ r(s_t, a_t) + \alpha H(\pi(\cdot|s_t)) ] \]</div>
+<ul>
+<li>
+<p>The <strong>temperature parameter <span class="arithmatex">\(\alpha\)</span></strong> determines the relative importance of the entropy term against the reward, and thus controls the stochasticity of the optimal policy. </p>
+<ul>
+<li>The maximum entropy objective differs from the standard maximum expected reward objective used in conventional reinforcement learning, though the conventional objective can be recovered in the limit as <span class="arithmatex">\(\alpha \to 0\)</span>. </li>
+<li>For the rest of this paper, we will omit writing the temperature explicitly, as it can always be subsumed into the reward by scaling it by <span class="arithmatex">\(\alpha^{-1}\)</span>.</li>
+</ul>
+</li>
+<li>
+<p>This objective has a number of conceptual and practical advantages. </p>
+<ul>
+<li>First, the policy is incentivized to explore more widely, while giving up on clearly unpromising avenues 途径.</li>
+<li>Second, the policy can capture multiple modes of near optimal behavior. In problem settings where multiple actions seem equally attractive, the policy will commit equal probability mass to those actions. </li>
+<li>Lastly, prior work has observed improved exploration with this objective (Haarnoja et al., 2017; Schulman et al., 2017a), and in our experiments, we observe that it considerably improves learning speed over state-of-art methods that optimize the conventional RL objective function. </li>
+</ul>
+</li>
+<li>
+<p>We can extend the objective to <strong>infinite horizon problems</strong> by introducing a discount factor <span class="arithmatex">\(\gamma\)</span> to ensure that the sum of expected rewards and entropies is finite. </p>
+<ul>
+<li>Writing down the maximum entropy objective for the <strong>infinite horizon discounted case</strong> is more involved (Thomas, 2014) and is deferred to <strong>Appendix A</strong>.</li>
+</ul>
+</li>
+<li>
+<p>Prior methods have proposed directly solving for the optimal Q-function, from which the optimal policy can be recovered (Ziebart et al., 2008; Fox et al., 2016; Haarnoja et al., 2017). </p>
+<ul>
+<li>We will discuss how we can devise (设计) a soft actor-critic algorithm through a <strong>policy iteration formulation</strong>, where we instead evaluate the Q-function of the current policy and update the policy through an off-policy gradient update. </li>
+<li>Though such algorithms have previously been proposed for conventional reinforcement learning, our method is, to our knowledge, <strong>the first off-policy actor-critic method in the maximum entropy reinforcement learning framework.</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="4-from-soft-policy-iteration-to-soft-actor-critic">4. From Soft Policy Iteration to Soft Actor-Critic</h2>
+<ul>
+<li>Our off-policy soft actor-critic algorithm can be derived starting from a maximum entropy variant of the <strong>policy iteration method</strong>. <ul>
+<li>We will first present this derivation, verify that the corresponding algorithm converges to the optimal policy from its density class, and then present a practical deep reinforcement learning algorithm based on this theory</li>
+</ul>
+</li>
+</ul>
+<h3 id="41-derivation-of-soft-policy-iteration">4.1. Derivation of Soft Policy Iteration</h3>
+<ul>
+<li>We will begin by deriving soft policy iteration, a general algorithm for learning optimal maximum entropy policies that alternates between policy evaluation and policy improvement in the maximum entropy framework. </li>
+<li>Our derivation is based on a tabular setting, to enable theoretical analysis and convergence guarantees, and we extend this method into the general continuous setting in the next section. </li>
+<li>We will show that soft policy iteration converges to the optimal policy within a set of policies which might correspond, for instance, to a set of parameterized densities.</li>
+<li>
+<p>In the policy evaluation step of soft policy iteration, we wish to compute the value of a policy <span class="arithmatex">\(\pi\)</span> according to the maximum entropy objective in Equation 1. </p>
+</li>
+<li>
+<p>Lemma 1 (Soft Policy Evaluation) </p>
+<ul>
+<li>For a fixed policy <span class="arithmatex">\(\pi\)</span>, the <strong>soft Q-value</strong> can be computed iteratively, starting from any function <span class="arithmatex">\(Q^0: S \times A \to R\)</span> and repeatedly applying a <strong>modified soft Bellman backup operator</strong> <span class="arithmatex">\(T^\pi\)</span> given by</li>
+</ul>
+<div class="arithmatex">\[ Q^{k+1} := T^\pi Q^k(s_t, a_t) := r(s_t, a_t) + \gamma E_{s_{t+1}\sim p}[V^k(s_{t+1})] \\[5pt] 
+V^k(s_t) := E_{a_t \sim \pi} [ Q^k(s_t, a_t) - \log \pi(a_t|s_t) ] \]</div>
+<ul>
+<li>Then the sequence <span class="arithmatex">\(Q^k\)</span> will converge to the <strong>soft Q-value</strong> of <span class="arithmatex">\(\pi\)</span> as <span class="arithmatex">\(k \to \infty\)</span></li>
+<li>Proof. See Appendix B.1.</li>
+</ul>
+</li>
+<li>
+<p>In the policy improvement step, we <strong>update the policy towards the exponential of the new Q-function.</strong> </p>
+<ul>
+<li><strong>This particular choice of update can be guaranteed to result in an improved policy in terms of its soft value.</strong> </li>
+<li>Since in practice we prefer policies that are tractable (易驾驭的), we will additionally restrict the policy to some set of policies <span class="arithmatex">\(\Pi\)</span>, which can correspond, for example, to a parameterized family of distributions such as Gaussians. To account for the constraint that <span class="arithmatex">\(\pi \in \Pi\)</span>, we project the improved policy into the desired set of policies.</li>
+<li><strong>While in principle we could choose any projection, it will turn out to be convenient to use the information projection defined in terms of the Kullback-Leibler divergence.</strong> </li>
+<li>In the other words, in the policy improvement step, <strong>for each state</strong>, we update the policy according to</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ \pi_\text{new} = \argmin_{\pi' \in \Pi} D_{KL} \left(
+\pi'(\cdot|s_t) \middle\| { \exp( Q^{\pi_\text{old}}(s_t, \cdot) ) \over Z^{\pi_\text{old}}(s_t) }
+\right) \]</div>
+<ul>
+<li>
+<p>The <strong>partition function</strong> <span class="arithmatex">\(Z^{\pi_\text{old}}(s_t)\)</span> <strong>normalizes the distribution</strong>, and while it is intractable (棘手) in general, it <strong>does not contribute to the gradient</strong> with respect to the new policy and <strong>can thus be ignored</strong>, as noted in the next section. </p>
+</li>
+<li>
+<p>Lemma 2 (Soft Policy Improvement). </p>
+<ul>
+<li>For this projection, we can show that the new, projected policy has a higher value than the old policy with respect to the objective in Equation 1. </li>
+<li>Let <span class="arithmatex">\(\pi_\text{old} \in \Pi\)</span> and let <span class="arithmatex">\(\pi_\text{new}\)</span> be the optimizer of the minimization problem defined in Equation 4. </li>
+<li>Then <span class="arithmatex">\(Q^{\pi_\text{new}}(s_t, a_t) \ge Q^{\pi_\text{old}}(s_t, a_t)\)</span> for all <span class="arithmatex">\((s_t, a_t) \in S \times A\)</span> with <span class="arithmatex">\(|A| &lt; \infty\)</span></li>
+<li>Proof. See Appendix B.2.</li>
+</ul>
+</li>
+<li>
+<p>The full soft policy iteration algorithm alternates between</p>
+<ul>
+<li>the soft policy evaluation </li>
+<li>and the soft policy improvement steps, </li>
+</ul>
+</li>
+<li>and it will provably converge to the optimal maximum entropy policy among the policies in <span class="arithmatex">\(\Pi\)</span> (Theorem 1).</li>
+<li>
+<p><strong>Although this algorithm will provably find the optimal solution, we can perform it in its exact form only in the tabular case.</strong> </p>
+<ul>
+<li><strong>Therefore, we will next approximate the algorithm for continuous domains, where we need to rely on a function approximator to represent the Q-values</strong>, </li>
+<li>and running the two steps until convergence would be computationally too expensive. </li>
+<li><strong>The approximation gives rise to a new practical algorithm, called soft actor-critic.</strong></li>
+</ul>
+</li>
+<li>
+<p>Theorem 1 (Soft Policy Iteration). </p>
+<ul>
+<li>Repeated application of <strong>soft policy evaluation</strong> and <strong>soft policy improvement</strong> from any <span class="arithmatex">\(\pi \in \Pi\)</span> converges to a policy <span class="arithmatex">\(\pi^*\)</span> such that <span class="arithmatex">\(Q^{\pi^*}(s_t, a_t) \ge Q^\pi(s_t, a_t)\)</span> for all <span class="arithmatex">\(\pi \in \Pi\)</span> and <span class="arithmatex">\((s_t, a_t) \in S \times A\)</span>, assuming <span class="arithmatex">\(|A| &lt; \infty\)</span>.</li>
+<li>Proof. See Appendix B.3.</li>
+</ul>
+</li>
+</ul>
+<h3 id="42-soft-actor-critic">4.2. Soft Actor-Critic</h3>
+<ul>
+<li>
+<p>As discussed above, large <strong>continuous domains</strong> require us to derive a <strong>practical approximation</strong> to soft policy iteration. </p>
+<ul>
+<li>To that end, we will use <strong>function approximators</strong> for both the Q-function and the policy, and instead of running evaluation and improvement to convergence, alternate between optimizing both networks with stochastic gradient descent. </li>
+<li>We will consider <ul>
+<li>a parameterized state value function <span class="arithmatex">\(V_\psi(s_t)\)</span>, </li>
+<li>soft Q-function <span class="arithmatex">\(Q_\theta(s_t, a_t)\)</span>, </li>
+<li>and a tractable policy <span class="arithmatex">\(\pi_\phi(a_t|s_t)\)</span>.</li>
+</ul>
+</li>
+<li>The parameters of these networks are <span class="arithmatex">\(\psi, \theta, \phi\)</span>. </li>
+<li>For example, <ul>
+<li><strong>the value functions can be modeled as expressive neural networks</strong>, </li>
+<li><strong>and the policy as a Gaussian with mean and covariance given by neural networks.</strong> </li>
+</ul>
+</li>
+<li>We will next derive update rules for these parameter vectors.</li>
+</ul>
+</li>
+<li>
+<p>The state value function approximates the soft value. </p>
+<ul>
+<li><strong>There is no need in principle to include a separate function approximator for the state value</strong> <span class="arithmatex">\(V(s_t)\)</span>, since it is related to the Q-function and policy according to Equation 3. </li>
+<li>This quantity can be estimated from a single action sample from the current policy without introducing a bias, </li>
+<li><strong>but in practice, including a separate function approximator for the soft value <span class="arithmatex">\(V(s_t)\)</span> can stabilize training and is convenient to train simultaneously with the other networks.</strong> </li>
+<li>The soft value function is trained to minimize the squared residual error</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ J_V(\psi) = E_{s_t \sim D} \left[ {1\over 2} \left(
+V_\psi(s_t) - \hat{V}(s_t) \right)^2 \right] \\[5pt]
+\hat{V}(s_t) := E_{a_t \sim \pi_\phi} [ Q_\theta(s_t, a_t) - \log \pi_\phi(a_t|s_t) ] \]</div>
+<ul>
+<li>
+<p>where <span class="arithmatex">\(D\)</span> is the distribution of <strong>previously sampled states and actions, or a replay buffer.</strong> </p>
+</li>
+<li>
+<p>The gradient can be estimated with an unbiased estimator</p>
+</li>
+</ul>
+<div class="arithmatex">\[ \nabla_\psi J_V(\psi) = 
+\left(
+V_\psi(s_t) - 
+Q_\theta(s_t, a_t) + \log \pi_\phi(a_t|s_t) 
+\right) \nabla_\psi V_\psi(s_t) \]</div>
+<ul>
+<li>
+<p><strong>where the actions are sampled according to the current policy, instead of the replay buffer.</strong> </p>
+</li>
+<li>
+<p><strong>The soft Q-function parameters can be trained to minimize the soft Bellman residual</strong></p>
+</li>
+</ul>
+<div class="arithmatex">\[ J_Q(\theta) = E_{(s_t, a_t)\sim D} \left[ {1\over 2} \left(
+Q_\theta(s_t, a_t) - \hat{Q}(s_t, a_t) \right)^2 \right] \\[5pt]
+\hat{Q}(s_t, a_t) := r(s_t, a_t) + \gamma E_{s_{t+1}\sim p}[V_{\bar{\psi}}(s_{t+1})] \\[10pt]
+\nabla_\theta J_Q(\theta) = ( Q_\theta(s_t, a_t) - r(s_t, a_t) - \gamma V_{\bar{\psi}}(s_{t+1}) ) \nabla_\theta Q_\theta(s_t, a_t) \]</div>
+<ul>
+<li>
+<p><strong>The update makes use of a target value network <span class="arithmatex">\(V_{\bar{\psi}}\)</span>, where <span class="arithmatex">\(\bar{\psi}\)</span> can be an exponentially moving average of the value network weights, which has been shown to stabilize training (Mnih et al., 2015).</strong> </p>
+<ul>
+<li>Alternatively, we can update the target weights to match the current value function weights periodically (see Appendix E). </li>
+</ul>
+</li>
+<li>
+<p>Finally, the policy parameters can be learned by directly minimizing the expected KL-divergence in Equation 4:</p>
+</li>
+</ul>
+<div class="arithmatex">\[ J_\pi(\phi) = E_{s_t\sim D} \left[ D_{KL} \left(
+\pi_\phi( \cdot|s_t ) \middle\| { \exp( Q_\theta(s_t, \cdot) ) \over Z_\theta(s_t) }
+ \right) \right] \]</div>
+<ul>
+<li>There are several options for minimizing <span class="arithmatex">\(J_\pi\)</span>. <ul>
+<li>A typical solution for <strong>policy gradient methods</strong> is to use the <strong>likelihood ratio gradient estimator (Williams, 1992)</strong>, which does not require backpropagating the gradient through the policy and the target density networks. </li>
+<li><strong>However, in our case, the target density is the Q-function, which is represented by a neural network and can be differentiated, and it is thus convenient to apply the reparameterization trick instead, resulting in a lower variance estimator.</strong> </li>
+<li>To that end, we reparameterize the policy using a neural network transformation</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ a_t = f_\phi(\epsilon_t ; s_t) \]</div>
+<ul>
+<li>where <span class="arithmatex">\(\epsilon_t\)</span> is an input noise vector, sampled from some fixed distribution, such as a spherical Gaussian. We can now rewrite the objective in Equation 10 as</li>
+</ul>
+<div class="arithmatex">\[ J_\pi(\phi) = E_{s_t\sim D, \; \epsilon_t \sim \mathcal{N} } \left[
+\log \pi_\phi( f_\phi(\epsilon_t ; s_t) | s_t )
+- Q_\theta(s_t, f_\phi(\epsilon_t ; s_t))
+\right] \]</div>
+<ul>
+<li>where <span class="arithmatex">\(\pi_\phi\)</span> is defined implicitly in terms of <span class="arithmatex">\(f_\phi\)</span>, and we have noted that <strong>the partition function is independent of <span class="arithmatex">\(\phi\)</span> and can thus be omitted.</strong> </li>
+<li>We can approximate the gradient of Equation 12 with</li>
+</ul>
+<div class="arithmatex">\[ \nabla_\phi J_\pi(\phi) = \boxed{ \nabla_\phi \log \pi_\phi( a_t | s_t ) + \nabla_{a_t} \log \pi_\phi(a_t|s_t) \; \nabla_\phi f_\phi(\epsilon_t;s_t) } \\[5pt]
+- \nabla_{a_t}Q(s_t, a_t) \; \nabla_\phi f_\phi(\epsilon_t;s_t) \]</div>
+<ul>
+<li>where <span class="arithmatex">\(a_t\)</span> is evaluated at $ f_\phi(\epsilon_t;s_t) $. </li>
+<li><strong>This unbiased gradient estimator extends the DDPG style policy gradients (Lillicrap et al., 2015) to any tractable stochastic policy.</strong></li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>Study note for <strong>the boxed term</strong>:</p>
+<ul>
+<li>
+<p>In a <strong>reparameterized policy (like a Gaussian policy)</strong>, your neural network doesn't output the action directly. </p>
+<ul>
+<li>Instead, the network takes the state <span class="arithmatex">\(s_t\)</span> and outputs the parameters of a distribution (<span class="arithmatex">\(\mu_\phi(s_t)\)</span> and <span class="arithmatex">\(\log \sigma_\phi(s_t)\)</span>).</li>
+<li>The reparameterization function <span class="arithmatex">\(f_\phi(\epsilon_t; s_t)\)</span> is the deterministic mapping that takes those network outputs and combines them with independent noise <span class="arithmatex">\(\epsilon_t \sim \mathcal{N}(0, I)\)</span> to sample an action:</li>
+</ul>
+<div class="arithmatex">\[ a_t = f_\phi(\epsilon_t; s_t) = \mu_\phi(s_t) + \sigma_\phi(s_t) \odot \epsilon_t \]</div>
+</li>
+<li>
+<p>There are two paths for <span class="arithmatex">\(\phi\)</span>:</p>
+<ul>
+<li>As the functional parameter dictating the shape of the distribution: <span class="arithmatex">\(\pi_\phi(\cdot)\)</span></li>
+<li>Inside the action argument via the reparameterization function: <span class="arithmatex">\(a_t = f_\phi(\epsilon_t; s_t)\)</span></li>
+</ul>
+</li>
+<li>
+<p>If you change the weights <span class="arithmatex">\(\phi\)</span> slightly, two things happen simultaneously:</p>
+<ul>
+<li>The distribution shifts: The actual shape/landscape of the probability density function <span class="arithmatex">\(\pi_\phi\)</span> changes. </li>
+<li>The action moves: The specific action <span class="arithmatex">\(a_t\)</span> generated by <span class="arithmatex">\(f_\phi\)</span> shifts to a new position on that landscape.</li>
+</ul>
+</li>
+<li>
+<p>If you have a function <span class="arithmatex">\(g(\phi, a(\phi))\)</span>, its total derivative with respect to <span class="arithmatex">\(\phi\)</span> is:</p>
+</li>
+</ul>
+<div class="arithmatex">\[ {d \over d\phi} g(\phi, a(\phi)) = {\partial g \over \partial \phi} \cdot 1 + {\partial g \over \partial a} {\partial a \over \partial \phi} \]</div>
+</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Our algorithm also makes use of two Q-functions to mitigate positive bias in the policy improvement step that is known to degrade performance of value based methods (Hasselt, 2010; Fujimoto et al., 2018).</strong> <ul>
+<li>In particular, we parameterize two Q-functions, with parameters <span class="arithmatex">\(\theta_i\)</span>, and train them independently to optimize <span class="arithmatex">\(J_Q(\theta_i)\)</span>. </li>
+<li><strong>We then use the minimum of the Q-functions for the value gradient in Equation 6 and policy gradient in Equation 13, as proposed by Fujimoto et al. (2018).</strong> </li>
+<li>Although our algorithm can learn challenging tasks, including a <strong>21-dimensional Humanoid</strong>, using just a single Q-function, <ul>
+<li><strong>we found two Q-functions significantly speed up training, especially on harder tasks.</strong> </li>
+</ul>
+</li>
+<li>The complete algorithm is described in Algorithm 1. The method alternates between <ul>
+<li>collecting experience from the environment with the current policy </li>
+<li>and updating the function approximators using the stochastic gradients from batches sampled from a replay buffer. </li>
+</ul>
+</li>
+<li><strong>In practice, we take a single environment step followed by one or several gradient steps (see Appendix D for all hyperparameter).</strong> <ul>
+<li>Using off-policy data from a replay buffer is feasible because both value estimators and the policy can be trained entirely on off-policy data. </li>
+</ul>
+</li>
+<li>The algorithm is agnostic to the parameterization of the policy, as long as it can be evaluated for any arbitrary state-action tuple.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li><strong>Algorithm 1 Soft Actor-Critic</strong><ul>
+<li>Initialize parameter vectors <span class="arithmatex">\(\psi, \bar{\psi}, \theta, \phi\)</span></li>
+<li>for each iteration do<ul>
+<li>for each environment step do<ul>
+<li><span class="arithmatex">\(a_t \sim \pi_\phi(a_t|s_t) \quad s_{t+1} \sim p(s_{t+1}|s_t, a_t)\)</span></li>
+<li><span class="arithmatex">\(D \gets D \cup \{(s_t, a_t, r(s_t, a_t), s_{t+1})\}\)</span></li>
+</ul>
+</li>
+<li>for each gradient step do<ul>
+<li><span class="arithmatex">\(\psi \gets \psi - \lambda_V \nabla_\psi J_V(\psi)\)</span></li>
+<li><span class="arithmatex">\(\theta_i \gets \theta_i − \lambda_Q \nabla_{\theta_i} J_Q(\theta_i) \text{ for } i \in \{1, 2\}\)</span></li>
+<li><span class="arithmatex">\(\phi \gets \phi − \lambda_\pi \nabla_\phi J_\pi(\phi)\)</span></li>
+<li><span class="arithmatex">\(\bar{\psi} \gets \tau \psi + (1 − \tau) \bar{\psi}\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ J_V(\psi) = E_{s_t \sim D} \left[ {1\over 2} \left(
+V_\psi(s_t) - \hat{V}(s_t) \right)^2 \right] \\[5pt]
+\hat{V}(s_t) := E_{a_t \sim \pi_\phi} [ Q_\theta(s_t, a_t) - \log \pi_\phi(a_t|s_t) ] \\[10pt]
+J_Q(\theta) = E_{(s_t, a_t)\sim D} \left[ {1\over 2} \left(
+Q_\theta(s_t, a_t) - \hat{Q}(s_t, a_t) \right)^2 \right] \\[5pt]
+\hat{Q}(s_t, a_t) := r(s_t, a_t) + \gamma E_{s_{t+1}\sim p}[V_{\bar{\psi}}(s_{t+1})] \\[10pt]
+J_\pi(\phi) = E_{s_t\sim D, \; \epsilon_t \sim \mathcal{N} } \left[
+\log \pi_\phi( f_\phi(\epsilon_t ; s_t) | s_t )
+- Q_\theta(s_t, f_\phi(\epsilon_t ; s_t))
+\right] \]</div>
+<hr />
+<h2 id="5-experiments">5. Experiments</h2>
+<ul>
+<li>
+<p>The goal of our experimental evaluation is to understand how the <strong>sample complexity</strong> and <strong>stability</strong> of our method compares with prior off-policy and on-policy deep reinforcement learning algorithms. </p>
+</li>
+<li>
+<p>We compare our method to prior techniques on a range of challenging continuous control tasks from the OpenAI gym benchmark suite (Brockman et al., 2016) and also on the rllab implementation of the Humanoid task (Duan et al., 2016). </p>
+</li>
+<li>
+<p>Although the easier tasks can be solved by a wide range of different algorithms, <strong>the more complex benchmarks, such as the 21-dimensional Humanoid (rllab), are exceptionally difficult to solve with off-policy algorithms (Duan et al., 2016).</strong> </p>
+</li>
+<li>
+<p>The stability of the algorithm also plays a large role in performance: easier tasks make it more practical to tune hyperparameters to achieve good results, while the already narrow basins (盆) of effective hyperparameters become prohibitively small for the more sensitive algorithms on the hardest benchmarks, leading to poor performance (Gu et al., 2016).</p>
+</li>
+<li>
+<p>We compare our method to </p>
+<ul>
+<li><strong>deep deterministic policy gradient (DDPG)</strong> (Lillicrap et al., 2015), an algorithm that is regarded as one of the more efficient off-policy deep RL methods (Duan et al., 2016); </li>
+<li><strong>proximal policy optimization (PPO)</strong> (Schulman et al., 2017b), a stable and effective on-policy policy gradient algorithm; </li>
+<li>and <strong>soft Q-learning (SQL)</strong> (Haarnoja et al., 2017), a recent off-policy algorithm for learning maximum entropy policies. <ul>
+<li>Our SQL implementation also includes two Q-functions, which we found to improve its performance in most environments. </li>
+</ul>
+</li>
+<li><strong>twin delayed deep deterministic policy gradient algorithm (TD3)</strong> (Fujimoto et al., 2018), using the author-provided implementation. <ul>
+<li>This is an extension to DDPG, proposed concurrently to our method, that first applied the double Q-learning trick to continuous control along with other improvements. </li>
+</ul>
+</li>
+<li><strong>trust region path consistency learning (Trust-PCL)</strong> (Nachum et al., 2017b) </li>
+<li>and two other variants of SAC in Appendix E. </li>
+</ul>
+</li>
+<li>
+<p>We turned off the exploration noise for evaluation for DDPG and PPO. </p>
+</li>
+<li>For maximum entropy algorithms, which do not explicitly inject exploration noise, we either evaluated with the exploration noise (SQL) or use the mean action (SAC).</li>
+</ul>
+<h3 id="51-comparative-evaluation">5.1. Comparative Evaluation</h3>
+<p><img alt="" src="../../imgs/02_SAC_benchmark.png" /></p>
+<ul>
+<li>Figure 1 shows the total average return of evaluation rollouts during training for <code>DDPG, PPO, and TD3</code>. <ul>
+<li>We train five different instances of each algorithm with different random seeds, with each performing one evaluation rollout every 1000 environment steps. <ul>
+<li>The solid curves corresponds to the mean and the shaded region to the minimum and maximum returns over the five trials.</li>
+</ul>
+</li>
+<li>The results show that, overall, SAC performs comparably to the baseline methods on the easier tasks and outperforms them on the harder tasks with a large margin, both in terms of learning speed and the final performance. <ul>
+<li>For example, DDPG fails to make any progress on Ant-v1, Humanoidv1, and Humanoid (rllab), a result that is corroborated by prior work (Gu et al., 2016; Duan et al., 2016). </li>
+</ul>
+</li>
+<li><strong>SAC also learns considerably faster than PPO as a consequence of the large batch sizes PPO needs to learn stably on more high-dimensional and complex tasks.</strong> </li>
+<li>Another maximum entropy RL algorithm, SQL, can also learn all tasks, but it is slower than SAC and has worse asymptotic performance.</li>
+<li>The quantitative results attained by SAC in our experiments also compare very favorably to results reported by other methods in prior work (Duan et al., 2016; Gu et al., 2016; Henderson et al., 2017), indicating that both the sample efficiency and final performance of SAC on these benchmark tasks exceeds the state of the art. </li>
+<li>All hyperparameters used in this experiment for SAC are listed in Appendix D.</li>
+</ul>
+</li>
+</ul>
+<h3 id="52-ablation-study">5.2. Ablation Study</h3>
+<ul>
+<li>
+<p>The results in the previous section suggest that algorithms based on <strong>the maximum entropy principle</strong> can outperform conventional RL methods on challenging tasks such as the humanoid tasks. </p>
+</li>
+<li>
+<p>In this section, we further examine which particular components of SAC are important for good performance. </p>
+</li>
+<li>
+<p>We also examine how sensitive SAC is to some of the most important hyperparameters, namely </p>
+<ul>
+<li>reward scaling </li>
+<li>and target value update smoothing constant.</li>
+</ul>
+</li>
+</ul>
+<h4 id="stochastic-vs-deterministic-policy">Stochastic vs. deterministic policy.</h4>
+<p><img alt="" src="../../imgs/02_SAC_stochastic_vs_deterministic.png" /></p>
+<ul>
+<li>Soft actor-critic learns stochastic policies via a maximum entropy objective. <ul>
+<li>The entropy appears in both the policy and value function. <ul>
+<li>In the policy, it prevents premature convergence of the policy variance (Equation 10). </li>
+<li>In the value function, it encourages exploration by increasing the value of regions of state space that lead to high-entropy behavior (Equation 5).</li>
+</ul>
+</li>
+<li>To compare how the stochasticity of the policy and entropy maximization affects the performance, <strong>we compare to a deterministic variant of SAC that does not maximize the entropy and that closely resembles DDPG</strong>, with the exception of <ul>
+<li>having two Q-functions, </li>
+<li>using hard target updates, </li>
+<li>not having a separate target actor, </li>
+<li>and using fixed rather than learned exploration noise. </li>
+</ul>
+</li>
+<li>Figure 2 compares five individual runs with both variants, initialized with different random seeds. </li>
+<li>Soft actor-critic performs much more consistently, while the deterministic variant exhibits very high variability across seeds, indicating <strong>substantially worse stability.</strong> </li>
+<li>As evident from the figure, learning a stochastic policy with entropy maximization can drastically stabilize training. </li>
+<li>This becomes especially important with harder tasks, where tuning hyperparameters is challenging. </li>
+<li>In this comparison, we updated the target value network weights with hard updates, by periodically overwriting the target network parameters to match the current value network (see Appendix E for a comparison of average performance on all benchmark tasks).</li>
+</ul>
+</li>
+</ul>
+<h4 id="policy-evaluation">Policy evaluation.</h4>
+<ul>
+<li>Since SAC converges to stochastic policies, it is often beneficial to make the final policy deterministic at the end for best performance. <ul>
+<li>For evaluation, we approximate the maximum a posteriori action by choosing the mean of the policy distribution. </li>
+<li>Figure 3(a) compares training returns to evaluation returns obtained with this strategy indicating that <strong>deterministic evaluation can yield better performance.</strong> </li>
+<li>It should be noted that all of the training curves depict the sum of rewards, which is different from the objective optimized by SAC and other maximum entropy RL algorithms, including SQL and Trust-PCL, which maximize also the entropy of the policy.</li>
+</ul>
+</li>
+</ul>
+<h4 id="reward-scale">Reward scale.</h4>
+<p><img alt="" src="../../imgs/02_SAC_important.png" /></p>
+<ul>
+<li><strong>Soft actor-critic is particularly sensitive to the scaling of the reward signal, because it serves the role of the temperature of the energy-based optimal policy and thus controls its stochasticity.</strong> <ul>
+<li>Larger reward magnitudes correspond to lower entries. </li>
+<li>Figure 3(b) shows how learning performance changes when the reward scale is varied: <ul>
+<li>For small reward magnitudes, the policy becomes nearly uniform, and consequently fails to exploit the reward signal, resulting in substantial degradation of performance. </li>
+<li>For large reward magnitudes, the model learns quickly at first, but the policy then becomes nearly deterministic, leading to poor local minima due to lack of adequate exploration.</li>
+<li>With the right reward scaling, the model balances exploration and exploitation, leading to faster learning and better asymptotic performance. </li>
+</ul>
+</li>
+<li><strong>In practice, we found reward scale to be the only hyperparameter that requires tuning, and its natural interpretation as the inverse of the temperature in the maximum entropy framework provides good intuition for how to adjust this parameter.</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="target-network-update">Target network update.</h4>
+<ul>
+<li><strong>It is common to use a separate target value network that slowly tracks the actual value function to improve stability.</strong> <ul>
+<li>We use an exponentially moving average, with a smoothing constant <span class="arithmatex">\(\tau\)</span>, to update the target value network weights as common in the prior work (Lillicrap et al., 2015; Mnih et al., 2015). </li>
+<li>A value of <span class="arithmatex">\(1\)</span> corresponds to a hard update where the weights are copied directly at every iteration and <span class="arithmatex">\(0\)</span> to not updating the target at all. </li>
+<li>In Figure 3(c), we compare the performance of SAC when <span class="arithmatex">\(\tau\)</span> varies. </li>
+<li>Large <span class="arithmatex">\(\tau\)</span> can lead to instabilities while small <span class="arithmatex">\(\tau\)</span> can make training slower. </li>
+<li>However, we found the range of suitable values of <span class="arithmatex">\(\tau\)</span> to be relatively wide and we used the same value (<strong>0.005</strong>) across all of the tasks. </li>
+<li>In Figure 4 (Appendix E) we also compare to another variant of SAC, where instead of using exponentially moving average, we copy over the current network weights directly into the target network every 1000 gradient steps. <ul>
+<li><strong>We found this variant to benefit from taking more than one gradient step between the environment steps, which can improve performance but also increases the computational cost.</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-conclusion">6. Conclusion</h2>
+<ul>
+<li>We present soft actor-critic (SAC), an <code>off-policy</code> <code>maximum entropy</code> deep reinforcement learning algorithm that provides sample-efficient learning while retaining the benefits of entropy maximization and stability. <ul>
+<li>Our theoretical results derive soft policy iteration, which we show to converge to the optimal policy. </li>
+<li>From this result, we can formulate a soft actor-critic algorithm, and we empirically show that it outperforms state-of-the-art model-free deep RL methods, including the off-policy DDPG algorithm and the on-policy PPO algorithm. <ul>
+<li>In fact, the sample efficiency of this approach actually exceeds that of DDPG by a substantial margin. </li>
+</ul>
+</li>
+<li>Our results suggest that stochastic, entropy maximizing reinforcement learning algorithms can provide a promising avenue for improved robustness and stability, and further exploration of maximum entropy methods, including methods that incorporate <ul>
+<li>second order information (e.g., trust regions (Schulman et al., 2015)) </li>
+<li>or more expressive policy classes </li>
+</ul>
+</li>
+<li>is an exciting avenue for future work.</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
