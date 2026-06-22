@@ -1,0 +1,2816 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../2.2_Embodied_AI/papers/02_D4RT_DeepMind/">
+      
+      
+        <link rel="next" href="../../../2.3_RL/papers/01_PPO/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>2 2026 NTU DynamicVLA - NeuroAI Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../js/main.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-2026-ntu-dynamicvla" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeuroAI Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 2026 NTU DynamicVLA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeuroAI Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeuroAI Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ricky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creator (Ricky)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.1 Guiding Principles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0.1 Guiding Principles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 NeuroAI Hassabis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 Brain Evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Neural Encoding I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/02_Neural_Encoding_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Neural Encoding II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/03_Neural_Decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Neural Decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/04_Information_Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Information Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/07_Network_Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Network Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/08_Plasticity_and_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Plasticity and Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Classical Conditioning and Reinforcement Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Representational Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 LLM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.1 LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 Qwen3-VL Technical Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 The Big LLM Architecture Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2024 DeepSeek-V3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 Embodied AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.2 Embodied AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_Embodied_AI/papers/01_Spatial_Intelligence_Survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2025 Spatial Intelligence Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_Embodied_AI/papers/02_D4RT_DeepMind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2025 D4RT: Dynamic 4D Reconstruction and Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 VLA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.2 VLA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2026 NTU DynamicVLA
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2026 NTU DynamicVLA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. INTRODUCTION
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. RELATED WORK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. RELATED WORK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vision-language-action-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision-Language-Action Models.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robot-learning-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Robot Learning Datasets.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robot-dynamic-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Robot Dynamic Manipulation.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-the-dynamic-vla-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. THE DYNAMIC-VLA MODEL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III. THE DYNAMIC-VLA MODEL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Problem Formulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-the-dynamicvla-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. The DynamicVLA Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. The DynamicVLA Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visionlanguage-backbone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision–Language Backbone.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diffusion-based-action-expert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusion-Based Action Expert.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-continuous-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Continuous Inference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-latent-aware-action-streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Latent-aware Action Streaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-the-dynamic-object-manipulation-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-benchmark-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Benchmark Dimensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-simulation-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Simulation Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-real-world-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Real-World Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V. EXPERIMENTS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-discussion-and-future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VI. DISCUSSION AND FUTURE WORK
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 RL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.3 RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/01_PPO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 PPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2023 DreamerV3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 Brain Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3.1 Brain Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Brain vs MPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. INTRODUCTION
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-related-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. RELATED WORK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II. RELATED WORK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vision-language-action-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision-Language-Action Models.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robot-learning-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Robot Learning Datasets.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#robot-dynamic-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Robot Dynamic Manipulation.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-the-dynamic-vla-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. THE DYNAMIC-VLA MODEL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="III. THE DYNAMIC-VLA MODEL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-problem-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Problem Formulation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-the-dynamicvla-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. The DynamicVLA Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B. The DynamicVLA Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visionlanguage-backbone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision–Language Backbone.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diffusion-based-action-expert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusion-Based Action Expert.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-continuous-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Continuous Inference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-latent-aware-action-streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Latent-aware Action Streaming
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-the-dynamic-object-manipulation-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-benchmark-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. Benchmark Dimensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-simulation-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. Simulation Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-real-world-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D. Real-World Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V. EXPERIMENTS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-discussion-and-future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VI. DISCUSSION AND FUTURE WORK
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-2026-ntu-dynamicvla">2 2026 NTU DynamicVLA</h1>
+<ul>
+<li><a href="https://arxiv.org/pdf/2601.22153">DynamicVLA: A Vision-Language-Action Model for Dynamic Object Manipulation</a></li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<ul>
+<li>
+<p>Manipulating dynamic objects remains an open challenge for Vision-Language-Action (VLA) models, which, despite strong generalization in static manipulation, struggle in dynamic scenarios requiring rapid perception, temporal anticipation, and continuous control. </p>
+</li>
+<li>
+<p>We present DynamicVLA, a framework for dynamic object manipulation that integrates temporal reasoning and closed-loop adaptation through three key designs: </p>
+<ul>
+<li>a compact 0.4B VLA using a <strong>convolutional vision encoder</strong> for spatially efficient, structurally faithful encoding, enabling fast multimodal inference; </li>
+<li>Continuous Inference, enabling overlapping reasoning and execution for lower latency and timely adaptation to object motion; and </li>
+<li>Latent-aware Action Streaming, which bridges the perception–execution gap by enforcing temporally aligned action execution. </li>
+</ul>
+</li>
+<li>
+<p>To fill the missing foundation of dynamic manipulation data, we introduce the Dynamic Object Manipulation (DOM) benchmark, built from scratch with an auto data collection pipeline that efficiently gathers 200K synthetic episodes across 2.8K scenes and 206 objects, and enables fast collection of 2K real-world episodes without teleoperation (遥控操作). </p>
+</li>
+<li>
+<p>Extensive evaluations demonstrate remarkable improvements in response speed, perception, and generalization, positioning DynamicVLA as a unified framework for general dynamic object manipulation across embodiments.</p>
+</li>
+</ul>
+<h2 id="i-introduction">I. INTRODUCTION</h2>
+<ul>
+<li>
+<p>Dynamic object manipulation is a fundamental yet under-explored frontier in robotics. </p>
+<ul>
+<li>Real-world interaction often involves objects in motion, such as handing, repositioning, or stabilizing items, requiring robots to perceive, predict, and act under rapidly changing conditions. </li>
+<li>Even minor latency may cause task failure, making dynamic manipulation a far more challenging problem than static grasping.</li>
+</ul>
+</li>
+<li>
+<p>To date, robots have been evaluated on moving targets such as throwing, soccer, and table tennis, relying on reactive control and handcrafted perception pipelines that operate only in structured settings. </p>
+<ul>
+<li>Recent works such as <code>DBC-TFP</code> and <code>GEM</code> extend manipulation to moving objects but remain limited to predictable, conveyor-belt–like motion. </li>
+<li>Meanwhile, concurrent VLA models, including <code>RDT2</code>, <code>RTVLA</code>, and <code>VLASH</code>, demonstrate real-time interaction with fast-moving targets, but these tasks tolerant to timing and spatial error. </li>
+<li>For example, a paddle can return a ball over a wide area, so the interaction does not require the precise 6DoF control needed for dynamic object manipulation.</li>
+<li>However, open-ended dynamic manipulation, which involves uncertain motion, precise contact, and tight perception–action alignment, remains largely unsolved.</li>
+</ul>
+</li>
+<li>
+<p>While VLA models have shown strong performance on static manipulation, where object states remain fixed during inference, latency plays only a minor role in such settings. </p>
+<ul>
+<li>Early VLAs relied on 3B–7B vision-language backbones and still achieved high success rates despite slow inference.</li>
+<li>More recent designs improve efficiency by reducing model size and increasing throughput while maintaining comparable performance. </li>
+<li>However, as illustrated in Figure 1a, dynamic manipulation imposes far stricter demands because inference delays de-synchronize perception from action and require models to anticipate future object motion, a capability not addressed by prior VLAs for manipulation.</li>
+</ul>
+</li>
+<li>
+<p>To address these issues, we propose DynamicVLA, a framework for dynamic object manipulation that integrates temporal reasoning and closed-loop adaptation through three key designs: </p>
+<ul>
+<li>a compact 0.4B-parameter VLA that adopts a <strong>convolutional vision encoder</strong> for efficient spatial compression and stronger structural preservation, enabling significantly faster and more compact inference in dynamic manipulation settings; </li>
+<li>Continuous Inference, a pipelined execution scheme that overlaps prediction and action execution to eliminate inter-chunk waiting and maintain a continuous action stream under dynamic object motion; and </li>
+<li>Latent-aware Action Streaming, a latency-aware execution mechanism that restores temporal alignment by discarding outdated actions and prioritizing the most recent predictions at each timestep, ensuring temporally consistent control despite inference delay.</li>
+</ul>
+</li>
+<li>
+<p>Since existing robotic datasets overwhelmingly capture static scenes and offer no large-scale foundation for dynamic object manipulation, we construct the Dynamic Object Manipulation (DOM) benchmark with a fully automated data collection pipeline validated across multiple robot embodiments, including Franka Emika Panda and AgileX PiPER. </p>
+<ul>
+<li>In simulation, <strong>Isaac Sim</strong> and our task-driven state machine controller use real-time 6D object pose and velocity to drive the robot to manipulate moving objects, producing 200K episodes across 2.8K diverse simulation-ready 3D scenes and 206 objects. </li>
+<li>Teleoperation is fundamentally ineffective for real-world dynamic manipulation, since fast-moving objects routinely exceed human reaction limits. </li>
+<li>To address this, we build a real-world “simulator” pipeline that performs 3D object tracking using dual RGB views to estimate 6D pose and infer velocity, and then drives the same state-machine controller to execute autonomous trials, with humans only initiating object motion when necessary.</li>
+</ul>
+</li>
+<li>
+<p>We extensively evaluate DynamicVLA across dynamic manipulation tasks, multiple robot embodiments, and both simulation and real-world settings, using the DOM benchmark together with 16 real-robot tasks. </p>
+<ul>
+<li>Our evaluation examines the model’s limits in real-time responsiveness, adaptation to sudden changes in object motion, perceptual grounding of appearance, motion, and spatial descriptions, and generalization to unseen objects, novel scenes, and new motion regimes. </li>
+</ul>
+</li>
+<li>
+<p>In summary, the contributions of this work consist of </p>
+<ul>
+<li>a compact 0.4B-parameter VLA tailored for dynamic manipulation, </li>
+<li>together with two modules that enable real-time closed-loop control. </li>
+<li>Continuous Inference overlaps inference and execution to eliminate inter-chunk waiting, while Latent aware Action Streaming enforces temporal alignment between perception and action. </li>
+<li>We further introduce the DOM benchmark, which supplies large-scale dynamic manipulation data through automated pipelines in both simulation and the real world across multiple robot embodiments.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ii-related-work">II. RELATED WORK</h2>
+<h3 id="vision-language-action-models">Vision-Language-Action Models.</h3>
+<ul>
+<li>
+<p>Inspired by the success of</p>
+<ul>
+<li>Large Language Models (LLMs) [36, 40, 1, 41] <ul>
+<li>[36] OpenAI. GPT-4 technical report. </li>
+<li>[40] Llama Team. The llama 3 herd of models. </li>
+<li>[1] DeepSeek AI. DeepSeek-R1: Incentivizing reasoning capability in LLMs via reinforcement learning. </li>
+<li>[41] Qwen Team. Qwen2.5-1M technical report. </li>
+</ul>
+</li>
+<li>Vision Language Models (VLMs) [25, 26, 42], <ul>
+<li>[25] Haotian Liu. Visual instruction tuning.</li>
+<li>[26] Haotian Liu. Improved baselines with visual instruction tuning.</li>
+<li>[42] Qwen Team. Qwen2.5-VL technical report.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Vision-LanguageAction (VLA) models extend VLMs with action generation.</p>
+<ul>
+<li><strong>Transformer-based methods</strong> [57, 7] use Transformers to model state-action-reward sequences. <ul>
+<li>[57] Sergey Levine. Learning fine-grained bimanual manipulation with low-cost hardware.</li>
+<li>[7] Chelsea Finn. RT-1: robotics transformer for real world control at scale. </li>
+</ul>
+</li>
+<li><strong>LLM/VLM-based methods</strong> [60, 17] treat VLA tasks as sequence-to-sequence problems for action generation. <ul>
+<li>[60] RT-2: Vision-Language-Action models transfer web knowledge to robotic control. </li>
+<li>[17] Sergey Levine. OpenVLA: An open-source Vision-Language-Action model. </li>
+</ul>
+</li>
+<li><strong>Diffusion-based methods</strong> [9, 32] model policies as denoising diffusion models. <ul>
+<li>[9] Diffusion policy: Visuomotor policy learning via action diffusion.  </li>
+<li>[32] Chelsea Finn. Fine-tuning Vision-Language-Action models: Optimizing speed and success.</li>
+</ul>
+</li>
+<li><strong>LLM and diffusion model methods</strong> [14, 6] combine LLMs for representation and diffusion models for action generation. <ul>
+<li>[14] Sergey Levine. Octo: An open-source generalist robot policy. </li>
+<li>[6] Chelsea Finn. <strong><span class="arithmatex">\(\pi_0\)</span>: A Vision-Language-Action flow model for general robot control.</strong></li>
+</ul>
+</li>
+<li><strong>Video generation with inverse kinematics methods</strong> [53, 49, 37] generate motion sequences and convert them into actions. <ul>
+<li>[53] Pieter Abbeel. Learning interactive real-world simulators. </li>
+<li>[49] Unleashing large-scale video generative pretraining for visual robot manipulation.</li>
+<li>[37] VideoWorld: Exploring knowledge learning from unlabeled videos. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>However, existing VLA models often suffer from <strong>slow inference speeds</strong>, limiting their use in scenarios requiring precise or rapid execution.</p>
+</li>
+</ul>
+<h3 id="robot-learning-datasets">Robot Learning Datasets.</h3>
+<ul>
+<li>Real-world datasets [28, 45, 35, 50] provide high-fidelity interactions but are costly and hard to scale, while simulated datasets [30, 24, 20, 21, 33] offer scalability yet suffer from the sim-to-real gap. </li>
+<li>Most benchmarks focus on simple tabletop manipulation (e.g., pick-and-place, pushing) with limited task diversity, though recent work explores long-horizon [24, 55], language-conditioned [58, 16], and tactile-rich [52, 2] settings. </li>
+<li>Generative models [34, 47, 53, 48] introduce interactive elements but remain constrained by artifacts, low frame rates, and memory. </li>
+<li>Despite progress in standardization and multi-embodiment learning, current datasets lack dynamic objects, limiting applicability to environments with independent motion.</li>
+</ul>
+<h3 id="robot-dynamic-manipulation">Robot Dynamic Manipulation.</h3>
+<ul>
+<li>Robotic manipulation has been studied largely in static settings, and existing methods for moving objects remain task-specific or rely on predictable motion. <ul>
+<li>Approaches such as DBC-TFP [56] and GEM [22] operate mainly in structured, conveyor-like scenarios. </li>
+<li>Concurrent VLA methods, including RDT-2 [43], RTVLA [27], and VLASH [39], demonstrate real-time interaction with fast moving targets, but these interactions permit large contact margins and do not involve precise 6DoF manipulation. </li>
+<li>Consequently, general dynamic manipulation under uncertain motion and fine contact constraints remains under-explored.</li>
+</ul>
+</li>
+</ul>
+<h2 id="iii-the-dynamic-vla-model">III. THE DYNAMIC-VLA MODEL</h2>
+<p><img alt="" src="../../imgs/02_NTU_DynamicVLA.png" /></p>
+<h3 id="a-problem-formulation">A. Problem Formulation</h3>
+<ul>
+<li>
+<p>We study dynamic object manipulation, where a robot must manipulate objects whose states evolve continuously during perception, reasoning, and execution. </p>
+</li>
+<li>
+<p>At time step <span class="arithmatex">\(t\)</span>, the VLA model <span class="arithmatex">\(M\)</span> receives </p>
+<ul>
+<li>a temporal window of visual observations <span class="arithmatex">\(O_t = \{o_{t−k}, ... , o_t\}\)</span>, </li>
+<li>a language instruction <span class="arithmatex">\(L_t\)</span>, and </li>
+<li>its proprioceptive (本体感受的) state <span class="arithmatex">\(P_t\)</span>, </li>
+</ul>
+</li>
+<li>and predicts <ul>
+<li>an action sequence <span class="arithmatex">\(A_t = \{a_t, ..., a_{t+n}\}\)</span>, i.e., </li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[ A_t = M(O_t,L_t, P_t) \]</div>
+<ul>
+<li>The physical environment includes <ul>
+<li>a latent object state <span class="arithmatex">\(s_t\)</span>, describing the object’s 6D pose and motion.</li>
+<li>Crucially, object motion does not pause during inference: while the model reasons over <span class="arithmatex">\(O_t\)</span>, the object transitions from <span class="arithmatex">\(s_t\)</span> to <span class="arithmatex">\(s_{t+m}\)</span>, where <strong><span class="arithmatex">\(m\)</span> denotes inference latency</strong>, leading to potential misalignment between perception and execution.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-the-dynamicvla-architecture">B. The DynamicVLA Architecture</h3>
+<ul>
+<li>Since inference latency directly limits the range of object motion in dynamic manipulation, we design a compact 0.4B VLA model for fast and spatially efficient multimodal reasoning, illustrated in Figure 2a.</li>
+</ul>
+<h4 id="visionlanguage-backbone">Vision–Language Backbone.</h4>
+<ul>
+<li>
+<p>We adopt SmolLM2-360M [3] as the <strong>language backbone</strong>, resulting in an overall tiny model size. </p>
+<ul>
+<li>Following SmolVLA [38], we truncate the <strong>language backbone</strong> to its first 16 transformer layers, significantly reducing inference latency with minimal impact on multimodal reasoning.</li>
+<li>[3] <strong>Hugging Face</strong> SmolLM2: when smol goes big - data-centric training of a small language model. </li>
+<li>[38] <strong>Hugging Face</strong> SmolVLA: A Vision-Language-Action model for affordable and efficient robotics. </li>
+</ul>
+</li>
+<li>
+<p><strong>Unlike existing VLMs that rely on transformer-based vision encoders, we employ a convolutional vision encoder, FastViT [44], which performs efficient spatial compression and avoids quadratic token growth when processing multi-frame visual inputs.</strong> </p>
+<ul>
+<li>[44] <strong>Apple</strong> FastViT: A fast hybrid vision transformer using structural reparameterization. </li>
+</ul>
+</li>
+</ul>
+<h4 id="diffusion-based-action-expert">Diffusion-Based Action Expert.</h4>
+<ul>
+<li>The action expert <span class="arithmatex">\(E_\theta\)</span> predicts an action chunk <span class="arithmatex">\(A_t\)</span> conditioned on the multimodal features produced by the VLM backbone. <ul>
+<li>Following diffusion-style action modeling [23, 12], we instantiate <span class="arithmatex">\(E_\theta\)</span> as a conditional <strong>Flow Matching Transformer</strong> [6] and train it using the objective</li>
+<li>[23] <strong>Meta</strong> Flow matching for generative modeling.</li>
+<li>[12] <strong>Stability AI</strong> Scaling rectified flow transformers for high-resolution image synthesis.</li>
+<li>[6] Chelsea Finn. <strong><span class="arithmatex">\(\pi_0\)</span>: A Vision-Language-Action flow model for general robot control</strong></li>
+</ul>
+</li>
+</ul>
+<div class="arithmatex">\[
+\text{\color{blue} Training: Flow Matching Loss} \\[5pt]
+L(\theta) = \mathbb{E}_{ t\sim \mathcal{U}(0, 1),\; x_0 \sim \mathcal{N}(0, I),\; x_1 \sim p_\text{data} } \| v_\theta(x_t, t) - (x_1-x_0) \|^2 \\[5pt]
+x_t := (1 - t) x_0 + t x_1 = x_0 + t (x_1 - x_0) \\[10pt]
+\text{input: } x_t, t \qquad
+\text{model: } v_\theta(\cdot) \qquad
+\text{target: } x_1 - x_0 \\[10pt]
+\text{\color{blue} Inference: Numerical Integration} \\[5pt]
+x_1 = x_0 + \int_0^1 v_\theta(x_t, t) \; dt 
+\]</div>
+<div class="arithmatex">\[ L^\tau(\theta) = \mathbb{E}_{ \epsilon \sim \mathcal{N}(0, I), \; p(A_t|f_t) } \|
+    E_\theta(A_t^\tau, O_t) - (A_t - \epsilon)
+\|^2 \\[10pt]
+A_t^\tau := (1-\tau) \epsilon + \tau A_t   \]</div>
+<ul>
+<li>where superscript <span class="arithmatex">\(\tau \in [0, 1]\)</span> denotes flow matching timesteps.</li>
+<li><span class="arithmatex">\(f_t\)</span> represents the VLM features extracted from <span class="arithmatex">\(O_t\)</span></li>
+<li>Under this objective, <span class="arithmatex">\(E_\theta(A_t^\tau, O_t)\)</span> learns to match the <strong>denoising vector field</strong> <span class="arithmatex">\(\epsilon - A_t\)</span></li>
+</ul>
+<h3 id="c-continuous-inference">C. Continuous Inference</h3>
+<ul>
+<li>
+<p>At time step <span class="arithmatex">\(t\)</span>, the VLA model <span class="arithmatex">\(M\)</span> predicts an action sequence <span class="arithmatex">\(A_t = \{a_t, ..., a_{t+n}\}\)</span>. </p>
+</li>
+<li>
+<p><strong>In existing VLA models [18, 6, 15], a new inference is triggered only after the previously predicted action sequence <span class="arithmatex">\(A_t\)</span> is fully executed.</strong> </p>
+<ul>
+<li>This serializes inference and execution, introducing inter-chunk waiting that stalls control until the next action sequence is available and degrades responsiveness under dynamic object motion.</li>
+</ul>
+</li>
+<li>
+<p><strong>Under Continuous Inference, inference cycles are triggered as soon as the previous inference finishes, independent of whether the previously predicted action sequence has been exhausted</strong>, as shown in Figure 2b. </p>
+</li>
+<li>
+<p><strong>Let <span class="arithmatex">\(m\)</span> denote the inference delay, i.e., the number of timesteps between the start and completion of an inference cycle.</strong> </p>
+<ul>
+<li>Inference therefore completes at timesteps $t, t + m, t + 2m, ... $ where <span class="arithmatex">\(m\)</span> may vary across cycles; </li>
+<li>for clarity, we assume a constant <span class="arithmatex">\(m\)</span> in the formulation.</li>
+<li>During execution, actions from <span class="arithmatex">\(A_t\)</span> are executed continuously while the next action sequence <span class="arithmatex">\(A_{t+m}\)</span> is being inferred.</li>
+<li>We assume <span class="arithmatex">\(n &gt; m\)</span>, such that a new action sequence becomes available before the execution of the current sequence completes. </li>
+<li>Consequently, execution does not block on inference completion, eliminating inter-chunk waiting.</li>
+</ul>
+</li>
+</ul>
+<h3 id="d-latent-aware-action-streaming">D. Latent-aware Action Streaming</h3>
+<ul>
+<li>
+<p>As presented in Figure 2c, <strong>inference delay <span class="arithmatex">\(m\)</span> introduces temporal misalignment between predicted actions and the evolving environment</strong>, which manifests in two ways:</p>
+<ul>
+<li>Perception–Execute Gap: when inference is initiated at time <span class="arithmatex">\(t\)</span> to predict <span class="arithmatex">\(A_t\)</span>, the predicted actions become available only at <span class="arithmatex">\(t + m\)</span>, by which time the observation has evolved to <span class="arithmatex">\(O_{t+m}\)</span>. Consequently, actions <span class="arithmatex">\(\{a_t, ..., a_{t+m−1}\}\)</span> are no longer aligned with the current observation.</li>
+<li>Conflicts Between Overlapping Action Chunks: continuous inference allows a new action sequence <span class="arithmatex">\(A_{t+m}\)</span> to be generated before the execution of <span class="arithmatex">\(A_t\)</span> is complete, resulting in multiple candidate actions for the same execution timestep.</li>
+</ul>
+</li>
+<li>
+<p>Latent-aware Action Streaming resolves both issues through an explicit execution strategy. </p>
+<ul>
+<li>Specifically, actions in <span class="arithmatex">\(A_t\)</span> corresponding to timesteps earlier than <span class="arithmatex">\(t + m\)</span> are <strong>discarded as outdated</strong>, and execution proceeds with the subsequence <span class="arithmatex">\(\{a_{t+m}, ..., a_{t+n}\}\)</span>. </li>
+<li>For timesteps where <span class="arithmatex">\(A_t\)</span> and <span class="arithmatex">\(A_{t+m}\)</span> overlap, actions from the newer sequence <span class="arithmatex">\(A_{t+m}\)</span> are prioritized, overwriting those from <span class="arithmatex">\(A_t\)</span>, allowing execution to adapt promptly to the most recent environment state, particularly under dynamic object motion.</li>
+</ul>
+</li>
+</ul>
+<h2 id="iv-the-dynamic-object-manipulation-benchmark">IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK</h2>
+<h3 id="a-overview">A. Overview</h3>
+<ul>
+<li>Dynamic Object Manipulation (DOM) is the first large scale benchmark dedicated to dynamic object manipulation, addressing the lack of standardized datasets for evaluating robotic policies on moving objects. <ul>
+<li>DOM provides scalable data collection through fully automated pipelines in both simulation and the real world, producing 200K synthetic episodes and 2K real-world episodes, where teleoperation is ineffective due to human reaction limits under fast object motion. </li>
+<li>The benchmark organizes dynamic manipulation scenarios along structured interaction, perception, and generalization dimensions, enabling consistent and comparable evaluation across algorithms and robot embodiments.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-benchmark-dimensions">B. Benchmark Dimensions</h3>
+<ul>
+<li>
+<p>As illustrated in Figure 1c, DOM evaluates dynamic manipulation ability across three principal dimensions:</p>
+</li>
+<li>
+<p>Interaction. This dimension evaluates how effectively a policy responds to evolving object motion. </p>
+<ul>
+<li>Closed-loop reactivity, which measures how quickly the robot adjusts to objects moving at different speeds; </li>
+<li>Dynamic adaptation, where the policy must handle abrupt changes in motion such as direction shifts or unexpected disturbances; </li>
+<li>Long-horizon sequencing, which assesses whether the policy maintains coherent behavior over extended interactions and prioritizes actions as motion events unfold.</li>
+</ul>
+</li>
+<li>
+<p>Perception. This dimension evaluates how well a policy perceives and grounds visual and linguistic cues in dynamic environments. </p>
+<ul>
+<li>Visual understanding, which measures the ability to distinguish objects with similar shapes, textures, or materials; </li>
+<li>Spatial reasoning, which examines whether the policy can infer object positions and relative arrangements in cluttered or changing scenes; </li>
+<li>Motion perception, which assesses how accurately the policy interprets object motion cues such as speed and direction.</li>
+</ul>
+</li>
+<li>
+<p>Generalization. This dimension evaluates how robustly a policy transfers across novel objects, scenes, and motion patterns. </p>
+<ul>
+<li>Visual generalization, which measures adaptation to unseen shapes, appearances, and scene layouts; </li>
+<li>Motion generalization, which assesses whether the policy can handle new speed ranges, altered friction conditions, and trajectory patterns that differ from those observed during training; </li>
+<li>Disturbance Robustness, which tests the ability to maintain stable behavior under external perturbations such as unexpected pushes, collisions, or sensor noise.</li>
+</ul>
+</li>
+</ul>
+<h3 id="c-simulation-data-collection">C. Simulation Data Collection</h3>
+<p><img alt="" src="../../imgs/02_NTU_DynamicVLA_data.png" /></p>
+<ul>
+<li>
+<p>Our simulation framework is designed with two core objectives: </p>
+<ul>
+<li>to rapidly scale up dynamic manipulation data for pretraining VLA policies, and </li>
+<li>to produce a reproducible and standardized benchmark that supports fair and consistent evaluation across future work. </li>
+</ul>
+</li>
+<li>
+<p>As shown in Figure 3, we construct a high-throughput pipeline in <strong>Isaac Sim</strong> [31] that unifies scene and object sampling, multi-view perception, realtime object-state acquisition, and closed-loop control.</p>
+</li>
+<li>
+<p>Objects and Dynamics. </p>
+<ul>
+<li>We include 206 everyday objects from <strong>Objeverse</strong> [11] spanning fruits, vegetables, containers, and other household items, with texture augmentation for additional visual diversity. </li>
+<li>Object speeds are sampled from 0–0.75 m/s (with some remaining static) and friction coefficients from 0.5–1.5. </li>
+<li>Multiple objects are placed in the workspace, allowing natural interactions during motion.</li>
+</ul>
+</li>
+<li>
+<p>Scenes and Sensors. </p>
+<ul>
+<li>We derive 2.8K diverse 3D scenes from 3D-FRONT [13], curated to ensure a clean, flat tabletop and to remove self-occluding or unrealistic object placements. </li>
+<li>Each scene is instrumented with three cameras: <ul>
+<li>two third-person views placed 1 m from the robot (front at 0.6 m height and left at 0.35 m height) and </li>
+<li>a wrist-mounted camera. </li>
+</ul>
+</li>
+<li>All cameras capture RGB frames at 25 FPS with a 480×360 resolution, using a 2.3 mm focal length aligned with <strong>Azure Kinect</strong> intrinsics. </li>
+<li>We randomize scene illumination by sampling color temperature from 4000–8000 K, light intensity from 150–750 lm, and light source positions from <span class="arithmatex">\(x \in [−50, 50] m, y \in [−50, 50] m, z \in [10, 20] m\)</span>.</li>
+</ul>
+</li>
+<li>
+<p>Object State Acquisition. </p>
+<ul>
+<li>The simulator maintains ground truth 6D object states throughout each episode.</li>
+<li>Isaac Sim randomizes physical parameters and propagates object motion via the physics engine, from which we extract per-object position, rotation, and linear/angular velocity at 25 Hz. </li>
+<li>The resulting noise-free trajectories provide the controller with real-time motion cues for short-horizon prediction and state transitions. </li>
+<li>This interface is later mirrored in the real-world pipeline to ensure consistent behavior across embodiments.</li>
+</ul>
+</li>
+<li>
+<p>State Machine Controller. </p>
+<ul>
+<li>The state machine consumes realtime 6D object pose, velocity, and the 6D pose of a static target object, and executes a four-stage closed-loop routine:<ul>
+<li>Approach Object: predict near-future object motion (about 0.23 s) and position the end effector 10 cm above the predicted location with continuous updates. </li>
+<li>Grasp &amp; Lift: descend, stabilize residual motion, and secure a grasp before lifting. </li>
+<li>Approach Target &amp; Place: move toward the placement pose derived from the target object’s 6D geometry and place the object accurately. </li>
+<li>Reset: return to the home pose to begin the next episode. This design produces reactive, prediction informed trajectories, enabling scalable generation of realistic dynamic manipulation episodes.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="d-real-world-data-collection">D. Real-World Data Collection</h3>
+<ul>
+<li>
+<p>Teleoperation is widely used for collecting demonstrations, but it breaks down for dynamic manipulation: human reaction is too slow to track fast-moving objects, even with homo-morphic interfaces. </p>
+<ul>
+<li>Meanwhile, the real world lacks ground-truth 6D object states, making the simulator’s closed-loop pipeline impossible to replicate directly. </li>
+<li>To address both issues, we build a real-world “simulator”—a high-frequency perception and state-estimation system that approximates simulator-style object states using commodity RGB-D sensors and enables fast (≈10 s per episode), teleoperation-free collection of large scale dynamic manipulation data that runs identically on Franka and PiPER for consistent multi-embodiment coverage.</li>
+</ul>
+</li>
+<li>
+<p>Environment Setup. </p>
+<ul>
+<li>We use 25 physical household objects spanning containers, food items, bottles, and tools, with multiple objects per episode, including pick/place targets and natural distractors. </li>
+<li>The scene is captured by two synchronized third-person RGB cameras (Azure Kinect DK) placed at front and side viewpoints, along with a wrist-mounted RealSense D435i, matching the simulation geometry and supplying synchronized, calibrated RGB streams for state estimation.</li>
+</ul>
+</li>
+<li>
+<p>Object State Acquisition. </p>
+<ul>
+<li>To replicate the simulator’s state interface, we build a “real-time” simulator that outputs 6D object pose and velocity. </li>
+<li>EfficientTAM [51] supplies per-view object masks from the synchronized third-person cameras, and a geometric triangulation step recovers the 3D centroid. </li>
+<li>Linear and angular velocities are obtained by fitting motion over a short temporal window, producing a smooth, low-latency 6D state stream compatible with the controller’s requirements.</li>
+</ul>
+</li>
+<li>
+<p>State-machine Controller. </p>
+<ul>
+<li>The same four-stage controller used in simulation runs unchanged in the real world, consuming the estimated 6D object states and target pose.</li>
+</ul>
+</li>
+</ul>
+<h2 id="v-experiments">V. EXPERIMENTS</h2>
+<h2 id="vi-discussion-and-future-work">VI. DISCUSSION AND FUTURE WORK</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
