@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../01_pi_0/">
+        <link rel="prev" href="../../../2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/">
       
       
-        <link rel="next" href="../03_NTU_VLANeXt/">
+        <link rel="next" href="../02_NTU_DynamicVLA/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>2 2026 NTU DynamicVLA - NeuroAI Research</title>
+        <title>1 2024 \(\pi_0\) - NeuroAI Research</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-2026-ntu-dynamicvla" class="md-skip">
+        <a href="#1-2024-pi_0" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2 2026 NTU DynamicVLA
+              1 2024 \(\pi_0\)
             
           </span>
         </div>
@@ -1237,34 +1237,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../01_pi_0/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1 2024 \(\pi_0\)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1284,7 +1256,7 @@
   <span class="md-ellipsis">
     
   
-    2 2026 NTU DynamicVLA
+    1 2024 \(\pi_0\)
   
 
     
@@ -1302,7 +1274,7 @@
   <span class="md-ellipsis">
     
   
-    2 2026 NTU DynamicVLA
+    1 2024 \(\pi_0\)
   
 
     
@@ -1358,14 +1330,47 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="II. RELATED WORK">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. OVERVIEW
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-the-pi_0-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV. THE \(\pi_0\) MODEL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-data-collection-and-training-recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V. DATA COLLECTION AND TRAINING RECIPE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="V. DATA COLLECTION AND TRAINING RECIPE">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vision-language-action-models" class="md-nav__link">
+  <a href="#a-pre-training-and-post-training" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Vision-Language-Action Models.
+        A. Pre-training and post-training
       
     </span>
   </a>
@@ -1373,10 +1378,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#robot-learning-datasets" class="md-nav__link">
+  <a href="#b-language-and-high-level-policies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Robot Learning Datasets.
+        B. Language and high-level policies
       
     </span>
   </a>
@@ -1384,10 +1389,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#robot-dynamic-manipulation" class="md-nav__link">
+  <a href="#c-robot-system-details" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Robot Dynamic Manipulation.
+        C. Robot system details
       
     </span>
   </a>
@@ -1400,22 +1405,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-the-dynamic-vla-model" class="md-nav__link">
+  <a href="#vi-experimental-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        III. THE DYNAMIC-VLA MODEL
+        VI. EXPERIMENTAL EVALUATION
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="III. THE DYNAMIC-VLA MODEL">
+    <nav class="md-nav" aria-label="VI. EXPERIMENTAL EVALUATION">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-problem-formulation" class="md-nav__link">
+  <a href="#a-evaluating-the-base-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. Problem Formulation
+        A. Evaluating the base model
       
     </span>
   </a>
@@ -1423,22 +1428,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#b-the-dynamicvla-architecture" class="md-nav__link">
+  <a href="#b-following-language-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B. The DynamicVLA Architecture
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="B. The DynamicVLA Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visionlanguage-backbone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Vision–Language Backbone.
+        B. Following language commands
       
     </span>
   </a>
@@ -1446,26 +1439,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#diffusion-based-action-expert" class="md-nav__link">
+  <a href="#c-learning-new-dexterous-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Diffusion-Based Action Expert.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-continuous-inference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        C. Continuous Inference
+        C. Learning new dexterous tasks
       
     </span>
   </a>
@@ -1473,10 +1450,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#d-latent-aware-action-streaming" class="md-nav__link">
+  <a href="#d-mastering-complex-multi-stage-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        D. Latent-aware Action Streaming
+        D. Mastering complex multi-stage tasks
       
     </span>
   </a>
@@ -1489,82 +1466,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-the-dynamic-object-manipulation-benchmark" class="md-nav__link">
+  <a href="#vii-discussion-limitations-and-future-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A. Overview
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-benchmark-dimensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        B. Benchmark Dimensions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-simulation-data-collection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        C. Simulation Data Collection
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#d-real-world-data-collection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        D. Real-World Data Collection
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v-experiments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        V. EXPERIMENTS
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-discussion-and-future-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        VI. DISCUSSION AND FUTURE WORK
+        VII. DISCUSSION, LIMITATIONS, AND FUTURE WORK
       
     </span>
   </a>
@@ -1575,6 +1480,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_NTU_DynamicVLA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2026 NTU DynamicVLA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2508,14 +2441,47 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="II. RELATED WORK">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. OVERVIEW
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-the-pi_0-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV. THE \(\pi_0\) MODEL
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-data-collection-and-training-recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V. DATA COLLECTION AND TRAINING RECIPE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="V. DATA COLLECTION AND TRAINING RECIPE">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vision-language-action-models" class="md-nav__link">
+  <a href="#a-pre-training-and-post-training" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Vision-Language-Action Models.
+        A. Pre-training and post-training
       
     </span>
   </a>
@@ -2523,10 +2489,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#robot-learning-datasets" class="md-nav__link">
+  <a href="#b-language-and-high-level-policies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Robot Learning Datasets.
+        B. Language and high-level policies
       
     </span>
   </a>
@@ -2534,10 +2500,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#robot-dynamic-manipulation" class="md-nav__link">
+  <a href="#c-robot-system-details" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Robot Dynamic Manipulation.
+        C. Robot system details
       
     </span>
   </a>
@@ -2550,22 +2516,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iii-the-dynamic-vla-model" class="md-nav__link">
+  <a href="#vi-experimental-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        III. THE DYNAMIC-VLA MODEL
+        VI. EXPERIMENTAL EVALUATION
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="III. THE DYNAMIC-VLA MODEL">
+    <nav class="md-nav" aria-label="VI. EXPERIMENTAL EVALUATION">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#a-problem-formulation" class="md-nav__link">
+  <a href="#a-evaluating-the-base-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A. Problem Formulation
+        A. Evaluating the base model
       
     </span>
   </a>
@@ -2573,22 +2539,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#b-the-dynamicvla-architecture" class="md-nav__link">
+  <a href="#b-following-language-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B. The DynamicVLA Architecture
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="B. The DynamicVLA Architecture">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#visionlanguage-backbone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Vision–Language Backbone.
+        B. Following language commands
       
     </span>
   </a>
@@ -2596,26 +2550,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#diffusion-based-action-expert" class="md-nav__link">
+  <a href="#c-learning-new-dexterous-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Diffusion-Based Action Expert.
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-continuous-inference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        C. Continuous Inference
+        C. Learning new dexterous tasks
       
     </span>
   </a>
@@ -2623,10 +2561,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#d-latent-aware-action-streaming" class="md-nav__link">
+  <a href="#d-mastering-complex-multi-stage-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        D. Latent-aware Action Streaming
+        D. Mastering complex multi-stage tasks
       
     </span>
   </a>
@@ -2639,82 +2577,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#iv-the-dynamic-object-manipulation-benchmark" class="md-nav__link">
+  <a href="#vii-discussion-limitations-and-future-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#a-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A. Overview
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#b-benchmark-dimensions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        B. Benchmark Dimensions
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-simulation-data-collection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        C. Simulation Data Collection
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#d-real-world-data-collection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        D. Real-World Data Collection
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v-experiments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        V. EXPERIMENTS
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vi-discussion-and-future-work" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        VI. DISCUSSION AND FUTURE WORK
+        VII. DISCUSSION, LIMITATIONS, AND FUTURE WORK
       
     </span>
   </a>
@@ -2738,408 +2604,355 @@
 
 
 
-<h1 id="2-2026-ntu-dynamicvla">2 2026 NTU DynamicVLA</h1>
+<h1 id="1-2024-pi_0">1 2024 <span class="arithmatex">\(\pi_0\)</span></h1>
 <ul>
-<li><a href="https://arxiv.org/pdf/2601.22153">DynamicVLA: A Vision-Language-Action Model for Dynamic Object Manipulation</a></li>
+<li><a href="https://arxiv.org/pdf/2410.24164"><span class="arithmatex">\(\pi_0\)</span>: A Vision-Language-Action Flow Model for General Robot Control</a></li>
 </ul>
 <h2 id="abstract">Abstract</h2>
 <ul>
-<li>
-<p>Manipulating dynamic objects remains an open challenge for Vision-Language-Action (VLA) models, which, despite strong generalization in static manipulation, struggle in dynamic scenarios requiring rapid perception, temporal anticipation, and continuous control. </p>
-</li>
-<li>
-<p>We present DynamicVLA, a framework for dynamic object manipulation that integrates temporal reasoning and closed-loop adaptation through three key designs: </p>
-<ul>
-<li>a compact 0.4B VLA using a <strong>convolutional vision encoder</strong> for spatially efficient, structurally faithful encoding, enabling fast multimodal inference; </li>
-<li>Continuous Inference, enabling overlapping reasoning and execution for lower latency and timely adaptation to object motion; and </li>
-<li>Latent-aware Action Streaming, which bridges the perception–execution gap by enforcing temporally aligned action execution. </li>
+<li>Robot learning holds tremendous promise to unlock the full potential of flexible, general, and dexterous robot systems, as well as to address some of the deepest questions in artificial intelligence. <ul>
+<li>However, bringing robot learning to the level of generality required for effective real-world systems faces major obstacles in terms of data, generalization, and robustness. </li>
+<li>In this paper, we discuss how generalist robot policies (i.e., robot foundation models) can address these challenges, and how we can design effective generalist robot policies for complex and highly dexterous tasks. </li>
+<li>We propose a novel <strong>flow matching</strong> architecture built on top of a <strong>pre-trained vision-language model (VLM)</strong> to inherit Internet-scale semantic knowledge. </li>
+<li>We then discuss how this model can be trained on a large and diverse dataset from multiple dexterous robot platforms, including single-arm robots, dual-arm robots, and mobile manipulators. </li>
+<li>We evaluate our model in terms of its ability to perform tasks via direct prompting, follow language instructions from people and from a high-level VLM policy, and its ability to acquire new skills via fine-tuning. </li>
+<li>Our results cover a wide variety of tasks, such as laundry folding, table cleaning, and assembling boxes.</li>
 </ul>
-</li>
-<li>
-<p>To fill the missing foundation of dynamic manipulation data, we introduce the Dynamic Object Manipulation (DOM) benchmark, built from scratch with an auto data collection pipeline that efficiently gathers 200K synthetic episodes across 2.8K scenes and 206 objects, and enables fast collection of 2K real-world episodes without teleoperation (遥控操作). </p>
-</li>
-<li>
-<p>Extensive evaluations demonstrate remarkable improvements in response speed, perception, and generalization, positioning DynamicVLA as a unified framework for general dynamic object manipulation across embodiments.</p>
 </li>
 </ul>
 <h2 id="i-introduction">I. INTRODUCTION</h2>
+<blockquote>
+<ul>
+<li>A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly.</li>
+<li>Specialization is for insects.</li>
+<li>Robert A. Heinlein, Time Enough for Love</li>
+</ul>
+</blockquote>
 <ul>
 <li>
-<p>Dynamic object manipulation is a fundamental yet under-explored frontier in robotics. </p>
+<p>Artificial intelligence systems come in all shapes and sizes, from highly specialized systems that solve complex problems inaccessible to the human mind, such as predicting the conformation of a protein, to systems that can produce lifelike high-resolution images or videos based on textual prompts. </p>
 <ul>
-<li>Real-world interaction often involves objects in motion, such as handing, repositioning, or stabilizing items, requiring robots to perceive, predict, and act under rapidly changing conditions. </li>
-<li>Even minor latency may cause task failure, making dynamic manipulation a far more challenging problem than static grasping.</li>
+<li>However, the axis along which human intelligence most outpaces machine intelligence is versatility: the ability to solve diverse tasks situated in varied physical environments, while responding intelligently to environmental constraints, language commands, and unexpected perturbations. </li>
+<li>Perhaps the most tangible progress toward this kind of versatility in AI can be seen in large language- and vision-language models: systems that are pre-trained on large and very diverse corpora of images and text from the web, and then fine-tuned (“aligned”) using more carefully curated datasets meant to induce the desired pattern of behavior and responsiveness. </li>
+<li>While such models have been shown to exhibit broad instruction-following and problem-solving abilities, they are not truly situated in a physical world the way that people are, and their understanding of physical interaction is based entirely on abstract descriptions. </li>
+<li>If such methods are to make tangible progress toward AI systems that exhibit the kind of physically situated versatility that people possess, we will need to train them on physically situated data — that is, data from embodied robot agents.</li>
 </ul>
 </li>
 <li>
-<p>To date, robots have been evaluated on moving targets such as throwing, soccer, and table tennis, relying on reactive control and handcrafted perception pipelines that operate only in structured settings. </p>
+<p>Flexible and general-purpose models that can be tasked to perform a variety of robot behaviors have tremendous practical ramifications, but they may also offer solutions to some of the toughest challenges facing robot learning today, such as availability of data, generalization, and robustness. </p>
 <ul>
-<li>Recent works such as <code>DBC-TFP</code> and <code>GEM</code> extend manipulation to moving objects but remain limited to predictable, conveyor-belt–like motion. </li>
-<li>Meanwhile, concurrent VLA models, including <code>RDT2</code>, <code>RTVLA</code>, and <code>VLASH</code>, demonstrate real-time interaction with fast-moving targets, but these tasks tolerant to timing and spatial error. </li>
-<li>For example, a paddle can return a ball over a wide area, so the interaction does not require the precise 6DoF control needed for dynamic object manipulation.</li>
-<li>However, open-ended dynamic manipulation, which involves uncertain motion, precise contact, and tight perception–action alignment, remains largely unsolved.</li>
+<li>In natural language and computer vision, general-purpose foundation models that are pre-trained on diverse multi-task data tend to outperform narrowly tailored and specialized solutions. </li>
+<li>For example, if the goal is to recognize birds in photographs, it is likely more expedient to pre-train on many different image-language associations and then fine-tune or prompt for the bird recognition task, than it is to train on only bird recognition data. </li>
+<li>Similarly, we may find that for effective specialized robot systems, it is more effective to first pre-train on highly diverse robot data, and then fine-tune or prompt for the desired task. </li>
+<li>This can resolve the data scarcity challenge, because many more sources of data are available to a generalist model — including data from other tasks, other robots, or even non-robot sources — and it may resolve robustness and generalization challenges, because the diverse data exhibits a greater coverage of observations and actions, providing a variety of scenes, corrections, and recovery behaviors that might not be present in more narrow specialized data. </li>
+<li>Thus, adopting a large-scale pre-training approach to robot learning has the potential to address many of the field’s challenges and make practical learning-enabled robots a reality, while at the same time furthering our understanding of the deepest problems in artificial intelligence.</li>
 </ul>
 </li>
 <li>
-<p>While VLA models have shown strong performance on static manipulation, where object states remain fixed during inference, latency plays only a minor role in such settings. </p>
+<p>However, developing such generalist robot policies — i.e., robot foundation models — involves a number of major challenges. </p>
 <ul>
-<li>Early VLAs relied on 3B–7B vision-language backbones and still achieved high success rates despite slow inference.</li>
-<li>More recent designs improve efficiency by reducing model size and increasing throughput while maintaining comparable performance. </li>
-<li>However, as illustrated in Figure 1a, dynamic manipulation imposes far stricter demands because inference delays de-synchronize perception from action and require models to anticipate future object motion, a capability not addressed by prior VLAs for manipulation.</li>
+<li>First, any such research must be done at a very large scale, because the full benefits of large-scale pre-training are often not present at smaller scales. </li>
+<li>Second, it requires developing the right model architectures that can effectively make use of diverse data sources, while at the same time being able to represent the intricate and subtle behaviors necessary to interact with complex physical scenes. </li>
+<li>Third, it requires the right training recipe. This is perhaps the most important ingredient, as much of the recent progress with large models in NLP and computer vision has relied heavily on delicate strategies for curating pre-training and post-training data.</li>
 </ul>
 </li>
 <li>
-<p>To address these issues, we propose DynamicVLA, a framework for dynamic object manipulation that integrates temporal reasoning and closed-loop adaptation through three key designs: </p>
+<p>In this paper, we present a prototype model and learning framework, which we call <span class="arithmatex">\(\pi_0\)</span>, that illustrates how each of these three bottlenecks could be tackled. </p>
 <ul>
-<li>a compact 0.4B-parameter VLA that adopts a <strong>convolutional vision encoder</strong> for efficient spatial compression and stronger structural preservation, enabling significantly faster and more compact inference in dynamic manipulation settings; </li>
-<li>Continuous Inference, a pipelined execution scheme that overlaps prediction and action execution to eliminate inter-chunk waiting and maintain a continuous action stream under dynamic object motion; and </li>
-<li>Latent-aware Action Streaming, a latency-aware execution mechanism that restores temporal alignment by discarding outdated actions and prioritizing the most recent predictions at each timestep, ensuring temporally consistent control despite inference delay.</li>
+<li>We illustrate our model and system in Figure 1. </li>
+<li>To incorporate diverse data sources, we begin by utilizing a pre-trained vision-language model (VLM) to import Internet-scale experience. </li>
+<li>By basing our model on a VLM, we inherit the general knowledge, semantic reasoning, and problem-solving abilities of language-and vision-language models. </li>
+<li>We then further train our model to incorporate robot actions, turning it into a vision-language-action (VLA) model. </li>
+<li>In order to make it feasible to utilize a variety of diverse robot data sources, we employ <strong>cross-embodiment training</strong>, where data from many robot types is combined into the same model. <ul>
+<li>These different robot types have different configuration spaces and action representations, including single and dual-arm systems, as well as mobile manipulators. </li>
+</ul>
+</li>
+<li>Additionally, in order to make it possible to perform highly dexterous and intricate physical tasks, we use an <strong>action chunking</strong> architecture with <strong>flow matching</strong> (a variant of diffusion) to represent complex continuous action distributions. </li>
+<li>This enables our model to control robots at frequencies of up to <strong>50 Hz</strong> for dexterous tasks such as laundry folding (see Figure 1). </li>
+<li>To combine flow matching with VLMs, we use a novel action expert that augments the standard VLM with flow-based outputs.</li>
 </ul>
 </li>
 <li>
-<p>Since existing robotic datasets overwhelmingly capture static scenes and offer no large-scale foundation for dynamic object manipulation, we construct the Dynamic Object Manipulation (DOM) benchmark with a fully automated data collection pipeline validated across multiple robot embodiments, including Franka Emika Panda and AgileX PiPER. </p>
+<p>As with language models, the architecture of our model is only part of our method. </p>
 <ul>
-<li>In simulation, <strong>Isaac Sim</strong> and our task-driven state machine controller use real-time 6D object pose and velocity to drive the robot to manipulate moving objects, producing 200K episodes across 2.8K diverse simulation-ready 3D scenes and 206 objects. </li>
-<li>Teleoperation is fundamentally ineffective for real-world dynamic manipulation, since fast-moving objects routinely exceed human reaction limits. </li>
-<li>To address this, we build a real-world “simulator” pipeline that performs 3D object tracking using dual RGB views to estimate 6D pose and infer velocity, and then drives the same state-machine controller to execute autonomous trials, with humans only initiating object motion when necessary.</li>
+<li>In order to flexibly and robustly perform complex tasks, we need the right training recipe.</li>
+<li>Our recipe mirrors the pre-training/post-training separation commonly seen in exa-scale language- and image-language models, where the model is first pre-trained on a very large and diverse corpus, and then fine-tuned on more narrow and more carefully curated data to induce the desired pattern of behavior — in our case, dexterity, efficiency, and robustness.</li>
+<li>Intuitively, training only on high-quality data does not teach the model how to recover from mistakes, since mistakes are rarely seen in such data. </li>
+<li>Training on only lower-quality pretraining data does not teach the model to act efficiently and robustly. </li>
+<li>Combining both provides the desired behavior: the model attempts insofar as possible to act in a manner similar to the high-quality data, but still has a repertoire of recoveries and corrections that it can deploy in the case of a mistake.</li>
 </ul>
 </li>
 <li>
-<p>We extensively evaluate DynamicVLA across dynamic manipulation tasks, multiple robot embodiments, and both simulation and real-world settings, using the DOM benchmark together with 16 real-robot tasks. </p>
+<p>The contributions of our work consist of a novel generalist robot policy architecture based on VLM pre-training and flow matching, and an empirical investigation of pre-training/post-training recipes for such robot foundation models. </p>
 <ul>
-<li>Our evaluation examines the model’s limits in real-time responsiveness, adaptation to sudden changes in object motion, perceptual grounding of appearance, motion, and spatial descriptions, and generalization to unseen objects, novel scenes, and new motion regimes. </li>
-</ul>
-</li>
-<li>
-<p>In summary, the contributions of this work consist of </p>
-<ul>
-<li>a compact 0.4B-parameter VLA tailored for dynamic manipulation, </li>
-<li>together with two modules that enable real-time closed-loop control. </li>
-<li>Continuous Inference overlaps inference and execution to eliminate inter-chunk waiting, while Latent aware Action Streaming enforces temporal alignment between perception and action. </li>
-<li>We further introduce the DOM benchmark, which supplies large-scale dynamic manipulation data through automated pipelines in both simulation and the real world across multiple robot embodiments.</li>
+<li>We evaluate our model out of the box with language commands, with fine-tuning to downstream tasks, and in combination with a high-level semantic policy that outputs intermediate language commands to perform complex and temporally extended tasks.</li>
+<li>While our model and system make use of a variety of ideas presented in recent work, the combination of ingredients is novel, and the empirical evaluation demonstrates a level of dexterity and generality that goes significantly beyond previously demonstrated robot foundation models. </li>
+<li>We evaluate our approach by pre-training on over 10,000 hours of robot data, and fine-tuning to a variety of dexterous tasks, including laundry folding (see Figure 2), clearing a table, putting dishes in a microwave, stacking eggs into a carton, assembling a box, and bagging groceries.</li>
 </ul>
 </li>
 </ul>
 <h2 id="ii-related-work">II. RELATED WORK</h2>
-<h3 id="vision-language-action-models">Vision-Language-Action Models.</h3>
 <ul>
 <li>
-<p>Inspired by the success of</p>
+<p>Our work builds on recently proposed methods in large-scale robot learning, as well as multimodal language models.</p>
 <ul>
-<li>Large Language Models (LLMs) [36, 40, 1, 41] <ul>
-<li>[36] OpenAI. GPT-4 technical report. </li>
-<li>[40] Llama Team. The llama 3 herd of models. </li>
-<li>[1] DeepSeek AI. DeepSeek-R1: Incentivizing reasoning capability in LLMs via reinforcement learning. </li>
-<li>[41] Qwen Team. Qwen2.5-1M technical report. </li>
+<li>Our work is most closely related to recently proposed vision-language-action (VLA) models, which use pre-trained VLMs that are fine-tuned for robot control. </li>
+<li>Such models employ <strong>autoregressive discretization to represent actions in a manner analogous to text tokens.</strong> </li>
+<li>In contrast, our model employs a novel design that fine-tunes a VLM to produce actions via flow matching, a variant of diffusion.</li>
+<li>This allows us to handle high-frequency action chunks (up to 50 Hz) and highly dexterous tasks, which we show pose a major challenge for prior autoregressive VLAs. </li>
+<li>This resembles a number of recent works on diffusion models for action generation. <ul>
+<li>In contrast to these works, our model uses a pre-trained VLM backbone. </li>
 </ul>
 </li>
-<li>Vision Language Models (VLMs) [25, 26, 42], <ul>
-<li>[25] Haotian Liu. Visual instruction tuning.</li>
-<li>[26] Haotian Liu. Improved baselines with visual instruction tuning.</li>
-<li>[42] Qwen Team. Qwen2.5-VL technical report.</li>
-</ul>
-</li>
+<li>Our contribution is also fundamentally integrative, focusing on a framework for robot foundation models, including not only the model architecture itself but also a pre-training recipe, pre-training and post-training phases, and a range of real-world experiments.</li>
 </ul>
 </li>
 <li>
-<p>Vision-LanguageAction (VLA) models extend VLMs with action generation.</p>
+<p>Outside of robot control, many models have been proposed that combine pre-trained language models with diffusion, including models that specifically hybridize diffusion and autoregressive large language models. </p>
 <ul>
-<li><strong>Transformer-based methods</strong> [57, 7] use Transformers to model state-action-reward sequences. <ul>
-<li>[57] Sergey Levine. Learning fine-grained bimanual manipulation with low-cost hardware.</li>
-<li>[7] Chelsea Finn. RT-1: robotics transformer for real world control at scale. </li>
-</ul>
-</li>
-<li><strong>LLM/VLM-based methods</strong> [60, 17] treat VLA tasks as sequence-to-sequence problems for action generation. <ul>
-<li>[60] RT-2: Vision-Language-Action models transfer web knowledge to robotic control. </li>
-<li>[17] Sergey Levine. OpenVLA: An open-source Vision-Language-Action model. </li>
-</ul>
-</li>
-<li><strong>Diffusion-based methods</strong> [9, 32] model policies as denoising diffusion models. <ul>
-<li>[9] Diffusion policy: Visuomotor policy learning via action diffusion.  </li>
-<li>[32] Chelsea Finn. Fine-tuning Vision-Language-Action models: Optimizing speed and success.</li>
-</ul>
-</li>
-<li><strong>LLM and diffusion model methods</strong> [14, 6] combine LLMs for representation and diffusion models for action generation. <ul>
-<li>[14] Sergey Levine. Octo: An open-source generalist robot policy. </li>
-<li>[6] Chelsea Finn. <strong><span class="arithmatex">\(\pi_0\)</span>: A Vision-Language-Action flow model for general robot control.</strong></li>
-</ul>
-</li>
-<li><strong>Video generation with inverse kinematics methods</strong> [53, 49, 37] generate motion sequences and convert them into actions. <ul>
-<li>[53] Pieter Abbeel. Learning interactive real-world simulators. </li>
-<li>[49] Unleashing large-scale video generative pretraining for visual robot manipulation.</li>
-<li>[37] VideoWorld: Exploring knowledge learning from unlabeled videos. </li>
-</ul>
-</li>
+<li>Such models are typically concerned with <strong>image generation</strong>, but our action generation model builds on a number of previously proposed concepts. </li>
+<li>Like Zhou et al., we train our model via a diffusion-style (flow matching) loss applied on individual sequence elements, in lieu of the standard cross-entropy loss for decoder-only transformers. </li>
+<li>Like Liu et al., we use a separate set of weights for the tokens corresponding to diffusion. </li>
+<li><strong>Incorporating these concepts into a VLA model, we introduce what to our knowledge is the first flow matching VLA that produces high-frequency action chunks for dexterous control.</strong></li>
 </ul>
 </li>
 <li>
-<p>However, existing VLA models often suffer from <strong>slow inference speeds</strong>, limiting their use in scenarios requiring precise or rapid execution.</p>
-</li>
-</ul>
-<h3 id="robot-learning-datasets">Robot Learning Datasets.</h3>
+<p>Our work also builds on a rich history of prior works on large-scale robot learning. </p>
 <ul>
-<li>Real-world datasets [28, 45, 35, 50] provide high-fidelity interactions but are costly and hard to scale, while simulated datasets [30, 24, 20, 21, 33] offer scalability yet suffer from the sim-to-real gap. </li>
-<li>Most benchmarks focus on simple tabletop manipulation (e.g., pick-and-place, pushing) with limited task diversity, though recent work explores long-horizon [24, 55], language-conditioned [58, 16], and tactile-rich [52, 2] settings. </li>
-<li>Generative models [34, 47, 53, 48] introduce interactive elements but remain constrained by artifacts, low frame rates, and memory. </li>
-<li>Despite progress in standardization and multi-embodiment learning, current datasets lack dynamic objects, limiting applicability to environments with independent motion.</li>
-</ul>
-<h3 id="robot-dynamic-manipulation">Robot Dynamic Manipulation.</h3>
-<ul>
-<li>Robotic manipulation has been studied largely in static settings, and existing methods for moving objects remain task-specific or rely on predictable motion. <ul>
-<li>Approaches such as DBC-TFP [56] and GEM [22] operate mainly in structured, conveyor-like scenarios. </li>
-<li>Concurrent VLA methods, including RDT-2 [43], RTVLA [27], and VLASH [39], demonstrate real-time interaction with fast moving targets, but these interactions permit large contact margins and do not involve precise 6DoF manipulation. </li>
-<li>Consequently, general dynamic manipulation under uncertain motion and fine contact constraints remains under-explored.</li>
-</ul>
-</li>
-</ul>
-<h2 id="iii-the-dynamic-vla-model">III. THE DYNAMIC-VLA MODEL</h2>
-<p><img alt="" src="../../imgs/02_NTU_DynamicVLA.png" /></p>
-<h3 id="a-problem-formulation">A. Problem Formulation</h3>
-<ul>
-<li>
-<p>We study dynamic object manipulation, where a robot must manipulate objects whose states evolve continuously during perception, reasoning, and execution. </p>
-</li>
-<li>
-<p>At time step <span class="arithmatex">\(t\)</span>, the VLA model <span class="arithmatex">\(M\)</span> receives </p>
-<ul>
-<li>a temporal window of visual observations <span class="arithmatex">\(O_t = \{o_{t−k}, ... , o_t\}\)</span>, </li>
-<li>a language instruction <span class="arithmatex">\(L_t\)</span>, and </li>
-<li>its proprioceptive (本体感受的) state <span class="arithmatex">\(P_t\)</span>, </li>
-</ul>
-</li>
-<li>and predicts <ul>
-<li>an action sequence <span class="arithmatex">\(A_t = \{a_t, ..., a_{t+n}\}\)</span>, i.e., </li>
-</ul>
-</li>
-</ul>
-<div class="arithmatex">\[ A_t = M(O_t,L_t, P_t) \]</div>
-<ul>
-<li>The physical environment includes <ul>
-<li>a latent object state <span class="arithmatex">\(s_t\)</span>, describing the object’s 6D pose and motion.</li>
-<li>Crucially, object motion does not pause during inference: while the model reasons over <span class="arithmatex">\(O_t\)</span>, the object transitions from <span class="arithmatex">\(s_t\)</span> to <span class="arithmatex">\(s_{t+m}\)</span>, where <strong><span class="arithmatex">\(m\)</span> denotes inference latency</strong>, leading to potential misalignment between perception and execution.</li>
-</ul>
-</li>
-</ul>
-<h3 id="b-the-dynamicvla-architecture">B. The DynamicVLA Architecture</h3>
-<ul>
-<li>Since inference latency directly limits the range of object motion in dynamic manipulation, we design a compact 0.4B VLA model for fast and spatially efficient multimodal reasoning, illustrated in Figure 2a.</li>
-</ul>
-<h4 id="visionlanguage-backbone">Vision–Language Backbone.</h4>
-<ul>
-<li>
-<p>We adopt SmolLM2-360M [3] as the <strong>language backbone</strong>, resulting in an overall tiny model size. </p>
-<ul>
-<li>Following SmolVLA [38], we truncate the <strong>language backbone</strong> to its first 16 transformer layers, significantly reducing inference latency with minimal impact on multimodal reasoning.</li>
-<li>[3] <strong>Hugging Face</strong> SmolLM2: when smol goes big - data-centric training of a small language model. </li>
-<li>[38] <strong>Hugging Face</strong> SmolVLA: A Vision-Language-Action model for affordable and efficient robotics. </li>
+<li>Early work in this area often utilized self-supervised or autonomous data collection, providing a tractable data source for simple tasks such as grasping or pushing, but without the complexity of more dexterous behaviors. </li>
+<li>More recently, a number of high-quality datasets have been collected for robot control that enable broad generalization, but typically for simpler tasks that consist of object relocation and rudimentary furniture manipulation (e.g., drawer opening). </li>
+<li>More dexterous tasks have been studied at a smaller scale, typically with 10s or 100s of training trajectories, equivalent to 10 or less hours. </li>
+<li>Since one of our aims is to study complex and dexterous behaviors, we utilize a much larger dataset, with about 10,000 hours of demonstrations, complemented by the open-source <a href="https://github.com/google-deepmind/open_x_embodiment">OXE dataset</a>. </li>
+<li>To our knowledge, this represents by far the largest robot learning experiment in terms of the amount of robot data. </li>
+<li>At this scale, we show that a more sophisticated pre-training/post-training recipe is highly effective — analogously to the recipes used for large language models, a pre-training phase endows our model with a broad base of knowledge, which is then refined in a post-training phase with higher-quality curated data to achieve the desired behavior.</li>
 </ul>
 </li>
 <li>
-<p><strong>Unlike existing VLMs that rely on transformer-based vision encoders, we employ a convolutional vision encoder, FastViT [44], which performs efficient spatial compression and avoids quadratic token growth when processing multi-frame visual inputs.</strong> </p>
+<p>The complexity of the tasks we illustrate goes significantly beyond prior work. </p>
 <ul>
-<li>[44] <strong>Apple</strong> FastViT: A fast hybrid vision transformer using structural reparameterization. </li>
+<li>While recent work has illustrated a number of more complex and dexterous behaviors, such as tying shoelaces or cooking shrimp, we show that our framework can learn very long tasks, sometimes tens of minutes in length, for behaviors that combine both physical dexterity and combinatorial complexity. </li>
+<li>For example, our laundry folding task requires the robot to manipulate a variety of clothing items that can start in any configuration, and fold multiple items in sequence. </li>
+<li>Our table bussing task requires discerning the class of novel objects (trash or dishes). </li>
+<li>We show that a single cross-embodiment model can be used as the base model for these tasks. </li>
+<li><strong>To our knowledge, our work demonstrates the longest dexterous tasks in the end-to-end robot learning literature.</strong></li>
 </ul>
 </li>
 </ul>
-<h4 id="diffusion-based-action-expert">Diffusion-Based Action Expert.</h4>
+<h2 id="iii-overview">III. OVERVIEW</h2>
 <ul>
-<li>The action expert <span class="arithmatex">\(E_\theta\)</span> predicts an action chunk <span class="arithmatex">\(A_t\)</span> conditioned on the multimodal features produced by the VLM backbone. <ul>
-<li>Following diffusion-style action modeling [23, 12], we instantiate <span class="arithmatex">\(E_\theta\)</span> as a conditional <strong>Flow Matching Transformer</strong> [6] and train it using the objective</li>
-<li>[23] <strong>Meta</strong> Flow matching for generative modeling.</li>
-<li>[12] <strong>Stability AI</strong> Scaling rectified flow transformers for high-resolution image synthesis.</li>
-<li>[6] Chelsea Finn. <strong><span class="arithmatex">\(\pi_0\)</span>: A Vision-Language-Action flow model for general robot control</strong></li>
+<li>We provide an outline of our model and training procedure in Figure 3. </li>
 </ul>
-</li>
-</ul>
-<div class="arithmatex">\[
-\text{\color{blue} Training: Flow Matching Loss} \\[5pt]
-L(\theta) = \mathbb{E}_{ t\sim \mathcal{U}(0, 1),\; x_0 \sim \mathcal{N}(0, I),\; x_1 \sim p_\text{data} } \| v_\theta(x_t, t) - (x_1-x_0) \|^2 \\[5pt]
-x_t := (1 - t) x_0 + t x_1 = x_0 + t (x_1 - x_0) \\[10pt]
-\text{input: } x_t, t \qquad
-\text{model: } v_\theta(\cdot) \qquad
-\text{target: } x_1 - x_0 \\[10pt]
-\text{\color{blue} Inference: Numerical Integration} \\[5pt]
-x_1 = x_0 + \int_0^1 v_\theta(x_t, t) \; dt 
-\]</div>
-<div class="arithmatex">\[ L^\tau(\theta) = \mathbb{E}_{ \epsilon \sim \mathcal{N}(0, I), \; p(A_t|f_t) } \|
-    E_\theta(A_t^\tau, O_t) - (A_t - \epsilon)
-\|^2 \\[10pt]
-A_t^\tau := (1-\tau) \epsilon + \tau A_t   \]</div>
-<ul>
-<li>where superscript <span class="arithmatex">\(\tau \in [0, 1]\)</span> denotes flow matching timesteps.</li>
-<li><span class="arithmatex">\(f_t\)</span> represents the VLM features extracted from <span class="arithmatex">\(O_t\)</span></li>
-<li>Under this objective, <span class="arithmatex">\(E_\theta(A_t^\tau, O_t)\)</span> learns to match the <strong>denoising vector field</strong> <span class="arithmatex">\(\epsilon - A_t\)</span></li>
-</ul>
-<h3 id="c-continuous-inference">C. Continuous Inference</h3>
+<p><img alt="" src="../../imgs/01_pi_0.png" /></p>
 <ul>
 <li>
-<p>At time step <span class="arithmatex">\(t\)</span>, the VLA model <span class="arithmatex">\(M\)</span> predicts an action sequence <span class="arithmatex">\(A_t = \{a_t, ..., a_{t+n}\}\)</span>. </p>
-</li>
-<li>
-<p><strong>In existing VLA models [18, 6, 15], a new inference is triggered only after the previously predicted action sequence <span class="arithmatex">\(A_t\)</span> is fully executed.</strong> </p>
+<p>In our training framework, we first assemble a pre-training mixture consisting of a weighted combination of our own dexterous manipulation datasets (Section V-C), collected on 7 different robot configurations for 68 different tasks, and the entire OXE dataset, which contains data from 22 robots. </p>
 <ul>
-<li>This serializes inference and execution, introducing inter-chunk waiting that stalls control until the next action sequence is available and degrades responsiveness under dynamic object motion.</li>
+<li>The pre-training phase (Section V-A) also uses diverse language labels, combining task names and segment annotations (fine-grained labels for sub-trajectories, typically about 2 seconds in length). </li>
+<li>The purpose of the pre-training phase is to train a base model that exhibits broad capabilities and generalization, but is not necessarily specialized for high performance on any one task. </li>
+<li>This base model can follow language commands and perform a variety of tasks at rudimentary proficiency. </li>
+<li>For complex and dexterous tasks, we then employ a post-training procedure (Section V-A), which uses high-quality curated data to adapt the model to specific downstream tasks. </li>
+<li>We study both efficient post-training with small to moderate amounts of data, and high-quality post-training with larger datasets for complex tasks such as laundry folding and mobile manipulation.</li>
 </ul>
 </li>
 <li>
-<p><strong>Under Continuous Inference, inference cycles are triggered as soon as the previous inference finishes, independent of whether the previously predicted action sequence has been exhausted</strong>, as shown in Figure 2b. </p>
-</li>
-<li>
-<p><strong>Let <span class="arithmatex">\(m\)</span> denote the inference delay, i.e., the number of timesteps between the start and completion of an inference cycle.</strong> </p>
+<p>Our model, which we describe in Section IV, is based on the <strong>PaliGemma vision-language model</strong>, which we then further train with our data mixture. </p>
 <ul>
-<li>Inference therefore completes at timesteps $t, t + m, t + 2m, ... $ where <span class="arithmatex">\(m\)</span> may vary across cycles; </li>
-<li>for clarity, we assume a constant <span class="arithmatex">\(m\)</span> in the formulation.</li>
-<li>During execution, actions from <span class="arithmatex">\(A_t\)</span> are executed continuously while the next action sequence <span class="arithmatex">\(A_{t+m}\)</span> is being inferred.</li>
-<li>We assume <span class="arithmatex">\(n &gt; m\)</span>, such that a new action sequence becomes available before the execution of the current sequence completes. </li>
-<li>Consequently, execution does not block on inference completion, eliminating inter-chunk waiting.</li>
+<li>To turn the base PaliGemma VLM into <span class="arithmatex">\(\pi_0\)</span>, we add action outputs that use flow matching to generate continuous action distributions. </li>
+<li>We describe this design in detail in the following section. </li>
+<li>Note that we use PaliGemma for convenience and because of its comparatively small size (which is useful for real-time control), but our framework is compatible with any base pre-trained VLM.</li>
 </ul>
 </li>
 </ul>
-<h3 id="d-latent-aware-action-streaming">D. Latent-aware Action Streaming</h3>
+<h2 id="iv-the-pi_0-model">IV. THE <span class="arithmatex">\(\pi_0\)</span> MODEL</h2>
 <ul>
 <li>
-<p>As presented in Figure 2c, <strong>inference delay <span class="arithmatex">\(m\)</span> introduces temporal misalignment between predicted actions and the evolving environment</strong>, which manifests in two ways:</p>
+<p>In this paper, we use the word “token” to refer to <strong>an input/output slot along the sequence dimension</strong>, whether the slot corresponds to </p>
 <ul>
-<li>Perception–Execute Gap: when inference is initiated at time <span class="arithmatex">\(t\)</span> to predict <span class="arithmatex">\(A_t\)</span>, the predicted actions become available only at <span class="arithmatex">\(t + m\)</span>, by which time the observation has evolved to <span class="arithmatex">\(O_{t+m}\)</span>. Consequently, actions <span class="arithmatex">\(\{a_t, ..., a_{t+m−1}\}\)</span> are no longer aligned with the current observation.</li>
-<li>Conflicts Between Overlapping Action Chunks: continuous inference allows a new action sequence <span class="arithmatex">\(A_{t+m}\)</span> to be generated before the execution of <span class="arithmatex">\(A_t\)</span> is complete, resulting in multiple candidate actions for the same execution timestep.</li>
+<li>a discrete variable (e.g., a language token) or </li>
+<li>a continuous variable (e.g., an image patch or a robot action).</li>
 </ul>
 </li>
 <li>
-<p>Latent-aware Action Streaming resolves both issues through an explicit execution strategy. </p>
+<p>The <span class="arithmatex">\(\pi_0\)</span> model, illustrated in Figure 3, consists primarily of a language model transformer backbone. </p>
 <ul>
-<li>Specifically, actions in <span class="arithmatex">\(A_t\)</span> corresponding to timesteps earlier than <span class="arithmatex">\(t + m\)</span> are <strong>discarded as outdated</strong>, and execution proceeds with the subsequence <span class="arithmatex">\(\{a_{t+m}, ..., a_{t+n}\}\)</span>. </li>
-<li>For timesteps where <span class="arithmatex">\(A_t\)</span> and <span class="arithmatex">\(A_{t+m}\)</span> overlap, actions from the newer sequence <span class="arithmatex">\(A_{t+m}\)</span> are prioritized, overwriting those from <span class="arithmatex">\(A_t\)</span>, allowing execution to adapt promptly to the most recent environment state, particularly under dynamic object motion.</li>
+<li><strong>Following the standard late fusion VLM recipe, image encoders embed the robot’s image observations into the same embedding space as language tokens.</strong> </li>
+<li>We further augment this backbone with robotics-specific inputs and outputs — namely, <strong>proprioceptive state</strong> and <strong>robot actions.</strong> </li>
+<li><span class="arithmatex">\(\pi_0\)</span> uses conditional flow matching to model the continuous distribution of actions. </li>
+<li>Flow matching provides our model with high precision and multimodal modeling capability, making it especially well suited to high-frequency dexterous tasks. </li>
+<li>Our architecture is inspired by <strong>Transfusion</strong>, which trains a single transformer using multiple objectives, with <ul>
+<li>tokens corresponding to <strong>continuous</strong> outputs supervised via a <strong>flow matching loss</strong> and </li>
+<li>tokens corresponding to <strong>discrete</strong> outputs supervised via a <strong>cross-entropy loss.</strong> </li>
 </ul>
 </li>
-</ul>
-<h2 id="iv-the-dynamic-object-manipulation-benchmark">IV. THE DYNAMIC OBJECT MANIPULATION BENCHMARK</h2>
-<h3 id="a-overview">A. Overview</h3>
-<ul>
-<li>Dynamic Object Manipulation (DOM) is the first large scale benchmark dedicated to dynamic object manipulation, addressing the lack of standardized datasets for evaluating robotic policies on moving objects. <ul>
-<li>DOM provides scalable data collection through fully automated pipelines in both simulation and the real world, producing 200K synthetic episodes and 2K real-world episodes, where teleoperation is ineffective due to human reaction limits under fast object motion. </li>
-<li>The benchmark organizes dynamic manipulation scenarios along structured interaction, perception, and generalization dimensions, enabling consistent and comparable evaluation across algorithms and robot embodiments.</li>
+<li>Building on Transfusion, we additionally found that using a separate set of weights for the robotics-specific (action and state) tokens led to an improvement in performance. </li>
+<li>This design is analogous to a <strong>mixture of experts</strong> with two mixture elements, where <ul>
+<li>the first element is used for image and text inputs, and </li>
+<li>the second is used for robotics-specific inputs and outputs. </li>
 </ul>
 </li>
-</ul>
-<h3 id="b-benchmark-dimensions">B. Benchmark Dimensions</h3>
-<ul>
-<li>
-<p>As illustrated in Figure 1c, DOM evaluates dynamic manipulation ability across three principal dimensions:</p>
-</li>
-<li>
-<p>Interaction. This dimension evaluates how effectively a policy responds to evolving object motion. </p>
-<ul>
-<li>Closed-loop reactivity, which measures how quickly the robot adjusts to objects moving at different speeds; </li>
-<li>Dynamic adaptation, where the policy must handle abrupt changes in motion such as direction shifts or unexpected disturbances; </li>
-<li>Long-horizon sequencing, which assesses whether the policy maintains coherent behavior over extended interactions and prioritizes actions as motion events unfold.</li>
+<li>We refer to the second set of weights as the action expert.</li>
 </ul>
 </li>
 <li>
-<p>Perception. This dimension evaluates how well a policy perceives and grounds visual and linguistic cues in dynamic environments. </p>
+<p>Formally, we want to model the data distribution <span class="arithmatex">\(p(A_t|o_t)\)</span>, where <span class="arithmatex">\(A_t = [a_t, a_{t+1}, ..., a_{t+H−1}]\)</span> corresponds to an action chunk of future actions (we use <span class="arithmatex">\(H = 50\)</span> for our tasks). </p>
 <ul>
-<li>Visual understanding, which measures the ability to distinguish objects with similar shapes, textures, or materials; </li>
-<li>Spatial reasoning, which examines whether the policy can infer object positions and relative arrangements in cluttered or changing scenes; </li>
-<li>Motion perception, which assesses how accurately the policy interprets object motion cues such as speed and direction.</li>
+<li>observation: <span class="arithmatex">\(o_t = [I_t^1, ..., I_t^n, l_t, q_t]\)</span>, <ul>
+<li><strong>multiple RGB images</strong>: <span class="arithmatex">\(I_t^i\)</span> is <span class="arithmatex">\(i\)</span>-th image (with 2 or 3 images per robot), </li>
+<li><strong>language command</strong>: <span class="arithmatex">\(l_t\)</span> is a sequence of language tokens, </li>
+<li><strong>proprioceptive state</strong>: <span class="arithmatex">\(q_t\)</span> is a vector of joint angles. </li>
+</ul>
+</li>
+<li><strong>The images <span class="arithmatex">\(I_t^i\)</span> and state <span class="arithmatex">\(q_t\)</span> are encoded via corresponding encoders and then projected via a linear projection layer into the same embedding space as the language tokens.</strong></li>
 </ul>
 </li>
 <li>
-<p>Generalization. This dimension evaluates how robustly a policy transfers across novel objects, scenes, and motion patterns. </p>
+<p>For each action <span class="arithmatex">\(a_{t'}\)</span> in the action chunk <span class="arithmatex">\(A_t\)</span>, we have a corresponding action token that we feed through the action expert. </p>
 <ul>
-<li>Visual generalization, which measures adaptation to unseen shapes, appearances, and scene layouts; </li>
-<li>Motion generalization, which assesses whether the policy can handle new speed ranges, altered friction conditions, and trajectory patterns that differ from those observed during training; </li>
-<li>Disturbance Robustness, which tests the ability to maintain stable behavior under external perturbations such as unexpected pushes, collisions, or sensor noise.</li>
+<li>During training, we supervise these action tokens using a conditional flow matching loss,</li>
 </ul>
 </li>
 </ul>
-<h3 id="c-simulation-data-collection">C. Simulation Data Collection</h3>
-<p><img alt="" src="../../imgs/02_NTU_DynamicVLA_data.png" /></p>
+<div class="arithmatex">\[ L^\tau(\theta) = \mathbb{E}_{ p(A_t|o_t), \; q(A_t^\tau|A_t) } \| v_\theta(A_t^\tau, o_t) - u(A_t^\tau |A_t) \|^2  \]</div>
 <ul>
 <li>
-<p>Our simulation framework is designed with two core objectives: </p>
+<p>where subscripts denote robot timesteps and superscripts denote flow matching timesteps, with <span class="arithmatex">\(\tau \in [0, 1]\)</span>. </p>
 <ul>
-<li>to rapidly scale up dynamic manipulation data for pretraining VLA policies, and </li>
-<li>to produce a reproducible and standardized benchmark that supports fair and consistent evaluation across future work. </li>
+<li>Recent work in high-resolution image and video synthesis has shown that flow matching can achieve strong empirical performance when combined with a simple linear-Gaussian (or optimal transport) probability path, given by <span class="arithmatex">\(q(A_t^\tau|A_t) = \mathcal{N}(\tau A_t, (1 − \tau) \mathbf{I})\)</span></li>
+<li>In practice, the network is trained by <ul>
+<li>sampling random noise <span class="arithmatex">\(\epsilon \sim \mathcal{N}(0, \mathbf{I})\)</span></li>
+<li>computing the “noisy actions” <span class="arithmatex">\(A_t^\tau = \tau A_t + (1 − \tau)\epsilon\)</span></li>
+<li>training the network outputs <span class="arithmatex">\(v_\theta(A_t^\tau, o_t)\)</span> to match the denoising vector field <span class="arithmatex">\(u(A_t^\tau|A_t) = A_t − \epsilon\)</span></li>
 </ul>
 </li>
-<li>
-<p>As shown in Figure 3, we construct a high-throughput pipeline in <strong>Isaac Sim</strong> [31] that unifies scene and object sampling, multi-view perception, realtime object-state acquisition, and closed-loop control.</p>
-</li>
-<li>
-<p>Objects and Dynamics. </p>
-<ul>
-<li>We include 206 everyday objects from <strong>Objeverse</strong> [11] spanning fruits, vegetables, containers, and other household items, with texture augmentation for additional visual diversity. </li>
-<li>Object speeds are sampled from 0–0.75 m/s (with some remaining static) and friction coefficients from 0.5–1.5. </li>
-<li>Multiple objects are placed in the workspace, allowing natural interactions during motion.</li>
+<li><strong>The action expert uses a full bidirectional attention mask, so that all action tokens attend to each other.</strong> </li>
+<li>During training, we sample the flow matching timestep <span class="arithmatex">\(\tau\)</span> from a <strong>beta distribution</strong> that emphasizes lower (noisier) timesteps. </li>
+<li>See Appendix B for more details.</li>
 </ul>
 </li>
 <li>
-<p>Scenes and Sensors. </p>
-<ul>
-<li>We derive 2.8K diverse 3D scenes from 3D-FRONT [13], curated to ensure a clean, flat tabletop and to remove self-occluding or unrealistic object placements. </li>
-<li>Each scene is instrumented with three cameras: <ul>
-<li>two third-person views placed 1 m from the robot (front at 0.6 m height and left at 0.35 m height) and </li>
-<li>a wrist-mounted camera. </li>
-</ul>
+<p>At <strong>inference time</strong>, we generate actions by integrating the learned vector field from <span class="arithmatex">\(\tau = 0\)</span> to <span class="arithmatex">\(\tau = 1\)</span>, starting with random noise <span class="arithmatex">\(A_t^0 \sim \mathcal{N}(0, \mathbf{I})\)</span>. We use the forward <strong>Euler integration</strong> rule:</p>
 </li>
-<li>All cameras capture RGB frames at 25 FPS with a 480×360 resolution, using a 2.3 mm focal length aligned with <strong>Azure Kinect</strong> intrinsics. </li>
-<li>We randomize scene illumination by sampling color temperature from 4000–8000 K, light intensity from 150–750 lm, and light source positions from <span class="arithmatex">\(x \in [−50, 50] m, y \in [−50, 50] m, z \in [10, 20] m\)</span>.</li>
+</ul>
+<div class="arithmatex">\[ A_t^{\tau+dt} = A_t^\tau + v_\theta(A_t^\tau, o_t) \cdot dt \]</div>
+<ul>
+<li>
+<p>where <span class="arithmatex">\(dt\)</span> is the integration step size. </p>
+<ul>
+<li>We use <span class="arithmatex">\(10\)</span> integration steps (corresponding to <span class="arithmatex">\(dt = 0.1\)</span>) in our experiments. </li>
+<li>Note that inference can be implemented efficiently by caching the attention keys and values for the prefix <span class="arithmatex">\(o_t\)</span> and only recomputing the suffix corresponding to the action tokens for each integration step. </li>
+<li>We provide more details regarding the inference procedure, including the inference time for each part of the model, in Appendix D.</li>
 </ul>
 </li>
 <li>
-<p>Object State Acquisition. </p>
+<p>While in principle our model can be initialized from scratch or fine-tuned from any VLM backbone, in practice we use PaliGemma as our base model. </p>
 <ul>
-<li>The simulator maintains ground truth 6D object states throughout each episode.</li>
-<li>Isaac Sim randomizes physical parameters and propagates object motion via the physics engine, from which we extract per-object position, rotation, and linear/angular velocity at 25 Hz. </li>
-<li>The resulting noise-free trajectories provide the controller with real-time motion cues for short-horizon prediction and state transitions. </li>
-<li>This interface is later mirrored in the real-world pipeline to ensure consistent behavior across embodiments.</li>
+<li>PaliGemma is an open-source <strong>3 billion</strong> parameter VLM that offers a convenient tradeoff between size and performance. </li>
+<li>We add <strong>300M</strong> parameters for the <strong>action expert</strong> (which is initialized from scratch) for a total of 3.3 billion parameters. </li>
+<li>We provide a full description of the model architecture in Appendix B.</li>
 </ul>
 </li>
 <li>
-<p>State Machine Controller. </p>
+<p><strong>Non-VLM baseline model.</strong> </p>
 <ul>
-<li>The state machine consumes realtime 6D object pose, velocity, and the 6D pose of a static target object, and executes a four-stage closed-loop routine:<ul>
-<li>Approach Object: predict near-future object motion (about 0.23 s) and position the end effector 10 cm above the predicted location with continuous updates. </li>
-<li>Grasp &amp; Lift: descend, stabilize residual motion, and secure a grasp before lifting. </li>
-<li>Approach Target &amp; Place: move toward the placement pose derived from the target object’s 6D geometry and place the object accurately. </li>
-<li>Reset: return to the home pose to begin the next episode. This design produces reactive, prediction informed trajectories, enabling scalable generation of realistic dynamic manipulation episodes.</li>
+<li>In addition to our main VLA model, we also trained a similar baseline model that did not use a VLM initialization for ablation experiments. </li>
+<li>This model, which we refer to as <span class="arithmatex">\(\pi_0\)</span>-small, has <strong>470M</strong> parameters, does not use VLM initialization, and has a number of small differences that we found to be helpful for training on our data without VLM initialization, which are summarized in Appendix C.</li>
+<li>This model is used in our comparisons to evaluate the benefits of incorporating VLM pertaining.</li>
 </ul>
 </li>
 </ul>
+<h2 id="v-data-collection-and-training-recipe">V. DATA COLLECTION AND TRAINING RECIPE</h2>
+<ul>
+<li>Broadly capable robot foundation models require not only an expressive and powerful architecture, but also the right dataset and, more importantly, the right training recipe. <ul>
+<li>In the same way that LLM training is typically divided into pre-training and post-training phases, we employ a multistage training procedure for our model. </li>
+<li>The goal of the pretraining phase is to expose the model to a diverse range of tasks so that it can acquire broadly applicable and general physical capabilities, while the goal of the post-training phase is to provide the model with the ability to skillfully and fluently execute the desired downstream task. </li>
+<li>Because of this, the requirements for the pre-training and post-training datasets are distinct: <ul>
+<li>the pre-training dataset should cover as many tasks as possible, and within each of those tasks should cover a diversity of behaviors. </li>
+<li>The post-training dataset should instead cover behaviors that are conducive to effective task execution, which should exhibit a consistent and fluent strategy. </li>
+</ul>
+</li>
+<li>Intuitively, the diverse (but lower quality) pre-training data allows the model to recover from mistakes and handle highly varied situations, which might not otherwise occur in the high-quality post-training data, while the post-training data teaches the model to perform the task well.</li>
+</ul>
 </li>
 </ul>
-<h3 id="d-real-world-data-collection">D. Real-World Data Collection</h3>
+<h3 id="a-pre-training-and-post-training">A. Pre-training and post-training</h3>
 <ul>
 <li>
-<p>Teleoperation is widely used for collecting demonstrations, but it breaks down for dynamic manipulation: human reaction is too slow to track fast-moving objects, even with homo-morphic interfaces. </p>
+<p>We provide an overview of our pre-training mixture in Figure 4. </p>
 <ul>
-<li>Meanwhile, the real world lacks ground-truth 6D object states, making the simulator’s closed-loop pipeline impossible to replicate directly. </li>
-<li>To address both issues, we build a real-world “simulator”—a high-frequency perception and state-estimation system that approximates simulator-style object states using commodity RGB-D sensors and enables fast (≈10 s per episode), teleoperation-free collection of large scale dynamic manipulation data that runs identically on Franka and PiPER for consistent multi-embodiment coverage.</li>
+<li>Since each training example corresponds to a timestep — i.e., a tuple <span class="arithmatex">\((o_t, A_t)\)</span>, — we will quantify data in terms of timesteps in this discussion. </li>
+<li>9.1% of the training mixture consists of open-source datasets, including OXE, Bridge v2, and DROID. </li>
+<li>The robots and tasks in these datasets typically have one or two cameras and use low-frequency control, between 2 and 10 Hz. </li>
+<li>However, these datasets cover a wide range of objects and environments. </li>
+<li>To learn dexterous and more complex tasks, we also use 903M timesteps of data from our own datasets, where 106M steps are from single-arm robots and 797M are from dual-arm robots.</li>
+<li>This data has 68 tasks, where each task is composed of complex behaviors — e.g., the “bussing” task involves putting a wide range of different dishes, cups, and utensils into a bussing bin, and a wide array of trash items into the garbage.</li>
+<li>Note that this definition of task is significantly different from prior work, which typically uses any combination of noun and verb (e.g., “pick up the cup” vs. “pick up the plate”) to constitute a distinct task. </li>
+<li>Therefore, the actual range of behaviors in our dataset is significantly broader than this number of “tasks” would imply. </li>
+<li>We discuss the specific robots and tasks in our dataset in more detail in Section V-C.</li>
 </ul>
 </li>
 <li>
-<p>Environment Setup. </p>
+<p>Since the datasets are somewhat imbalanced in size (e.g., the more difficult laundry folding tasks are overrepresented), we weight each task-robot combination by <span class="arithmatex">\(n^{0.43}\)</span>, where <span class="arithmatex">\(n\)</span> is the number of samples for that combination, such that over-represented combinations are down-weighted. </p>
 <ul>
-<li>We use 25 physical household objects spanning containers, food items, bottles, and tools, with multiple objects per episode, including pick/place targets and natural distractors. </li>
-<li>The scene is captured by two synchronized third-person RGB cameras (Azure Kinect DK) placed at front and side viewpoints, along with a wrist-mounted RealSense D435i, matching the simulation geometry and supplying synchronized, calibrated RGB streams for state estimation.</li>
+<li>The configuration vector <span class="arithmatex">\(q_t\)</span> and action vectors <span class="arithmatex">\(a_t\)</span> always have the dimensionality of the largest robot in the dataset (18 in our case, to accommodate two 6-DoF arms, 2 grippers, a mobile base, and a vertically actuated torso). </li>
+<li><strong>For robots with lower-dimensional configuration and action spaces, we zero-pad the configuration and action vectors.</strong> </li>
+<li><strong>For robots with fewer than three images, we also mask out the missing image slots.</strong></li>
 </ul>
 </li>
 <li>
-<p>Object State Acquisition. </p>
+<p>In the post-training phase, we fine-tune our model with a smaller task-specific dataset to specialize it to particular downstream applications. </p>
 <ul>
-<li>To replicate the simulator’s state interface, we build a “real-time” simulator that outputs 6D object pose and velocity. </li>
-<li>EfficientTAM [51] supplies per-view object masks from the synchronized third-person cameras, and a geometric triangulation step recovers the 3D centroid. </li>
-<li>Linear and angular velocities are obtained by fitting motion over a short temporal window, producing a smooth, low-latency 6D state stream compatible with the controller’s requirements.</li>
+<li>As mentioned previously, our definition of “task” is fairly broad — e.g., the “bussing” task requires manipulating a wide range of different objects. </li>
+<li>Different tasks require very different datasets, with the simplest of the tasks necessitating only 5 hours and the most complex tasks using 100 or more hours of data.</li>
+</ul>
+</li>
+</ul>
+<h3 id="b-language-and-high-level-policies">B. Language and high-level policies</h3>
+<ul>
+<li>More complex tasks that require semantic reasoning and high-level strategy, such as table bussing, can also benefit from a high-level policy that decomposes high-level tasks (such as “bus the table”) into more immediate subtasks (such as “pick up the napkin” or “throw the napkin into the trash”). <ul>
+<li>Since our model is trained to process language inputs, <strong>we can use a high-level VLM to make these semantic inferences, a method that is analogous to LLM/VLM planning methods such as SayCan.</strong> </li>
+<li>We use such a high-level policy to assist our model with high-level strategy for several of our experimental tasks, as we will discuss in Section VI.</li>
+</ul>
+</li>
+</ul>
+<h3 id="c-robot-system-details">C. Robot system details</h3>
+<h2 id="vi-experimental-evaluation">VI. EXPERIMENTAL EVALUATION</h2>
+<h3 id="a-evaluating-the-base-model">A. Evaluating the base model</h3>
+<h3 id="b-following-language-commands">B. Following language commands</h3>
+<h3 id="c-learning-new-dexterous-tasks">C. Learning new dexterous tasks</h3>
+<h3 id="d-mastering-complex-multi-stage-tasks">D. Mastering complex multi-stage tasks</h3>
+<h2 id="vii-discussion-limitations-and-future-work">VII. DISCUSSION, LIMITATIONS, AND FUTURE WORK</h2>
+<ul>
+<li>
+<p>We presented a framework for training a robot foundation model, which we refer to as <span class="arithmatex">\(\pi_0\)</span>, that consists of pretraining on highly diverse data, followed by either out-of-box evaluation or fine-tuning to complex downstream tasks.</p>
+</li>
+<li>
+<p>Our empirical evaluation studies tasks that combine dexterity, generalization, and temporally extended multi-stage behaviors.</p>
+<ul>
+<li>Our model incorporates Internet-scale vision-language model (VLM) pre-training with flow matching for representing complex high-frequency action chunks. </li>
+<li>Our pre-training mixture consists of 10,000 hours of dexterous manipulation data from 7 different robot configurations and 68 tasks, in addition to large amounts of previously collected robot manipulation data from OXE, DROID, and Bridge. </li>
+<li>To our knowledge, this represents the largest pre-training mixture ever used for a robot manipulation model. </li>
+<li>Our fine-tuning experiments include over 20 tasks, where we show that our model outperforms a variety of baselines, including prior VLA models and models designed specifically for dexterous manipulation. </li>
+<li>We also examine how our post-training recipe can enable highly complex tasks, such as folding multiple articles of clothing from arbitrary initial configurations or assembling boxes.</li>
 </ul>
 </li>
 <li>
-<p>State-machine Controller. </p>
+<p>Our framework broadly resembles the training procedures employed for large language models, which typically consist of pre-training a base model on very large datasets scraped from the web, followed by a post-training procedure that aims to “align” the model to enable it to follow instructions and perform user commands. </p>
 <ul>
-<li>The same four-stage controller used in simulation runs unchanged in the real world, consuming the estimated 6D object states and target pose.</li>
+<li>It is generally recognized that most of the “knowledge” in such models is acquired in the pretraining phase, while the post-training phase serves to tell the model how it should leverage that knowledge to fulfill user commands. </li>
+<li>Our experiments imply that an analogous phenomenon might take place with robot foundation models, where pre-trained models have some zero-shot capabilities, but complex tasks like laundry following require fine-tuning with high-quality data. </li>
+<li><strong>Training on only this high-quality data results in a brittle model that does not reliably recover from mistakes, while running the pre-trained model in zero shot does not always exhibit the fluent strategies demonstrated in the post-training data.</strong></li>
+</ul>
+</li>
+<li>
+<p>We hope that our results will serve as a stepping stone toward general and broadly applicable robot foundation models.</p>
+<ul>
+<li>Our experiments suggest that such models may soon be a reality, but there are a number of limitations and ample room for future work. </li>
+<li>First, our experiments do not yet provide a comprehensive understanding of how the pre-training datasets should be composed: we combined all data available to us, but understanding what type of data is more helpful to add and how it should be weighted remains an open problem. </li>
+<li>Not all tasks in our evaluation work reliably, and it remains unclear how to predict how much and what kind of data is needed to attain near-perfect performance. </li>
+<li>Finally, it remains to be seen how much positive transfer there is in combining highly diverse data, particularly from different tasks and different robots: although our results suggest that universal pre-trained robot foundation models might become a reality, it is left for future work to understand whether this universality extends to much more distinct domains, such as autonomous driving, navigation, and legged locomotion.</li>
 </ul>
 </li>
 </ul>
-<h2 id="v-experiments">V. EXPERIMENTS</h2>
-<h2 id="vi-discussion-and-future-work">VI. DISCUSSION AND FUTURE WORK</h2>
 
 
 
