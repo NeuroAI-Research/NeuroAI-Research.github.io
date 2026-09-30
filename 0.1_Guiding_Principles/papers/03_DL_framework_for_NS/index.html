@@ -1,0 +1,3265 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../02_Brain_Evolution/">
+      
+      
+        <link rel="next" href="../../../1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>3 2019 DL framework for NS - NeuroAI Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../js/main.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-2019-dl-framework-for-ns" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeuroAI Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 2019 DL framework for NS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    NeuroAI Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeuroAI Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ricky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Creator (Ricky)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.1 Guiding Principles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0.1 Guiding Principles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_NeuroAI_Hassabis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 NeuroAI Hassabis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_Brain_Evolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 Brain Evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2019 DL framework for NS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2019 DL framework for NS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constraining-learning-in-artificial-neural-networks-and-the-brain-with-task-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraining learning in artificial neural networks and the brain with “task sets”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constraining learning in artificial neural networks and the brain with “task sets”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#box-1-learning-and-the-credit-assignment-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Box 1: Learning and the “credit assignment problem”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#box-2-what-are-inductive-biases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Box 2: What are inductive biases?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-core-components-of-a-deep-learning-framework-for-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three core components of a deep learning framework for the brain
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The three core components of a deep learning framework for the brain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#box-3-are-there-objective-functions-for-brains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Box 3: Are there objective functions for brains?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures-learning-rules-and-objective-functions-in-the-wet-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectures, learning rules, and objective functions in the wet lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empirical-studies-of-architecture-in-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empirical studies of architecture in the brain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empirical-studies-of-learning-rules-in-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empirical studies of learning rules in the brain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empirical-studies-of-objective-functions-in-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empirical studies of objective functions in the brain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caveats-and-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caveats and concerns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Neural Encoding I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/02_Neural_Encoding_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Neural Encoding II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/03_Neural_Decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Neural Decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/04_Information_Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Information Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/07_Network_Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Network Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/08_Plasticity_and_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Plasticity and Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Classical Conditioning and Reinforcement Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Representational Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 LLM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.1 LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 Qwen3-VL Technical Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 The Big LLM Architecture Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2024 DeepSeek-V3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 VLA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.2 VLA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_VLA/papers/01_pi_0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2024 \(\pi_0\)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 RL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.3 RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/01_PPO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 PPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2023 DreamerV3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.4 Spatial Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.4 Spatial Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.4_Spatial_Intelligence/papers/02_DeepMind_D4RT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2025 DeepMind D4RT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.4_Spatial_Intelligence/papers/04_Microsoft_TRELLIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2024 Microsoft TRELLIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.5 Generative Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.5 Generative Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.5_Generative_Flows/papers/01_DiT_Diffusion_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2022 DiT: Diffusion Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 Brain Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3.1 Brain Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Brain vs MPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_1" id="__nav_11_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NTU MMLab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NTU MMLab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/01_NTU_DynamicVLA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2026 NTU DynamicVLA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/02_NTU_VLANeXt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2026 NTU VLANeXt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/03_NTU_SI_Survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2025 NTU SI Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/04_NTU_4RC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2026 NTU 4RC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/05_NTU_PhysX-Anything/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 NTU PhysX-Anything
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/06_NTU_STREAM3R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 NTU STREAM3R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/07_NTU_Puffin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2025 NTU Puffin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constraining-learning-in-artificial-neural-networks-and-the-brain-with-task-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraining learning in artificial neural networks and the brain with “task sets”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constraining learning in artificial neural networks and the brain with “task sets”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#box-1-learning-and-the-credit-assignment-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Box 1: Learning and the “credit assignment problem”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#box-2-what-are-inductive-biases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Box 2: What are inductive biases?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-three-core-components-of-a-deep-learning-framework-for-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three core components of a deep learning framework for the brain
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The three core components of a deep learning framework for the brain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#box-3-are-there-objective-functions-for-brains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Box 3: Are there objective functions for brains?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architectures-learning-rules-and-objective-functions-in-the-wet-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectures, learning rules, and objective functions in the wet lab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empirical-studies-of-architecture-in-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empirical studies of architecture in the brain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empirical-studies-of-learning-rules-in-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empirical studies of learning rules in the brain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empirical-studies-of-objective-functions-in-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empirical studies of objective functions in the brain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caveats-and-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caveats and concerns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3-2019-dl-framework-for-ns">3 2019 DL framework for NS</h1>
+<ul>
+<li><a href="https://discovery.ucl.ac.uk/id/eprint/10086844/1/A%20deep%20learning%20framework%20for%20neuroscience%20-%20vFinalv2.pdf">A deep learning framework for neuroscience (optimization in the brain)</a></li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<ul>
+<li>Systems neuroscience seeks explanations for how the brain implements a wide variety of perceptual, cognitive and motor tasks. </li>
+<li><strong>Conversely</strong>, artificial intelligence attempts to design computational systems based on the tasks they will have to solve. <ul>
+<li>In the case of artificial neural networks, the three components specified by design are <ul>
+<li>the objective functions, </li>
+<li>the learning rules, and </li>
+<li>architectures. </li>
+</ul>
+</li>
+<li>With the growing success of deep learning, which utilizes brain-inspired architectures, these three designed components have increasingly become central to how we model, engineer and optimize complex artificial learning systems. </li>
+</ul>
+</li>
+<li>Here we argue that a greater focus on these components would also benefit systems neuroscience. <ul>
+<li>We give examples of how this <strong>optimization-based framework</strong> can drive theoretical and experimental progress in neuroscience. </li>
+<li>We contend that this principled perspective on systems neuroscience will help to generate more rapid progress. </li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li>Major technical advances are revolutionizing our ability to observe and manipulate brains at a large-scale and quantify complex behaviors. </li>
+<li>
+<p>How should we use this data to develop models of the brain? </p>
+</li>
+<li>
+<p>When the <strong>classical framework</strong> for systems neuroscience was developed, we could only record from small sets of neurons. </p>
+<ul>
+<li>In this framework, <ul>
+<li>a researcher observes neural activity, </li>
+<li>develops a theory of what individual neurons compute, </li>
+<li>then assembles a circuit-level theory of how the neurons combine their operations. </li>
+</ul>
+</li>
+<li>This approach has worked well for <strong>simple computations</strong>. <ul>
+<li>For example, we know how <strong>central pattern generators</strong> control <code>rhythmic movements</code>, </li>
+<li>how the <strong>vestibulo-ocular reflex</strong> promotes <code>gaze stabilization</code>, and </li>
+<li>how the <strong>retina</strong> <code>computes motion</code>. </li>
+</ul>
+</li>
+<li>But, can this classical framework scale up to recordings of thousands of neurons and all of the behaviors that we may wish to account for? <ul>
+<li><strong>Arguably, we have not had as much success with the classical approach in large neural circuits that perform a multitude of functions, like the neocortex or hippocampus.</strong> </li>
+<li>In such circuits, researchers often find neurons with response properties that are difficult to summarize in a succinct (简洁) manner</li>
+</ul>
+</li>
+<li>The limitations of the classical framework suggest that new approaches are needed to take advantage of experimental advances. </li>
+</ul>
+</li>
+<li>
+<p>A promising framework is emerging from the interactions between <strong>neuroscience and AI</strong>. </p>
+<ul>
+<li>The rise of deep learning as a leading machine learning method invites us to revisit Artificial Neural Networks (ANNs). </li>
+<li>At their core, ANNs model neural computation using simplified units that loosely mimic the integration and activation properties of real neurons. </li>
+<li>Units are implemented with varying degrees of abstraction, ranging from highly simplified linear operations to relatively complex models with multiple compartments, spikes, etc. </li>
+</ul>
+</li>
+<li>
+<p>Importantly, the specific computations performed by ANNs are not designed, but learned.</p>
+<ul>
+<li>However, human design still plays a role in determining three essential components in ANNs: <ul>
+<li>the <strong>learning goal</strong>, expressed as an <code>objective function</code> (or loss function) to be maximized or minimized; </li>
+<li>a set of <strong>learning rules</strong>, expressed as <code>synaptic weight updates</code>; and </li>
+<li>the <strong>network architecture</strong>, expressed as the <code>pathways and connections for information flow</code> (Fig. 1). </li>
+</ul>
+</li>
+<li>Within this framework, we do not seek to summarize how a computation is performed, but we do summarize what objective functions, learning rules and architectures would enable learning of that computation.</li>
+</ul>
+</li>
+<li>
+<p>Deep learning can be seen as a rebranding of long-standing ANN ideas. </p>
+<ul>
+<li>Deep ANNs possess multiple layers, either feedforward, or recurrent over time. </li>
+<li>The “layers” are best thought of as being analogous to brain regions, rather than as specific laminae in biological brains.</li>
+<li>“Deep” learning specifically refers to training hierarchical ANNs in an end-to-end manner, such that plasticity in each layer of the hierarchy contributes to the learning goals, which requires a solution to the “credit assignment problem” (Box 1). </li>
+</ul>
+</li>
+<li>
+<p>In recent years, progress in deep learning has come from the use of bigger ANNs, trained with bigger datasets using Graphics Processing Units (GPUs) that can efficiently handle the required computations. </p>
+<ul>
+<li>Such developments have produced solutions for many new problems, including image and speech classification and generation, language processing and translation, haptics and grasping, navigation, sensory prediction, game playing and reasoning.</li>
+</ul>
+</li>
+<li>
+<p>Many recent findings suggest that deep learning can inform our theories of the brain.</p>
+<ul>
+<li>First, it has been shown that deep ANNs can, in some cases closely, mimic the representational transformations in primate perceptual systems, and thereby can be leveraged to manipulate neural activity. </li>
+<li>Second, many well-known behavioral and neurophysiological phenomena, <ul>
+<li>including <ul>
+<li>grid cells, </li>
+<li>shape tuning, </li>
+<li>temporal receptive fields, </li>
+<li>visual illusions, and </li>
+<li>apparent model-based reasoning, </li>
+</ul>
+</li>
+<li>have been shown to emerge in deep ANNs trained on tasks similar to those solved by animals. </li>
+</ul>
+</li>
+<li><strong>Third, many modeling studies have demonstrated that the apparent biological implausibility of end-to-end learning rules, e.g. learning algorithms that can mimic the power of the canonical backpropagation-of-error algorithm (backprop) (Fig. 2; see also Box 1), is overstated.</strong> <ul>
+<li>Relatively simple assumptions about cellular and subcellular electrophysiology, inhibitory microcircuits, patterns of spike timing, short term plasticity, and feedback connections <strong>can enable biological systems to approximate backprop-like learning in deep ANNs</strong>.</li>
+</ul>
+</li>
+<li>Hence, ANN-based models of the brain may not be as unrealistic as previously thought, and simultaneously, they appear to explain a lot of neurobiological data.</li>
+</ul>
+</li>
+<li>
+<p>With these developments, it is the right time to consider a deep-learning-inspired framework for systems neuroscience. </p>
+<ul>
+<li>We have a growing understanding of the key principles that underlie ANNs, and there are theoretical reasons to believe that these insights apply generally. </li>
+<li>Concomitantly (伴随地), our ability to monitor and manipulate large neural populations opens the door to new ways of testing hypotheses derived from the deep learning literature. </li>
+</ul>
+</li>
+<li>
+<p>Here we sketch the scaffolding of a deep learning framework for modern systems neuroscience.</p>
+</li>
+</ul>
+<h3 id="constraining-learning-in-artificial-neural-networks-and-the-brain-with-task-sets">Constraining learning in artificial neural networks and the brain with “task sets”</h3>
+<ul>
+<li>
+<p>The “No Free Lunch Theorems” demonstrated broadly that no learning algorithm can perform well on all possible problems. </p>
+<ul>
+<li>ANN researchers in the first decade of the 21st century thus argued that AI should be primarily concerned with the set of tasks that “...most animals can perform effortlessly, such as <code>perception</code> and <code>control</code>, as well as ... <code>long-term prediction</code>, <code>reasoning</code>, <code>planning</code>, and <code>communication</code>”. <ul>
+<li>This set of tasks has been termed the “AI Set”, and the focus on building computers with capabilities that are similar to those of humans and animals is what distinguishes AI tasks from other tasks in computer science (note that the word “tasks” here refers broadly to any computation, including those that are unsupervised.)</li>
+<li>Much of the success of deep learning can be attributed to the consideration given to learning in the AI Set. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Designing ANNs that are well-suited to learn specific tasks is an example of incorporating “inductive biases” (Box 2): assumptions that one makes about the nature of the solutions to a given optimization problem. </p>
+<ul>
+<li>Deep learning works so well, in part, because it uses appropriate inductive biases for the AI Set, particularly <strong>hierarchical architectures</strong>. <ul>
+<li>For example, images can be well described by composing them into a hierarchical set of increasingly complex features: from edges, to simple combinations of these, to larger configurations that form objects. </li>
+<li>Language too can be considered a hierarchical construction, with phonemes assembled into words, words into sentences, sentences into narratives.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>However, deep learning also eschews (避开) hand-engineering, allowing the function computed by the system to emerge during learning. </p>
+<ul>
+<li>Thus, despite the common belief that deep learning relies solely on increases in computational power, or that it represents a “blank slate” approach to intelligence, many of the successes of deep learning have grown out of a balance between useful <strong>inductive biases</strong> and <strong>emergent computation</strong>, echoing the blend of nature and nurture which underpins the adult brain.</li>
+</ul>
+</li>
+<li>
+<p>Similarly, neuroscientists focus on the behaviors/tasks that a species evolved to perform.</p>
+<ul>
+<li>This set of tasks overlaps with the AI Set, though possibly not completely, since different species have evolved strong inductive biases for their ecological niches. </li>
+<li>By considering this “Brain Set” for specific species — the tasks that are important for survival and reproduction for that species — researchers can focus on the features most likely to be key to learning. </li>
+<li>Just as departing from a pure blank slate was the key to the success of modern ANNs — e.g. by focusing on ANN designs with inductive biases that are useful for the AI Set — so we suspect that it will also be crucial to the development of a deep learning framework for systems neuroscience to focus on how a given animal might solve tasks in its appropriate Brain Set.</li>
+</ul>
+</li>
+<li>
+<p>Recognizing the importance of inductive biases in deep learning also helps address some existing misconceptions. </p>
+<ul>
+<li>Deep networks are often considered different from brains because they depend on large amounts of data. </li>
+<li>However, it is worth noting that <ul>
+<li>(1) many species, especially humans, develop slowly with large quantities of experiential data and </li>
+<li>(2) that deep networks can work well in low data regimes if they have good inductive biases. <ul>
+<li>For example, deep networks can learn how to learn quickly. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In the case of brains, evolution could be one means by which such inductive biases are acquired.</li>
+</ul>
+</li>
+</ul>
+<h4 id="box-1-learning-and-the-credit-assignment-problem">Box 1: Learning and the “credit assignment problem”</h4>
+<ul>
+<li>
+<p>A natural definition of learning is that it is a change to a system that improves its performance. Suppose we have an objective function, <span class="arithmatex">\(F(W)\)</span>, which measures how well a system is currently performing, given the <span class="arithmatex">\(N\)</span>-dimensional vector of its current synaptic weights, <span class="arithmatex">\(W\)</span>. If the synaptic weights change from <span class="arithmatex">\(W\)</span> to <span class="arithmatex">\(W + \Delta W\)</span>, then the change in performance is <span class="arithmatex">\(\Delta F = F(W + \Delta W) − F(W)\)</span>. If we make small changes to <span class="arithmatex">\(W\)</span>, and <span class="arithmatex">\(F\)</span> is locally smooth, then <span class="arithmatex">\(\Delta F\)</span> is given approximately by $ \Delta F \approx (\Delta W)^T \cdot \nabla_W F $, where <span class="arithmatex">\(\nabla_W F\)</span> is the gradient of <span class="arithmatex">\(F\)</span> with respect to <span class="arithmatex">\(W\)</span>. </p>
+</li>
+<li>
+<p>Suppose we want to guarantee improved performance, i.e. we want to ensure <span class="arithmatex">\(\Delta F &gt; 0\)</span>. We know that there is an <span class="arithmatex">\(N-1\)</span> dimensional manifold of local changes in <span class="arithmatex">\(W\)</span> that all lead to the same improvement. Which one should we choose? Gradient-based algorithms derive from the intuition that we want to take the smallest step that gets us a specific level of improvement. If we choose a small step size, <span class="arithmatex">\(\eta\)</span>, times the gradient <span class="arithmatex">\(\nabla_W F\)</span>, then we will improve as much as possible for that step size. Thus, we have: $ \Delta F \approx (\eta \nabla_W F)^T \cdot \nabla_W F &gt; 0 $. In other words, the objective function value increases with every step (when <span class="arithmatex">\(\eta\)</span> is small) according to the length of the gradient vector.</p>
+</li>
+<li>
+<p>The concept of “credit assignment” refers to the problem of determining how much “credit” or “blame” a given neuron or synapse should get for a given outcome. More specifically, it is a way of determining how each parameter in the system (e.g., each synaptic weight) should change to ensure that <span class="arithmatex">\(\Delta F &gt; 0\)</span>. In its simplest form, the “credit assignment problem” refers to the difficulty of assigning credit in complex networks. Updating weights using the gradient of the objective function, <span class="arithmatex">\(\nabla_W F\)</span>, has proven to be an excellent means of solving the credit assignment problem in ANNs. A question that systems neuroscience faces is whether the brain also approximates something like gradient-based methods.</p>
+</li>
+<li>
+<p>The most common method for calculating gradients in deep ANNs is <code>backprop</code>. It uses the chain rule to recursively calculate gradients backwards from the output. But <code>backprop</code> rests on biologically implausible assumptions, such as </p>
+<ul>
+<li>symmetric feedback weights and </li>
+<li>distinct forward and backward passes of information. </li>
+</ul>
+</li>
+<li>Many different learning algorithms, not just <code>backprop</code>, can provide estimates of a gradient, and some of these do not suffer from <code>backprop</code>’s biological implausibility. However, algorithms differ in their variance and bias properties (Fig. 2). <ul>
+<li>Algorithms such as <code>weight/node perturbation</code>, which reinforce random changes in synaptic weights through rewards, have high variance in their path along the gradient. </li>
+<li>Algorithms that use <code>random feedback weights</code> to communicate gradient information have high bias. </li>
+</ul>
+</li>
+<li>Various proposals have been made to minimize bias and variance in algorithms while maintaining their biological realism. </li>
+</ul>
+<p><img alt="" src="../../imgs/03_backprop_vs_others.png" /></p>
+<h4 id="box-2-what-are-inductive-biases">Box 2: What are inductive biases?</h4>
+<ul>
+<li>Learning is easier when we have prior knowledge about the kind of problems that we will have to solve. </li>
+<li>Inductive biases are a means of embedding such prior knowledge into an optimization system. </li>
+<li>Such inductive biases may be generic, such as hierarchy, or specific, such as convolutions. </li>
+<li>Importantly, the inductive biases that exist in the brain will have been shaped by evolution to increase an animal’s fitness in both the broad context of life on Earth (e.g. life in a 3D world where one needs to obtain food, water, shelter, etc.), and in specific ecological niches. </li>
+<li>Examples of inductive biases are: <ul>
+<li><strong>Simple explanations</strong>: When attempting to make sense of the world, simple explanations may be preferred, as articulated by <strong>Occam’s Razor</strong>. We can build this into ANNs using either <strong>Bayesian frameworks</strong> or by other mechanisms, such as <strong>sparse representations</strong>.</li>
+<li><strong>Object permanence</strong>: The world is organized into objects, which are spatio-temporally constant. We can build this into ANNs by learning representations that assume <strong>consistent movement in sensory space</strong>.</li>
+<li><strong>Visual translation invariance</strong>: A visual feature tends to have the same meaning regardless of its location. We can build this into ANNs using <strong>convolution operations</strong>.</li>
+<li><strong>Focused attention</strong>: Some aspects of the information coming into a system are more important than others. We can build this into ANNs through <strong>attention mechanisms</strong>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-three-core-components-of-a-deep-learning-framework-for-the-brain">The three core components of a deep learning framework for the brain</h3>
+<ul>
+<li>Deep learning combines human design with automatic learning to solve a task. </li>
+<li>
+<p>What is designed are not the computations (i.e. the specific input/output functions of the ANNs), but three components: </p>
+<ul>
+<li><strong>Objective functions</strong> describe the goals of the learning system. <ul>
+<li>They are functions of the synaptic weights of a neural network and the data it receives, but they can be defined without making reference to a specific task or dataset. </li>
+<li>For example, the <strong>cross-entropy objective</strong> function, which is common in machine learning, specifies a means of calculating performance on any categorization task, from distinguishing different breeds of dog in the <code>ImageNet</code> dataset to classifying the sentiment behind a tweet. </li>
+<li>We will return to some of the specific objective functions proposed for the brain below. </li>
+</ul>
+</li>
+<li><strong>Learning rules</strong> describe how the parameters in a model are updated. <ul>
+<li>In ANNs, these rules are generally used to improve on the objective function. </li>
+<li>Notably, this is true not only for supervised learning (where an agent receives an explicit target to mimic), but also for unsupervised learning (where an agent must learn without any instruction) and reinforcement learning systems (where an agent must learn using only rewards/punishments). </li>
+</ul>
+</li>
+<li>Finally, <strong>architectures</strong> describe how the units in an ANN are arranged and what operations they can perform. <ul>
+<li>For example, <code>convolutional networks</code> impose a connectivity pattern whereby the same receptive fields are applied repeatedly over the spatial extent of an input.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Why do so many AI researchers now focus on objective functions, learning rules and architectures instead of designing specific computations? </p>
+<ul>
+<li>The short answer is that this appears to be the most tractable way to solve real-world problems. </li>
+<li>Originally, AI practitioners believed that intelligent systems could be hand-designed by piecing together elementary computations. But results on the AI Set were underwhelming. </li>
+<li>It now seems clear that solving complex problems with pre-designed computations (e.g. such as handcrafted features) is usually too difficult and practically unworkable. </li>
+<li>In contrast, specifying objective functions, architectures, and learning rules works well.</li>
+</ul>
+</li>
+<li>
+<p>There is, though, a drawback: the computations that emerge in large-scale ANNs trained on high-dimensional datasets can be difficult to interpret. </p>
+<ul>
+<li>We can construct a neural network in a few lines of code, and for each unit in an ANN we can specify the equations that determine their responses to stimuli or relationships to behavior. </li>
+<li>However, after training, a network is characterized by millions of weights that collectively encode what the network has learned, and it is hard to imagine how we could describe such a system with only a small number of parameters, let alone in words.</li>
+</ul>
+</li>
+<li>
+<p>Such considerations of complexity are informative for neuroscience. </p>
+<ul>
+<li>For small circuits comprising only tens of neurons it may be possible to build compact models of individual neural responses and computations (i.e. to develop models that can be communicated using a small number of free parameters or words). </li>
+<li>But, considering that animals are solving many AI Set problems, it is likely that the brain uses solutions that are as complex as the solutions used by ANNs. </li>
+<li>This suggests that a normative (规范的) framework that explains why neural responses are as they are, might be best obtained by viewing neural responses as an emergent consequence of the interplay between objective functions, learning rules, and architecture. </li>
+<li><strong>With such a framework in hand, one could then train ANN models that do, in fact, predict neural responses well.</strong> </li>
+<li>Of course, those ANN models would likely be non-compact, involving millions, billions or even trillions of free parameters, and being nigh (接近) indescribable with words. </li>
+<li>Hence, our claim is not that we could ever hope to predict neural responses with a compact model, but rather, that we could explain the emergence of neural responses within a compact framework.</li>
+</ul>
+</li>
+<li>
+<p>A question that naturally arises is whether the environment, or data, that an animal encounters should be a fourth essential component for neuroscience. </p>
+<ul>
+<li>Determining the “Brain Set” for an animal necessarily involves consideration of its evolutionary and ontogenic (个体发育的) milieu (环境).</li>
+<li>Efforts to efficiently describe naturalistic stimuli and identify ethologically-relevant behaviors are crucial to neuroscience, and have shaped many aspects of nervous systems. </li>
+<li>However, the core issue we are addressing in this perspective piece is how to develop models of complex, hierarchical brain circuits, so we view the environment as a crucial consideration to anchor the core components, but not as one of the components itself.</li>
+</ul>
+</li>
+<li>
+<p>Once the appropriate Brain Set has been identified, the first question is: what is the <strong>architecture</strong> of the circuits? </p>
+<ul>
+<li>This involves descriptions of the cell types and their connectivity (micro, meso and macroscopic). </li>
+<li>Thus, uncontroversially, we propose that circuit-level descriptions of the brain are a crucial topic for systems neuroscientists. </li>
+<li>Thanks to modern techniques for circuit tracing and genetic lineage determination, rapid progress is being made. </li>
+<li>But, to reiterate, we would argue that understanding the architecture is not sufficient for understanding the circuit; rather, it should be complemented by knowledge of learning rules and objective functions.</li>
+</ul>
+</li>
+<li>
+<p>Many neuroscientists recognize the importance of <strong>learning rules</strong> and <strong>architecture</strong>. But identifying the <strong>objective functions</strong> that have shaped the brain, either during learning or evolution, is less common. </p>
+<ul>
+<li><strong>Unlike architectures and learning rules, objective functions may not be directly observable in the brain (Fig. 3).</strong> </li>
+<li>Nonetheless, we can define them mathematically and without making reference to a specific environment or task. </li>
+<li>For example, <strong>predictive coding models</strong> minimize an objective function known as the <strong>description length</strong>, which measures how much information is required to encode sensory data using the neural representations. </li>
+<li>Several other objective functions have been proposed for the brain (Box 3). </li>
+<li>In this perspective piece, we are not advocating for any of these specific objective functions in the brain, as we are articulating a framework, not a model. </li>
+<li>One of our key claims is that even though we must infer them, objective functions are an attainable part of a complete theory of how the architectures or learning rules help to achieve a computational goal.</li>
+</ul>
+</li>
+<li>
+<p>This optimization framework has an added benefit: as with ANNs, the architectures, learning rules and objective functions of the brain are likely relatively simple and compact, at least in comparison to the list of computations performed by individual neurons. </p>
+<ul>
+<li><strong>The reason is that these three components must presumably be conveyed to offspring through a limited information bottleneck, i.e. the genome (which may not have sufficient capacity to fully specify the wiring of large vertebrate brains).</strong> </li>
+<li>In contrast, the environment in which we live can convey vast amounts of complex and changing information that dwarf the capacity of the genome.</li>
+<li>Since the responses of individual neurons are shaped by the environment, their computations should reflect this massive information source. </li>
+<li>We can see evidence of this in the ubiquity (无处不在) of neurons in the brain that have <strong>high entropy in their activity</strong> and that do not exhibit easy-to-describe correlations with the multitude of stimuli and behaviors that experimentalists have explored to date. </li>
+<li>To clarify our claim, we are suggesting that identifying a normative explanation using the three components may be a fruitful way to go on to develop better, non-compact models of the response properties of neurons in a circuit, as shown by recent studies that use task-optimized deep ANNs to determine the optimal stimuli for activating specific neurons. </li>
+<li>As an analogy, the theory of evolution by natural selection provides a compact explanation for why species emerge as they do, one which can be stated in relatively few words.</li>
+<li>This compact explanation of the emergence of species can then be used to develop more complex, non-compact models of the phylogeny of specific species. </li>
+<li>Our suggestion is that normative explanations based on the three components could provide similar high-level theories for generating our lower-level models of neural responses, and that this would bring us one step closer to the form of “understanding” that many scientists seek.</li>
+</ul>
+</li>
+<li>
+<p>It is worth recognizing that researchers have long postulated objective functions and plasticity rules to explain the function of neural circuits. </p>
+<ul>
+<li>Many of them, however, have sidestepped the question of hierarchical credit assignment, which is key to deep learning.</li>
+<li>There are clear experimental success stories too, including work on <strong>predictive coding</strong>, <strong>reinforcement learning</strong>, and <strong>hierarchical sensory processing</strong>. </li>
+<li>Thus, the optimization-based framework that we articulate here can, and has, operated alongside studies of individual neuron response properties. </li>
+<li>But, we believe that we will see even greater success if a framework focused on the three core components is adopted more widely.</li>
+</ul>
+</li>
+</ul>
+<h4 id="box-3-are-there-objective-functions-for-brains">Box 3: Are there objective functions for brains?</h4>
+<ul>
+<li>
+<p>Animals clearly have some baseline objective functions. </p>
+<ul>
+<li>For example, homeostasis (体内平衡) minimizes an objective function corresponding to the difference between a physiological variable (like blood oxygen levels) and a set-point for that variable.</li>
+<li>Given the centrality of homeostasis to physiology, objective functions are arguably something that the brain must be concerned with.</li>
+</ul>
+</li>
+<li>
+<p>But, some readers may doubt whether the sort of objective functions used in machine learning are relevant to the brain. </p>
+<ul>
+<li><strong>For example, the cross-entropy objective function used in ANNs trained on categorization tasks is unlikely to be used in the brain, since it requires specification of the correct category for each sensory input.</strong> </li>
+<li>Other objective functions are more ecologically plausible, though. </li>
+<li>Examples include <ul>
+<li><strong>the description length objective function used in predictive coding models</strong>, </li>
+<li><strong>the log-probability of action sequences scaled by the reward they have produced (which is used in reinforcement learning to maximize rewards)</strong>, </li>
+<li><strong>increases in mutual information with the environment</strong>, </li>
+<li>and <strong>empowerment, which measures the degree of control an agent has in their environment</strong>. </li>
+</ul>
+</li>
+<li>These objective functions can all be specified mathematically for the brain without worrying about specific datasets, tasks or environments.</li>
+</ul>
+</li>
+<li>
+<p>There are, however, real challenges in tying objective functions to empirical and theoretical models in neuroscience. </p>
+<ul>
+<li>Many potential plasticity rules may not follow the gradient of any objective function at all, or only follow it partially (Fig. 3). </li>
+<li>This apparently complicates our problems, and makes it impossible to guarantee that objective functions are always involved in neural plasticity. </li>
+<li>As well, the brain likely optimizes multiple objective functions, some of which we may in fact learn (i.e. we may “learn-to-learn”; <strong>for example, humans learn how to learn new board games</strong>), and some of which may have been optimized over the course of evolution rather than in an individual animal (i.e. reflexes or reproductive behavior).</li>
+</ul>
+</li>
+<li>
+<p>Despite these complexities, we believe that consideration of objective functions is critical for systems neuroscience. </p>
+<ul>
+<li>After all, we know that biological variables, such as dopamine release, meaningfully relate to objective functions from reinforcement learning. </li>
+<li>In addition, although many potential learning rules may not directly follow the gradient of the objective function, they would still lead to an improvement in that objective function. </li>
+<li>Here, identifying an objective function allows us to establish whether a change in the phenotype of a neural circuit should be considered a form of learning. </li>
+<li>If things don’t “get better” according to some metric, how can we refer to any phenotypic plasticity as “learning” as opposed to just “changes”?</li>
+</ul>
+</li>
+</ul>
+<h3 id="architectures-learning-rules-and-objective-functions-in-the-wet-lab">Architectures, learning rules, and objective functions in the wet lab</h3>
+<ul>
+<li>How can the framework articulated here engage with experimental work? <ul>
+<li><strong>One way to make progress is to build working models using the three core components, then compare the models with the brain.</strong> </li>
+<li>Such models should ideally check out on all levels: <ul>
+<li>(1) They should solve the complex tasks from the Brain Set under consideration. </li>
+<li>(2) They should be informed by our knowledge of anatomy and plasticity. And, </li>
+<li>(3) they should reproduce the representations, and changes in representation, we observe in brains (Fig. 4). </li>
+</ul>
+</li>
+<li>Of course, checking each of these criteria will be non-trivial. It may require many new experimental paradigms. </li>
+<li><strong>Checking that a model can solve a given task is relatively straightforward, but representational and anatomical matches are not straightforward to establish</strong>, and this is an area of active research. </li>
+<li>Luckily, the modularity of the optimization framework allows researchers to attempt to study each of the three components in isolation.</li>
+</ul>
+</li>
+</ul>
+<h3 id="empirical-studies-of-architecture-in-the-brain">Empirical studies of architecture in the brain</h3>
+<ul>
+<li>
+<p>To be able to identify the architecture that defines the inductive biases of the brain, we need to continue performing experiments that explore neuroanatomy at the circuit level. </p>
+<ul>
+<li>To really frame neuroanatomy within an optimization framework, we must also be able to identify what information is available to a circuit, including where signals about action outcomes may come from. </li>
+<li>Ultimately, we want to be able to relate these aspects of anatomy to concrete biological markers that guide the developmental processes responsible for learning.</li>
+</ul>
+</li>
+<li>
+<p>There is considerable experimental effort already underway towards describing the anatomy of the nervous system. </p>
+<ul>
+<li>We are using a range of imaging techniques to quantify the anatomy and development of circuits. </li>
+<li>Extensive work is also conducted in mapping out the projections of neural circuits with cell-type specificity. </li>
+<li>Research attempting to map out the hierarchy of the brain has long existed, but <strong>several groups are now probing which parts of deep ANN hierarchies may best reflect which brain areas.</strong> </li>
+<li>For example, the representations in <strong>striate cortex</strong> (初级视皮层) (as measured, for example, by dissimilarity matrices) better match early layers of a deep ANN, while those in <strong>inferotemporal cortex</strong> (下颞叶皮层) better match later layers. </li>
+<li>This strain (类型) of work also involves optimization of the architecture of deep ANNs so that they provide a closer fit to representation dynamics in the brain, e.g. by exploring different recurrent connectivity motifs. </li>
+<li>Confronted with a bewildering set of anatomical observations that have been and will be made, theories and frameworks that place anatomy in a framework alongside objective functions and learning rules offer a way to zero in on those features with the most explanatory power.</li>
+</ul>
+</li>
+</ul>
+<h3 id="empirical-studies-of-learning-rules-in-the-brain">Empirical studies of learning rules in the brain</h3>
+<ul>
+<li>
+<p>There is a long tradition in neuroscience of studying synaptic plasticity rules. </p>
+<ul>
+<li>Yet, these studies have rarely explored how credit assignment may occur. </li>
+<li>However, as we discussed above (Box 1), credit assignment is key to learning in ANNs, and may be in the brain as well. </li>
+<li>Thankfully, <strong>top-down feedback and neuromodulatory systems have become the focus of recent studies of synaptic plasticity.</strong> </li>
+<li><strong>This has allowed some concrete proposals, e.g. as to how apical dendrites may be involved in credit assignment, or how top-down attention mechanisms combined with neuromodulators may solve the credit assignment problem (Fig. 5).</strong> </li>
+<li>We may also be able to look at changes in representations and infer the plasticity rules from those observations. </li>
+<li>It is important for experimentalists to measure neural responses both during and after an animal has reached stable performance, so as to capture how representations evolve during learning. </li>
+<li>Work on learning rules with an eye to credit assignment is producing a finer-grained understanding of the myriad of factors that affect plasticity.</li>
+</ul>
+</li>
+<li>
+<p>In the future, we should be better placed to study learning rules with optimization in mind. </p>
+<ul>
+<li>As optical technologies improve, and potentially give us a means of estimating synaptic changes in vivo, we may be able to directly relate synaptic changes to things like behavioral errors. </li>
+<li>We could also directly test hypothesized biological models of learning rules that can solve the credit assignment problem, such as those that use attention or those that use dendritic signals for credit assignment (Fig. 5). </li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../imgs/03_bio_credit_assignment.png" /></p>
+<ul>
+<li>Figure 5: Biological models of credit assignment. <ul>
+<li>(a) <strong>Attention based models of credit assignment</strong> propose that the credit assignment problem is solved by the brain using attention and neuromodulatory signals. <ul>
+<li>According to these models, sensory processing is largely feedforward in early stages, then feedback “tags” neurons and synapses for credit, and <strong>reward prediction errors (RPE)</strong> determine the direction of plastic changes. </li>
+<li>This is illustrated at the bottom, where circles indicate neurons, and the gray level indicates their level of activity.</li>
+<li>These models predict that the neurons responsible for activating a particular output unit will be tagged (T) by attentional feedback. Then, if a positive RPE is received, the synapses should potentiate. In contrast, if a negative RPE is received, the synapses should depress. </li>
+<li>This provides an estimate of a gradient for a category-based objective function. </li>
+</ul>
+</li>
+<li>(b-d) <strong>Dendritic models of credit assignment</strong> propose that gradient signals are carried by “dendritic error” (<span class="arithmatex">\(\delta\)</span>) signals in the apical dendrites of pyramidal neurons. <ul>
+<li>(b) According to these models, feedforward weight updates are determined by a combination of feedforward inputs and <span class="arithmatex">\(\delta\)</span>. In an experiment where two different stimuli are presented, and only one is reinforced, this leads to specific predictions. </li>
+<li>(c) If a neuron is tuned towards a stimulus that is reinforced, then reinforcement should lead to an increase in apical activity. </li>
+<li>(d) In contrast, if a neuron is tuned to an un-reinforced stimulus, its apical activity should decrease when reinforcement is received.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="empirical-studies-of-objective-functions-in-the-brain">Empirical studies of objective functions in the brain</h3>
+<ul>
+<li>
+<p>In some cases, the objective functions being optimized by the brain may be represented directly in neural signals that we can monitor and record. </p>
+<ul>
+<li>In other cases, objective functions may only exist implicitly with respect to the plasticity rules that govern synaptic updates. </li>
+<li>Normative concepts, such as optimal control, are applicable, and evolutionary ideas can inform our thinking. </li>
+<li>More specifically, ethology may provide guidance as to which functions would be useful for animals to optimize, giving us a meaningful intuitive space in which to think about objective functions.</li>
+</ul>
+</li>
+<li>
+<p>There is a long-standing literature trying to relate experimental data to objective functions. </p>
+<ul>
+<li>This starts with theoretical work relating known plasticity rules to potential objective functions. </li>
+<li>For example, there are studies that attempt to <strong>estimate objective functions by comparing neural activity observed experimentally with the neural activity of ANNs trained on natural scenes.</strong> </li>
+<li>There are also approaches that use <strong>inverse reinforcement learning</strong> to identify what a system optimizes. </li>
+<li>Moreover, one could argue that we can get a handle on objective functions by <strong>looking for correlations between representational geometries optimized for a given objective and real neural representational geometries.</strong> </li>
+<li>Another newly emerging approach asks what an animal’s circuits can optimize when controlling a Brain Computer Interface (BCI) device. </li>
+<li>Thus, a growing literature, which builds on previous work, helps us explore objective functions in the brain.</li>
+</ul>
+</li>
+</ul>
+<h2 id="caveats-and-concerns">Caveats and concerns</h2>
+<ul>
+<li>One may argue that a focus on architectures, learning rules, and objective functions, and a move away from studying the coding properties of neurons, loses much of what we have learned so far, e.g. <ul>
+<li>orientation selectivity, </li>
+<li>frequency tuning, </li>
+<li>spatial-tuning (place cells, grid cells). </li>
+</ul>
+</li>
+<li>
+<p>However, our proposed framework is heavily informed by this knowledge. </p>
+<ul>
+<li><strong>Convolutional ANNs directly emerged from the observation of complex cells in the visual system.</strong> </li>
+<li>Moreover, tuning curves are often measured in the context of learning experiments, and changes in tuning inform us about learning rules and objective functions.</li>
+</ul>
+</li>
+<li>
+<p>In a similar vein, a lot of computational neuroscience has emphasized models of the <strong>dynamics of neural activity</strong>, and that has not been a major theme in our discussion. </p>
+<ul>
+<li>As such, one might worry that our framework fails to connect with this past literature. </li>
+<li>However, the framework we articulate here does not preclude (排除) consideration of dynamics. </li>
+<li>A focus on dynamics may equally be repurposed for making inferences about architectures, learning rules and objective functions, which have long been a feature of models of neural dynamics.</li>
+</ul>
+</li>
+<li>
+<p>Another common objection to the relevance of deep learning for neuroscience is that many behaviors that animals engage in appear to require relatively little learning. </p>
+<ul>
+<li>However, <strong>such innate behavior was “learned”, only on evolutionary timescales.</strong> </li>
+<li>Hardwired behavior is, arguably, best described as strong inductive biases, since even pre-wired behaviors can be modified by learning (e.g. horses still get better at running after birth). </li>
+<li>Hence, even when a neural circuit engages in only moderate amounts of learning, an optimization framework can help us model its operations.</li>
+</ul>
+</li>
+<li>
+<p>The framework that we have laid out here makes the optimization of objective functions central to models of the brain. </p>
+<ul>
+<li>But a comprehensive theory of any brain likely requires attention to other constraints unrelated to any form of objective function optimization. </li>
+<li>For example, many aspects of physiology are determined by phylogenetic constraints that may be hold-overs from evolutionary ancestors. </li>
+<li>While these constraints are undoubtedly crucial for our models in neuroscience, we believe that it is the optimization of objective functions within these constraints that produces the rich diversity of neural circuitry and behavior that we observe in the brain.</li>
+</ul>
+</li>
+<li>
+<p><strong>Some of us, who are inclined to a bottom-up approach to understanding the brain, worry that attempts to posit objective functions or learning rules for the brain may be premature, needing far more details of brain operation than we currently possess.</strong> </p>
+<ul>
+<li>Nonetheless, scientific questions necessarily are posed within some framework of thought. </li>
+<li>Importantly, we are not calling for abandoning bottom-up explanations. </li>
+<li>Instead, we hope that important new experimental questions will emerge from the framework suggested by ANNs (see e.g. Fig. 5).</li>
+</ul>
+</li>
+<li>
+<p>Finally, some researchers are concerned by the large number of parameters in deep ANNs, seeing them as a violation of Occam’s razor and merely an over-fitting to data.</p>
+<ul>
+<li>Interestingly, recent work in AI shows that the behavior of massively over-parameterized learning systems can be counterintuitive — there appear to be intrinsic mathematical properties of over-parameterized learning systems that enable good generalization. </li>
+<li>Since the brain itself apparently contains a massive number of potential parameters to adapt (e.g. synaptic connections, dendritic ion channel densities, etc.), one might argue that the large number of parameters in deep ANNs actually makes them even more appropriate models of the brain.</li>
+</ul>
+</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>
+<p>Much of systems neuroscience has attempted to formulate succinct (简洁) statements about the function of <strong>individual neurons</strong> in the brain.</p>
+<ul>
+<li>This approach has been successful at explaining some (relatively small) circuits and certain hard-wired behaviors. </li>
+<li>However, there is reason to believe that this approach will need to be complemented by other insights if we are to develop good models of plastic circuits with thousands, millions or billions of neurons. </li>
+<li><strong>There is, unfortunately, no guarantee that the function of individual neurons in the central nervous system can be compressed down to a human-interpretable, verbally articulable form.</strong> </li>
+<li>Given that we currently have no good means of distilling the function of individual units in deep ANNs into words, and given that real brains are likely more, not less, complex, we suggest that systems neuroscience would benefit from focusing on the kinds of models that have been successful in ANN research programs, i.e. models grounded in the three essential components.</li>
+</ul>
+</li>
+<li>
+<p>Current theories in systems neuroscience are beautiful and insightful, but we believe that they could benefit from a cohesive framework founded in <strong>optimization</strong>. </p>
+<ul>
+<li>For example, local plasticity rules, such as Hebbian mechanisms, explain a great deal of biological data. </li>
+<li>But, to achieve good performance on complex tasks, Hebbian rules must be designed with objective functions and architectures in mind. </li>
+<li>Similarly, other researchers have, for good reason, pointed out the benefits of the inductive biases utilized by the brain. </li>
+<li>However, inductive biases are not on their own sufficient to solve complex tasks, like those contained in the AI Set or various Brain Sets. </li>
+<li>To solve these difficult problems, inductive biases must be paired with learning and credit assignment. </li>
+<li>If, as we have argued, the set of tasks that an animal can solve are an essential consideration for neuroscience, then it is critical to build models that can actually solve these tasks.</li>
+</ul>
+</li>
+<li>
+<p>Inevitably, both bottom-up descriptive work and top-down theoretical work will be required to make progress in systems neuroscience. </p>
+<ul>
+<li>It is important, though, to start with the right kind of top-down theoretical framing. </li>
+<li>Given the ability of modern machine learning to solve problems in the AI Set and numerous Brain Sets, it will be fruitful to guide the top-down framework of systems neuroscience research with machine learning insights. </li>
+<li>If we consider research data within the framework provided by this mindset, and focus our attention on the three essential components identified here, we believe we can develop theories of the brain that will reap the full benefits of the current technological revolution in neuroscience.</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
