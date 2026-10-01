@@ -1,0 +1,3463 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01_Brain_vs_MPU/">
+      
+      
+        <link rel="next" href="../../../Labs/NTU_MMLab/01_NTU_DynamicVLA/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>2 2021 NeuroCircuit Architectures - NeuroAI Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../js/main.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-2021-neurocircuit-architectures" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeuroAI Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 2021 NeuroCircuit Architectures
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    NeuroAI Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeuroAI Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ricky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Creator (Ricky)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.1 Guiding Principles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0.1 Guiding Principles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 NeuroAI Hassabis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 Brain Evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/03_DL_framework_for_NS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2019 DL framework for NS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Neural Encoding I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/02_Neural_Encoding_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Neural Encoding II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/03_Neural_Decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Neural Decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/04_Information_Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Information Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/07_Network_Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Network Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/08_Plasticity_and_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Plasticity and Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Classical Conditioning and Reinforcement Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Representational Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 LLM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.1 LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 Qwen3-VL Technical Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 The Big LLM Architecture Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2024 DeepSeek-V3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 VLA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.2 VLA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_VLA/papers/01_pi_0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2024 \(\pi_0\)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 RL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.3 RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/01_PPO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 PPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2023 DreamerV3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.4 Spatial Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.4 Spatial Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.4_Spatial_Intelligence/papers/02_DeepMind_D4RT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2025 DeepMind D4RT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.4_Spatial_Intelligence/papers/04_Microsoft_TRELLIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2024 Microsoft TRELLIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.5 Generative Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.5 Generative Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.5_Generative_Flows/papers/01_DiT_Diffusion_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2022 DiT: Diffusion Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 Brain Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3.1 Brain Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_Brain_vs_MPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Brain vs MPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 NeuroCircuit Architectures
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 NeuroCircuit Architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-sentence-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-sentence summary:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commonly-used-circuit-motifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commonly Used Circuit Motifs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commonly Used Circuit Motifs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feedforward-excitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedforward excitation.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedforwardfeedback-inhibition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedforward/feedback inhibition.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lateral-inhibition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lateral inhibition.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutual-inhibition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutual inhibition.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialized-architectures-for-specific-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specialized Architectures for Specific Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specialized Architectures for Specific Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#continuous-topographic-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous topographic mapping:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-parallel-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete parallel processing:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimensionality-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimensionality expansion:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrent-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recurrent loops:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biased-input-segregated-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Biased input (偏置输入) – segregated output (分隔输出):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evolutionary-and-developmental-perspectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolutionary and Developmental Perspectives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evolutionary and Developmental Perspectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evolution-of-neuronal-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolution of neuronal circuits.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-of-neuronal-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development of neuronal circuits.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#box-1-tools-for-mapping-neuronal-circuit-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Box 1: Tools for mapping neuronal circuit architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Box 1: Tools for mapping neuronal circuit architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-neuron-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single neuron tracing.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serial-electron-microscopic-em-reconstruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serial electron microscopic (EM) reconstruction.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trans-synaptic-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trans-synaptic tracing.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electrophysiological-and-optical-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electrophysiological and optical methods.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_1" id="__nav_11_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NTU MMLab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NTU MMLab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/01_NTU_DynamicVLA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2026 NTU DynamicVLA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/02_NTU_VLANeXt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2026 NTU VLANeXt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/03_NTU_SI_Survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2025 NTU SI Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/04_NTU_4RC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2026 NTU 4RC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/05_NTU_PhysX-Anything/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 NTU PhysX-Anything
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/06_NTU_STREAM3R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 NTU STREAM3R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/07_NTU_Puffin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2025 NTU Puffin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-sentence-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-sentence summary:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commonly-used-circuit-motifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commonly Used Circuit Motifs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commonly Used Circuit Motifs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feedforward-excitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedforward excitation.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feedforwardfeedback-inhibition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedforward/feedback inhibition.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lateral-inhibition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lateral inhibition.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutual-inhibition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutual inhibition.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialized-architectures-for-specific-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specialized Architectures for Specific Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Specialized Architectures for Specific Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#continuous-topographic-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Continuous topographic mapping:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discrete-parallel-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discrete parallel processing:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dimensionality-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dimensionality expansion:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recurrent-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recurrent loops:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#biased-input-segregated-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Biased input (偏置输入) – segregated output (分隔输出):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evolutionary-and-developmental-perspectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolutionary and Developmental Perspectives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evolutionary and Developmental Perspectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evolution-of-neuronal-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evolution of neuronal circuits.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#development-of-neuronal-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development of neuronal circuits.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outlook
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#box-1-tools-for-mapping-neuronal-circuit-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Box 1: Tools for mapping neuronal circuit architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Box 1: Tools for mapping neuronal circuit architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-neuron-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single neuron tracing.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serial-electron-microscopic-em-reconstruction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serial electron microscopic (EM) reconstruction.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trans-synaptic-tracing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trans-synaptic tracing.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electrophysiological-and-optical-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electrophysiological and optical methods.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-2021-neurocircuit-architectures">2 2021 NeuroCircuit Architectures</h1>
+<ul>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8916593/pdf/nihms-1746805.pdf">Architectures of Neuronal Circuits</a></li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<ul>
+<li>While individual neurons are the basic unit of the nervous system, they process information by working together in neuronal circuits with specific patterns of synaptic connectivity. <ul>
+<li>Here we review common circuit motifs and architectural plans used in diverse brain regions and animal species. </li>
+<li>We also consider how these circuit architectures assemble during development and might have evolved. </li>
+<li>Understanding how specific patterns of synaptic connectivity can implement specific neural computations will help bridge the huge gap between the biology of the individual neuron and the function of the entire brain, will allow us to better understand the neural basis of behavior, and may inspire new advances in AI.</li>
+</ul>
+</li>
+</ul>
+<h2 id="one-sentence-summary">One-sentence summary:</h2>
+<ul>
+<li>
+<p>Neuronal circuit architectures and their function, evolution, and development are reviewed here.</p>
+</li>
+<li>
+<p>Over a century ago, Santiago Ramón y Cajal and his contemporaries proposed that individual neurons are the basic unit of the nervous system. </p>
+<ul>
+<li>Cajal further proposed that information flows from dendrites to cell bodies to axons within individual neurons (Fig. 1). </li>
+<li>Given that dendrites and axons of most vertebrate neurons are readily distinguishable morphologically, systematic studies of isolated neurons labeled by Golgi stains provided the first overview of how information flows within vertebrate nervous systems.</li>
+</ul>
+</li>
+<li>
+<p>With the advent of modern technologies (Box 1), we have accumulated vast amounts of knowledge of the anatomical, physiological, and functional properties of individual neurons. </p>
+<ul>
+<li>However, individual neurons do not work in isolation: they work together in neuronal circuits to process information. </li>
+<li>What is less clear is whether there are generalizable principles about the structural organization of neuronal circuits across different brain regions and animal species. </li>
+<li>Here I discuss principles underlying how neurons communicate with each other through specific patterns of synaptic connectivity. </li>
+<li>While the importance of activity dynamics in neuronal populations has been increasingly recognized in information processing in diverse systems from invertebrates to mammals, synaptic connectivity patterns provide the physical bases on which neuronal dynamics execute their functions.</li>
+<li>Understanding how these connectivity patterns implement specific computations will allow us to decipher information processing principles in the nervous system and should inspire new advances in AI.</li>
+</ul>
+</li>
+</ul>
+<h2 id="commonly-used-circuit-motifs">Commonly Used Circuit Motifs</h2>
+<p><img alt="" src="../../imgs/02_circuit_motifs.png" /></p>
+<ul>
+<li>
+<p>Fig. 2. Commonly used circuit motifs. See box on the right for notations. </p>
+<ul>
+<li>(A) <strong>Feedforward excitation</strong>. Information flows through a series of excitatory neurons, <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(D\)</span>. Three different <span class="arithmatex">\(A\)</span> neurons synapse onto <span class="arithmatex">\(B\)</span>, exemplifying convergent excitation. <span class="arithmatex">\(C\)</span> synapses onto three distinct <span class="arithmatex">\(D\)</span> neurons, exemplifying divergent excitation. </li>
+<li>(B) In <strong>feedforward inhibition</strong> (top), inhibitory neuron <span class="arithmatex">\(C\)</span> receives input from presynaptic excitatory neuron <span class="arithmatex">\(A\)</span> and sends inhibitory output to postsynaptic neuron <span class="arithmatex">\(B\)</span>; in <strong>feedback inhibition</strong> (bottom), inhibitory neuron <span class="arithmatex">\(C\)</span> receives input from and sends inhibitory output to postsynaptic excitatory neuron <span class="arithmatex">\(B\)</span>. </li>
+<li>(C) In <strong>lateral inhibition</strong>, parallel pathways (<span class="arithmatex">\(A_n \to B_n\)</span>; 3 are shown) each excite inhibitory neuron <span class="arithmatex">\(C\)</span>, which in turn sends inhibitory output to all pathways. </li>
+<li>(D) In <strong>mutual inhibition</strong>, two inhibitory neurons form reciprocal connections and also provide outputs through branched axons to broadcast their activity states. The inhibitory neurons can also act through intermediary excitatory neurons to inhibit each other (not shown). </li>
+</ul>
+</li>
+<li>
+<p>If individual neurons are ‘letters’ in an alphabet used to write an ‘article’ that is a brain, then what are the intermediates? </p>
+<ul>
+<li>In this section, we focus on circuit motifs used across diverse brain regions and animal species (Fig. 2), which can be considered ‘words.’ </li>
+<li>In the next section, we explore circuit architectures that might operate at the level of ‘sentences.’</li>
+<li>Here, we discuss the most commonly used circuit motifs involving excitatory and inhibitory neurons. </li>
+<li>Some of these motifs apply not only to neuronal circuits but also to gene regulatory circuits. </li>
+<li><a href="https://www.cs.toronto.edu/~hinton/absps/NatureDeepReview.pdf">Architectures based on some of these motifs have also been used in AI to great effect</a>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="feedforward-excitation">Feedforward excitation.</h3>
+<ul>
+<li>
+<p>The primary means by which signals flow from one region to another is through feedforward excitation, a series of connections between excitatory neurons (Fig. 2A). </p>
+<ul>
+<li>At each stage, a neuron often receives input from multiple presynaptic partners (convergent excitation) and sends output via branched axons to multiple postsynaptic partners (divergent excitation).</li>
+<li><strong>Convergent excitation</strong> can enable postsynaptic neurons to respond selectively to features not solely or explicitly present in any of the presynaptic neurons. It can also increase signal-to-noise ratio if multiple input neurons carry the same signal but uncorrelated noise. </li>
+<li><strong>Divergent excitation</strong> allows the same signal to be processed by multiple downstream pathways.</li>
+</ul>
+</li>
+<li>
+<p>One of the best characterized examples of feedforward excitation is the mammalian visual system, where signals flow from </p>
+<ul>
+<li>photoreceptors → </li>
+<li>bipolar cells → </li>
+<li>retinal ganglion cells → </li>
+<li>lateral geniculate nucleus (LGN) relay neurons → </li>
+<li>layer 4 primary visual cortical (V1) neurons → </li>
+<li>V1 neurons in other layers → </li>
+<li>neurons in higher cortical areas. </li>
+</ul>
+</li>
+<li>(Note that while the discussion here focuses on individual neurons and their synaptic connections, feedforward excitation can also be applied to neural regions in broad strokes, such as retina → LGN → V1.) </li>
+<li>Along these feedforward pathways, representations of visual information are transformed from light intensity to contrasts, edges, objects, and motion. </li>
+<li>The feedforward architecture of the mammalian visual system inspired the development of the <strong>perceptron</strong> and <strong>deep neural network</strong> for image recognition and categorization; deep neural networks have also been used in AI to solve problems far beyond image analysis.</li>
+</ul>
+<h3 id="feedforwardfeedback-inhibition">Feedforward/feedback inhibition.</h3>
+<ul>
+<li>
+<p>While long-range signals in the nervous system are mostly delivered by excitatory neurons (<strong>notable exceptions include basal ganglia and cerebellum circuits</strong>), inhibitory interneurons play key roles in sculpting such signals locally. </p>
+<ul>
+<li>Two widely used motifs are feedforward and feedback inhibition (Fig. 2B). </li>
+<li>In feedforward inhibition, an inhibitory neuron receives input from a presynaptic excitatory neuron, and both inhibitory and presynaptic excitatory inputs converge onto a postsynaptic neuron. </li>
+<li>In feedback inhibition, an inhibitory neuron receives input from and projects back onto an excitatory neuron, often at its presynaptic terminals. </li>
+<li><strong>Almost every excitatory connection in the visual pathway described above is accompanied by feedforward inhibition, feedback inhibition, or both.</strong></li>
+<li>For example, LGN neurons directly excite V1 GABAergic neurons to provide feedforward inhibition to layer 4 excitatory neurons, and layer 4 excitatory neurons also activate V1 GABAergic neurons to provide feedback inhibition onto themselves.</li>
+</ul>
+</li>
+<li>
+<p>Feedforward inhibition acts more rapidly than feedback inhibition, as it reaches the postsynaptic target cell with only one synaptic delay after excitatory signals, whereas feedback inhibition has two synaptic delays (Fig. 2B). </p>
+<ul>
+<li>Feedforward inhibition is proportional to the strength of the input, whereas feedback inhibition is proportional to the strength of the output. </li>
+<li>Both are used to regulate the duration and magnitude of incoming excitatory signals. </li>
+<li>For example, limiting the duration of activation in response to sensory input allows circuits to quickly return to their baseline activity levels, so as to maximize their sensitivity to future inputs that signal changes in the environment. </li>
+<li>Networks of feedforward and feedback inhibitory neurons often act in concert and can perform many interesting functions, such as <ul>
+<li>regulating the gain and dynamic range of input signals and </li>
+<li>facilitating synchronous or oscillatory firing.</li>
+</ul>
+</li>
+<li>Feedforward and feedback inhibition also play an essential role in maintaining a ‘balance’ between excitation and inhibition (e.g., strong excitation is accompanied by strong inhibition) to prevent overly excited or inhibited states.</li>
+<li>Such ‘balanced’ networks can enhance the speed and signal-to-noise ratio of information processing.</li>
+</ul>
+</li>
+</ul>
+<h3 id="lateral-inhibition">Lateral inhibition.</h3>
+<ul>
+<li>Lateral inhibition (Fig. 2C) is a widely occurring circuit motif. <ul>
+<li>It selects information to be propagated to downstream circuits by amplifying differences in activity between parallel pathways. </li>
+<li><strong>For example, photoreceptor neurons in the vertebrate retina activate horizontal cells, which provide feedback inhibition to many photoreceptor neurons nearby. This action is a major contributor to the classic center–surround receptive field in downstream ganglion cells, conferring on these neurons the ability to extract information about spatial or color contrast.</strong></li>
+<li>Lateral inhibition is also used in other sensory systems, with the general purpose of sharpening representations of ethologically (从行为学角度) relevant information to be processed by downstream circuits.</li>
+</ul>
+</li>
+</ul>
+<h3 id="mutual-inhibition">Mutual inhibition.</h3>
+<ul>
+<li>Communication between inhibitory neurons can confer circuits interesting properties. <ul>
+<li>For example, if inhibitory neuron A directly inhibits inhibitory neuron B, then activation of A would dis-inhibit target neurons of B. </li>
+<li>If B also inhibits A, then they form the mutual (reciprocal) inhibition motif (Fig. 2D). </li>
+<li><strong>Mutual inhibition is widely used in circuits that exhibit rhythmic activity, such as those involved in locomotion.</strong> A classic example is the crustacean stomatogastric ganglion (甲壳动物胃食管神经节). </li>
+<li><strong>Operating on a longer timescale, mutual inhibition can also be used to regulate brain states, such as the sleep–wake cycle.</strong></li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p><strong>So far, our discussion has involved an alphabet comprising just two letters: excitatory and inhibitory neurons. In reality, the neuronal alphabet is far richer.</strong> </p>
+<ul>
+<li>Both excitatory and inhibitory neurons have many variations, thanks to the heterogeneity in their dendrite morphology, ion channel composition, spiking properties, and the subcellular distribution and strength of their input and output synapses. </li>
+<li>For example, in the <strong>mammalian neocortex</strong>, three classes of inhibitory neurons, the <code>Martinotti</code>, <code>basket</code>, and <code>chandelier</code> cells, target their presynaptic terminals to distal (远端) dendrites, cell bodies, and axon initial segments of excitatory pyramidal neurons, respectively, and thus control different aspects of how pyramidal neurons integrate synaptic inputs and produce spikes. </li>
+<li>In the stomatogastric ganglion, mutually inhibiting neurons have distinct ion channel compositions and input/output synaptic strengths, which underlie their sequential firing patterns within each rhythmic cycle. </li>
+<li>Finally, the neuronal ‘alphabet’ also includes many modulatory neuron types to be discussed later.</li>
+</ul>
+</li>
+<li>
+<p>At the level of core motifs, there are also many variations. </p>
+<ul>
+<li>For example, the mutual inhibition motif often includes intermediary neurons (e.g., inhibitory neuron A inhibits an excitatory neuron that excites inhibitory neuron B). </li>
+<li>It is important to note that the core motifs discussed above are almost always used in concert. </li>
+<li>Indeed, the large-scale architectural patterns discussed in the next section always contain these motifs.</li>
+</ul>
+</li>
+<li>
+<p>In summary, a rich alphabet of neurons with diverse intrinsic properties can be used to compose words using a set of core motifs and their variations. </p>
+<ul>
+<li>These words are often used in concert to produce phrases, which together form the basis for sentences, as we discuss next.</li>
+</ul>
+</li>
+</ul>
+<h2 id="specialized-architectures-for-specific-functions">Specialized Architectures for Specific Functions</h2>
+<p><img alt="" src="../../imgs/02_specialized_architectures.png" /></p>
+<ul>
+<li>
+<p>Fig. 3. Specialized architectures for specific functions. </p>
+<ul>
+<li>(A) <strong>Continuous topographic mapping</strong>. <ul>
+<li>Neighboring neurons in the input field project their axons in an orderly fashion to connect to neighboring neurons in the target field, preserving their spatial relationships. </li>
+<li>A prime example is the retinotopic map. </li>
+</ul>
+</li>
+<li>(B) <strong>Discrete parallel processing</strong>. <ul>
+<li>Neurons of a specific type (same color) in the input field, regardless of their spatial locations, connect to the corresponding neuron type in the target field. </li>
+<li>A prime example is the olfactory glomerular map. </li>
+<li>Target neurons do not need to be spatially ordered as shown; they could extend their dendrites to connect specifically with the axons of specific input neuron types. </li>
+</ul>
+</li>
+<li>(C) <strong>Dimensionality expansion</strong>. <ul>
+<li>Signals represented by a small number of neurons in field A are represented by a much larger number of neurons in field B, such that activation of B neurons can represent specific combinations of A neurons (e.g., B4 represents co-activation of A1 and A2). </li>
+<li>Furthermore, the synaptic connections between B and C can be altered by coactivation of a teaching signal (the lightening and <span class="arithmatex">\(+\)</span> sign signals strengthening) and a specific B neuron to modify the synaptic strength between that particular B and C. </li>
+<li>Thus, only after training would coactivation of A1 and A2 reaches the threshold (thick arrow for B4) for activating C1. </li>
+<li>Likewise, a C2 neuron (not shown) can be trained to respond to the coactivation of A2 and A3 by modifying the strength of B7 → C2. </li>
+<li>Filled and open symbols represent active and inactive neurons, respectively. </li>
+</ul>
+</li>
+<li>(D) Two examples of <strong>recurrent loops</strong>. <ul>
+<li>In the entorhinal–hippocampal loop (内嗅-海马环路, top), arrows indicate direct connections between neurons within the indicated regions. </li>
+<li>Many connections within these regions are topographically organized. </li>
+<li>In the <code>neocortex – basal ganglia – thalamus</code> (red) and <code>neocortex–pons–cerebellum–thalamus</code> loops (blue), arrows represent connections between these brain regions but not necessarily direct synaptic connections between specific neuron types. </li>
+<li>Within the basal ganglia and cerebellum, for example, inputs are transformed at intermediary stages to produce outputs. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The next level of organization is more heterogeneous in scale and configuration and less readily generalizable. </p>
+<ul>
+<li>Nevertheless, I attempt here to extract some high-order circuit architectural patterns that have been found in multiple neural regions and diverse species.</li>
+</ul>
+</li>
+</ul>
+<h3 id="continuous-topographic-mapping">Continuous topographic mapping:</h3>
+<ul>
+<li>
+<p>This is a common organizational scheme for representing information in the nervous system.</p>
+<ul>
+<li>Neighboring input neurons connect to neighboring target neurons through orderly axonal projections (Fig. 3A). </li>
+<li><strong>A prime example is retinotopy (视网膜拓扑映射): neighboring retinal ganglion cells synapse onto neighboring LGN neurons, which then connect to neighboring V1 neurons, which in turn connect to neighboring higher-order visual cortical neurons. Retinotopy enables spatial relationships in the outside world captured by the retina to be recapitulated (重述) in V1 and higher visual cortical areas.</strong> </li>
+<li>Continuous topographic mapping is also used elsewhere. In the <a href="https://en.wikipedia.org/wiki/Cortical_homunculus">sensory and motor homunculi</a>, somatosensory (体感) stimuli from neighboring body parts are coarsely represented in neighboring areas of the primary somatosensory cortex, and motor outputs to neighboring body parts are coarsely controlled by neighboring areas of the motor cortex.</li>
+</ul>
+</li>
+<li>
+<p>Topographic maps provide a convenient way to organize information at successive stages of processing and can be constructed via robust developmental mechanisms (Fig. 5A). </p>
+<ul>
+<li>They have a variety of computational advantages. </li>
+<li>For example, retinotopy facilitates extraction of local contrast through lateral inhibition for object recognition. </li>
+<li>Furthermore, by placing circuit elements that are more often functionally connected nearby each other, topographic maps save energy by minimizing wiring length. </li>
+<li>The design of ‘CNN’ takes a page from topographic mapping to greatly reduce the number of variables needed to tune an ANN and thus speed up computation.</li>
+</ul>
+</li>
+</ul>
+<h3 id="discrete-parallel-processing">Discrete parallel processing:</h3>
+<ul>
+<li>
+<p>Discrete parallel processing (Fig. 3B) allows signals to be represented and processed in parallel by discrete information channels. </p>
+<ul>
+<li>A prime example is the glomerular (肾小球的) organization of the vertebrate olfactory bulb (脊椎动物嗅球) and insect antennal lobe: olfactory receptor neurons (ORNs) expressing the same odorant receptors send their axons to the same glomerulus (肾小球) to synapse onto the dendrites of their corresponding second-order projection neurons, forming discrete olfactory processing channels. Tens to thousands of individual ORNs expressing the same odorant receptor converge their axons onto the same glomerulus, thus enhancing the signal-to-noise ratio. </li>
+<li><strong>Rather than representing continuous values, different glomeruli represent signals from discrete ORN types, and thus the nature of the chemicals that activate those odorant receptors.</strong> </li>
+<li>Discrete parallel processing also characterizes the mammalian taste system.</li>
+</ul>
+</li>
+<li>
+<p>Discrete parallel processing is often used in conjunction with continuous topographic mapping. </p>
+<ul>
+<li>In the retina, for example, superimposed on the continuous retinotopy are discrete layers where different bipolar and ganglion cell types form specific connections to process different types of visual signals such as luminance, color, and motion in parallel. </li>
+<li>Compared to serial processing, parallel processing reduces computational depth, hence decreasing error rate and increasing processing speed. </li>
+<li>Indeed, massively parallel processing is a salient (显著的) feature of complex nervous systems with large numbers of neurons and large numbers of connections per neuron. </li>
+<li>This architecture is increasingly being adopted in computer systems design.</li>
+</ul>
+</li>
+</ul>
+<h3 id="dimensionality-expansion">Dimensionality expansion:</h3>
+<ul>
+<li>
+<p>In this architecture, signals from a relatively small number of input neurons diverge onto a much larger number of output neurons (Fig. 3C), allowing output neurons to represent distinct combinations of inputs. </p>
+<ul>
+<li>Similar signals at the input level are more readily distinguished at the output level, facilitating <strong>pattern separation</strong> by downstream neurons. </li>
+<li>Two prime examples are the insect mushroom body (olfactory projection neurons → mushroom body Kenyon cells → mushroom body output neurons) and the vertebrate cerebellum (mossy fibers → cerebellar granule cells → Purkinje cells). </li>
+<li>In both cases, a relatively small number of inputs (projection neurons or mossy fibers, respectively) synapse onto a much larger number of output neurons (Kenyon cells or granule cells, respectively).</li>
+<li>Information at the level of the output neurons can thus be represented in a much higher dimensional space, with each dimension representing the firing rate of one cell. </li>
+<li>Small differences in input firing patterns (e.g., different projection neuron populations representing different odor combinations) can more readily be distinguished by the population firing patterns of their postsynaptic partners. </li>
+<li><strong>This architecture allows for learning by adjusting the synaptic strengths of the output neurons via ‘teaching’ signals from dopamine neurons in the mushroom body and climbing fibers in the cerebellum.</strong> </li>
+<li>After training, the same input can produce different output patterns (Fig. 3C).</li>
+</ul>
+</li>
+<li>
+<p>Another example of dimensionality expansion is the entorhinal cortex → dentate gyrus granule cell → CA3 pyramidal neuron circuit (Fig. 3D, top). </p>
+<ul>
+<li>The large number of dentate gyrus granule cells can perform pattern separation for information from the entorhinal cortex  regarding space and objects for further processing by the downstream hippocampal circuit. </li>
+<li><strong>Unlike in the mushroom body and cerebellar cortex, ‘teaching neurons’ have not been identified here. This may be because the hippocampal circuit uses unsupervised learning, whereas the cerebellar and mushroom body circuits implement algorithms akin to supervised and reinforcement learning.</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="recurrent-loops">Recurrent loops:</h3>
+<ul>
+<li><strong>Nervous systems are full of recurrent loops: neurons connect back onto themselves, often through intermediary neurons.</strong><ul>
+<li>These recurrent loops are heterogeneous in scale, ranging from within a particular neural region (e.g., mutual inhibition employed in the crustacean stomatogastric circuit) to spanning large parts of the brain. </li>
+<li>In the mammalian visual system, for example, in addition to ‘bottom-up’ projections from LGN → V1 → higher cortical areas, ‘top-down’ projections from higher cortical areas → V1 → LGN serve several functions such as attentional control. </li>
+<li>Long-range recurrent loops may incorporate continuous topographic mapping or discrete parallel processing architectures. </li>
+<li>Fig. 3D illustrates two examples in the mammalian brain at the level of neuronal populations (top) and brain regions (bottom). </li>
+<li>Recurrent loops generally support rich neural activity dynamics, but their exact computational roles are not clear in most cases and are likely to differ on a case-by-case basis. </li>
+<li><strong>Understanding the general principles of information processing in recurrent loops is a major challenge in modern neuroscience.</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="biased-input-segregated-output">Biased input (偏置输入) – segregated output (分隔输出):</h3>
+<p><img alt="" src="../../imgs/02_input-output_organization.png" /></p>
+<ul>
+<li>
+<p>Fig. 4. Input–output organization of neuromodulatory circuits with broad projections. Modulatory neurons in region B collectively receive inputs from regions <span class="arithmatex">\(A_1 - A_m\)</span> and send broad output to regions <span class="arithmatex">\(C_1 - C_n\)</span>. </p>
+<ul>
+<li>(A) <strong>Biased input – segregated output architecture</strong>. <ul>
+<li>This architecture applies to several neuromodulatory systems, including <code>midbrain dopamine neurons</code>, <code>dorsal raphe serotonin neurons (背侧中缝核血清素能神经元)</code>, and <code>preoptic area galanin neurons (视前区甘丙肽神经元)</code>. </li>
+<li><strong>Arrows of different thickness represent different input strengths.</strong> </li>
+</ul>
+</li>
+<li>(B) <strong>Integration-and-broadcast architecture</strong>. <ul>
+<li>Neuronal populations in region B that project to a specific output region also send output to other output regions, with the possibility of a quantitative bias; these populations also receive similar inputs. </li>
+<li><code>Locus coeruleus norepinephrine neurons (蓝斑核去甲肾上腺素能神经元)</code> approximate this architecture. </li>
+<li><strong>Each circle symbolizes a neuronal population rather than an individual neuron, as the input–output organization summarized here is based on studies at the population level rather than at the level of individual neurons.</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>The above discussions have focused on circuits comprising excitatory and inhibitory neurons. </p>
+<ul>
+<li>Nervous systems also employ modulatory neurons for important functions.</li>
+<li>Modulatory neurons use neurotransmitters such as monoamines and neuropeptides that primarily engage G-protein-coupled receptors; hence their actions on postsynaptic neurons are slower and last between tens of milliseconds to seconds, compared to fast excitatory and inhibitory neurotransmitters, which engage ionotropic receptors and act within a few milliseconds. </li>
+<li>Besides acting across the synaptic cleft, modulatory neurotransmitters can also be released at sites without postsynaptic specializations — so-called ‘volume release’ — and can thus influence targets at distances greater than that of a typical synaptic cleft.</li>
+</ul>
+</li>
+<li>
+<p>Some modulatory neurons in the mammalian brain have cell bodies clustered in small regions but project axons broadly and receive diverse inputs. </p>
+<ul>
+<li>Viral-genetic tracing in the mouse (Box 1) revealed that midbrain dopamine, dorsal raphe serotonin, and hypothalamic neuropeptide galanin systems all adopt a ‘biased input–segregated output’ architecture at the population level (Fig. 4A). </li>
+<li>Each system can be divided into parallel subsystems defined based on their segregated output projections to distinct target regions that serve different behavioral functions. </li>
+<li>Each output subsystem receives inputs from similar regions with quantitative biases, allowing these subsystems to be differentially regulated by external and internal stimuli. </li>
+<li>One exception is the locus coeruleus (LC) norepinephrine system: at the population level, LC norepinephrine axons projecting to one brain region also project broadly to other regions, even though branching patterns of individual neurons can be idiosyncratic. </li>
+<li>These observations suggest that the LC norepinephrine system adopts an integration-and-broadcast architecture (Fig. 4B), which may suit its role in regulating global brain states such as arousal.</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>Nervous systems also employ architectures not discussed above. <ul>
+<li>A prominent architecture in bilaterians is interconnected bilateral symmetry; formal network analysis identified bilateral symmetry as the top-level organization in forebrain connectivity maps. </li>
+<li>The architectures of many neuronal circuits, such as those of the canonical mammalian neocortex and basal ganglia circuits, do not fit neatly into the categories described above, even though they utilize the aforementioned core circuit motifs, and can participate as parts of other architectures, such as topographic maps and recurrent loops (Fig. 3D bottom). </li>
+<li>This may be because we have not dug deep enough into these specific circuits to decipher their computational principles or because our understanding of the nervous system is not broad enough to identify shared architectures. </li>
+<li>We expect ample future opportunities to explore both the depth and breadth of neural circuit architectures by collecting greater amounts of data with increasingly sophisticated tools (Box 1). </li>
+<li>Only when we know more about these ‘sentences’ and their numerous variations and complex interactions will we have a deeper understanding of how they constitute ‘paragraphs’ (e.g., brain regions) and eventually the ‘article’ — the overall organization of an entire nervous system.</li>
+</ul>
+</li>
+</ul>
+<h2 id="evolutionary-and-developmental-perspectives">Evolutionary and Developmental Perspectives</h2>
+<ul>
+<li>Whereas computer circuits are products of top-down design, complex neuronal circuits have evolved over hundreds of millions of years. <ul>
+<li>Neuronal circuits also self-assemble during development using evolutionarily selected genetic instructions and are fine-tuned by experience. </li>
+<li>Thus, existing neuronal circuit architectures are likely a selection of those that can be readily evolved and assembled during development. </li>
+<li>Looking at a neuronal circuit in isolation may not tell us what elements are functionally important. </li>
+<li>Seeing what has been evolutionarily selected, expanded, shrunken, eliminated, or repeatedly produced through convergent evolution can, however, suggest what elements to focus on in functional studies.</li>
+</ul>
+</li>
+</ul>
+<h3 id="evolution-of-neuronal-circuits">Evolution of neuronal circuits.</h3>
+<ul>
+<li>
+<p>Extant bilaterian nervous systems (including all vertebrate and most invertebrate phyla) likely derived from ancestors via progressive sophistication: those with only myocytes, followed by the sequential evolution of sensorimotor neurons, separate sensory and motor neurons, interneurons, and centralized inter-neuron networks that gave rise to the central nervous system (CNS) and brain. </p>
+<ul>
+<li>The ubiquity (无处不在) of some core motifs, such as feedforward excitation and feedforward/feedback inhibition, may have originated early in animals with interneurons and a CNS, and have since been conserved across diverse species and spread across neural regions within each species due to their utility. </li>
+<li>Other architectures have evolved independently. </li>
+<li>The glomerular organization of the insect and vertebrate olfactory systems is likely the result of convergent evolution, as many clades descended from their last common ancestor do not have this organization, and different types of molecules are used as odorant receptors. </li>
+<li>Visual systems provide striking examples of convergent evolution of many fundamental features from retinotopy to motion detection algorithms in invertebrate and vertebrate lineages.</li>
+</ul>
+</li>
+<li>
+<p>Progressive sophistication of the nervous system requires expansion of neuronal numbers, neuron types and their connections, and brain regions. </p>
+<ul>
+<li>All these processes must result from changes to DNA. </li>
+<li>A key mechanism of evolutionary innovation is the duplication and divergence of genes; for example, duplication and divergence of a cone opsin gene (视锥蛋白基因) conferred (赋予) trichromacy (三色视觉) on some primates. </li>
+<li>Duplication-and-divergence is also used in the evolution of neuron types and brain regions. </li>
+<li><strong>Duplication-and-divergence for brain region evolution should in principle make neuronal circuits modular: rich connections within a duplicated unit and sparse connections between units (as opposed to all-to-all non-modular architectures employed as the starting conditions in many artificial neural networks).</strong> </li>
+<li>In turn, the modular nature of neuronal circuits might speed up evolution, as different modules can evolve independently of each other.</li>
+</ul>
+</li>
+</ul>
+<h3 id="development-of-neuronal-circuits">Development of neuronal circuits.</h3>
+<p><img alt="" src="../../imgs/02_circuit_development.png" /></p>
+<ul>
+<li>
+<p>Fig. 5. Wiring up neuronal circuits. </p>
+<ul>
+<li>(A) <strong>Protein gradients</strong> can be used to construct continuous topographic maps. <ul>
+<li>In this example, both input and target fields are patterned by opposing gradients of cell-surface proteins A and B. </li>
+<li>Suppose that neuronal processes expressing protein A and protein B mutually <strong>repel</strong> each other. </li>
+<li>Because Neuron 1 has the highest level of protein A, it seeks a target field with the lowest level of protein B; likewise, Neuron 6 seeks a target field with the lowest level of protein A. </li>
+</ul>
+</li>
+<li>(B) Illustration of <strong>combinatorial strategies</strong> to specify connections between 25 discrete cell types in the input and target fields. <ul>
+<li>(Left) Suppose that connection specificities between the input and target fields are mediated by homophilic (同嗜性的) attraction molecules. <ul>
+<li>If each connection is specified by a single molecule, 25 molecules are needed to specify 25 connections. </li>
+<li>If each connection is specified by a combination of two molecules (a letter and a number), only 10 molecules are needed. </li>
+</ul>
+</li>
+<li>(Right) The combinatorial strategy is realized by dividing the wiring process into 2 steps. <ul>
+<li>At step 1, 5 molecules (represented by different shades of gray) separate 5 input axons into 5 groups; </li>
+<li>at step 2, 5 more molecules (represented by different colors) are used in each of the 5 groups to specify the final connections. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(C) Schematic illustration of <strong>Hebb’s rule</strong> in instructing wiring. <ul>
+<li>At an early developmental stage, the target neuron is connected with two groups of input neurons with distinct coincident firing patterns (blue and yellow vertical lines). </li>
+<li>Because stronger connections to the group 1 input drive the target neuron to fire in a pattern (green vertical lines) similar to that of group 1, their connections are strengthened. </li>
+<li>Synaptic connections between group 2 input and the target neuron weaken due to their dissimilar firing patterns.</li>
+<li>Eventually, the target neuron is only connected with group 1 input. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Evolution exerts (施加) its influence on neuronal circuits primarily by modifying genes involved in circuit wiring during development. </p>
+<ul>
+<li>A key question is how a limited number of genes (~20,000 across many animal species) can construct nervous systems with much larger numbers of synaptic connections (<span class="arithmatex">\(\sim 10^7\)</span> in fruit flies, <span class="arithmatex">\(\sim 10^{11}\)</span> in mice, <span class="arithmatex">\(&gt; 10^{14}\)</span> in humans) with specific motifs and architectures.</li>
+</ul>
+</li>
+<li>
+<p><strong>Extracellular cues and their cell-surface receptors enable recognition of specific targets by axonal and dendritic growth cones. These molecules are the predominant force for establishing a coarse organization of the nervous system and can also specify synaptic connectivity with great precision in certain circuits and organisms.</strong> </p>
+<ul>
+<li><strong>One strategy to establish specificity of a large number of connections with a limited number of genes is to use different expression levels of the same protein to specify different connections.</strong></li>
+<li>This strategy is readily used in constructing continuous topographic maps (Fig. 5A), perhaps contributing to the prevalence of this circuit architecture (Fig. 3A). </li>
+<li>Graded expression of cell-surface molecules is also used in the early steps of constructing discrete maps. </li>
+<li>However, discrete parallel processing (Fig. 3B) requires distinguishing between discrete cell types, and often utilizes combinatorial cell-surface protein codes such that a small number of proteins can specify many more connections (Fig. 5B, left). </li>
+<li>An efficient way to implement combinatorial coding is to divide the wiring process into distinct spatiotemporal steps (Fig. 5B, right); in addition to conserving molecules, this strategy can also enhance robustness, as growth cones are faced with few simultaneous choices at each step. </li>
+<li>The same wiring molecules can be used at different times and places, sometimes in different parts of the same circuit, through elaborate spatiotemporal regulation of their expression patterns.</li>
+</ul>
+</li>
+<li>
+<p>Neuronal activity, both spontaneous and experience-driven, refines synaptic wiring diagrams. </p>
+<ul>
+<li>Activity-dependent wiring, often via competition between neurons with different activity levels, has been well documented. </li>
+<li>A prominent mechanism by which neuronal activity influences wiring is by implementing Hebb’s rule: synapses at which firing of presynaptic neurons causes firing of postsynaptic neurons are strengthened — colloquially, ‘fire together, wire together’ (Fig. 5C). </li>
+<li>Non-Hebbian mechanisms, such as homeostatic synaptic plasticity, also contribute to activity-dependent circuit wiring. </li>
+<li>These activity-dependent mechanisms continue to operate in the adult nervous system, enabling animals to change their synaptic connectivity patterns as a consequence of experience throughout life.</li>
+</ul>
+</li>
+<li>
+<p>Many synaptic connections are not completely specified. </p>
+<ul>
+<li>In vertebrate neuromuscular systems, for example, while the connections between motor neuron pools and muscles are precisely specified, the specific connection patterns between individual motor neurons and muscle fibers within a motor pool are highly variable. </li>
+<li>Likewise, in the fly olfactory circuit, synaptic connections between specific olfactory projection neuron types and mushroom body Kenyon cells (Fig. 3C) are mostly random. </li>
+<li>In both cases, it is not necessary, or even desirable, to have more stereotyped (模式化的) connectivity. </li>
+<li>As more synaptic connectomes are mapped (Box 1), more examples of wiring variability will surely emerge.</li>
+</ul>
+</li>
+<li>
+<p><strong>In summary, two broad kinds of mechanisms are used to establish wiring patterns of neuronal circuits:</strong> </p>
+<ul>
+<li><strong>molecular cues</strong> hard-wire the nervous system, and <strong>neuronal activity and experience</strong> fine-tune connectivity. </li>
+<li>There is also interplay between neuronal activity and molecular cues; for example, neuronal activity can regulate expression of molecular cues or complement their action. </li>
+<li>However, apart from the limited examples discussed above, most developmental studies have not focused on addressing how specific circuit motifs and architectures are established, while most investigations of circuit function have not considered developmental constraints. </li>
+<li>There is ample (充足) opportunity for cross-fertilization of developmental and functional studies of neuronal circuits.</li>
+</ul>
+</li>
+</ul>
+<h2 id="outlook">Outlook</h2>
+<ul>
+<li>
+<p>Applications of circuit mapping tools such as serial electron microscopy and trans-synaptic tracing (Box 1) to diverse neural regions and organisms will surely generate a wealth of data from which we can distill common principles of structural organization of neuronal circuits.</p>
+<ul>
+<li>Relating structures to the functions they implement will be an important next step. </li>
+<li>This can be done by leveraging powerful tools that have been developed and applied to functionally interrogate neuronal circuits in the context of animal behavior. </li>
+<li><strong>Such interrogation is essential for identifying the functions of each circuit elements.</strong> </li>
+<li>In addition, a key challenge is to investigate how these motifs and architectures interact with each other across scales.</li>
+<li>Understanding how different architectures cooperate in an individual nervous system should also inspire new artificial neural networks that might someday achieve general-purpose artificial intelligence.</li>
+</ul>
+</li>
+<li>
+<p>We are still only beginning to gain insights into the evolutionary and developmental processes that give rise to circuit architecture in complex nervous systems. </p>
+<ul>
+<li>We still do not know, for example, whether and to what degree algorithmic changes in the wiring process and operation of neuronal circuits can account for the increased complexity of the mammalian brain. </li>
+<li>A deliberate effort to investigate how letters are assembled into words and words into sentences in key circuit architectures across different species could yield valuable insights. </li>
+<li>Comparative study of neuron type composition of homologous brain regions using single-cell transcriptomics (转录组学) is a useful first step. </li>
+<li>This can be followed by investigation of the mechanisms that establish their connectivity patterns and that underlie their functional operations. </li>
+<li>Integrating studies of the structure, function, development, and evolution of neuronal circuits will enable a deeper understanding of nervous system organization beyond the level of individual neurons.</li>
+</ul>
+</li>
+</ul>
+<h2 id="box-1-tools-for-mapping-neuronal-circuit-architecture">Box 1: Tools for mapping neuronal circuit architecture</h2>
+<ul>
+<li>Diverse tools have been used to study the structural organization of the nervous system.</li>
+</ul>
+<h3 id="single-neuron-tracing">Single neuron tracing.</h3>
+<ul>
+<li>In this approach, a dense library of single neurons within a neural region is created by sparse labeling in individual animals, using the Golgi stain, intracellular dye filling, or genetic methods, such that dendritic morphology and axonal projections are clearly resolved using light microscopy. <ul>
+<li>One can infer that neuron A synapses onto neuron B when A’s axon overlaps with B’s dendrites. </li>
+<li>Cajal used this approach to chart the coarse organization of the vertebrate nervous system. </li>
+<li>Genetic methods for sparse labeling now allow researchers to infer connectivity between neurons of specific types.</li>
+<li>A key limitation of this method is that spatial overlap visualized with light microscopy between dendrites and axons is necessary but insufficient to confidently classify two neurons as synaptic partners. </li>
+<li>Thus, it is only useful for inferring possible connectivity at a coarse level.</li>
+</ul>
+</li>
+</ul>
+<h3 id="serial-electron-microscopic-em-reconstruction">Serial electron microscopic (EM) reconstruction.</h3>
+<ul>
+<li>This is the most comprehensive way of deciphering synaptic wiring diagrams, as <strong>EM is the only method able to unambiguously visualize synapses</strong>. <ul>
+<li>All synapses can be visualized in the same specimen, with the potential of producing a complete wiring diagram. </li>
+<li>Serial EM reconstruction has been used to decipher the synaptic wiring diagram of the entire C. elegans nervous system. </li>
+<li>Recent years have seen rapid progress in the acquisition and partial reconstruction of EM volumes of neural regions from multiple organisms. </li>
+<li><strong>A densely reconstructed Drosophila hemi-brain has been achieved, and the entire mouse brain has been proposed as the next ambitious target.</strong> </li>
+<li>Limitations include the extensive labor needed to accurately reconstruct connections from EM volumes, especially across large distances, and the difficulty of deciphering cell types or connection signs (excitatory vs. inhibitory) unless the region is also well characterized by other means.</li>
+</ul>
+</li>
+</ul>
+<h3 id="trans-synaptic-tracing">Trans-synaptic tracing.</h3>
+<ul>
+<li>This approach relies on an event such as gene expression or viral transduction occurring in one neuron to trigger the labeling of its presynaptic partners (retrograde trans-synaptic labeling) or postsynaptic partners (anterograde trans-synaptic labeling). <ul>
+<li>The most widely used methods in mammals utilize viruses that naturally transduce neurons across synapses, in particular rabies (狂犬病) virus for retrograde trans-synaptic tracing from a defined neuron type in a specific location. </li>
+<li>Axon terminal-initiated rabies tracing can reveal inputs to neuronal populations that project to specific targets, allowing inference of input–output architecture (Fig. 4). </li>
+<li>Anterograde (顺行的) methods have also been reported.</li>
+<li>Limitations include poor understanding of trans-synaptic transmission mechanisms, potential biases due to cell type and subcellular locations of synapses, and incomplete characterization of false negatives (synaptic partners not labeled) and false positives (labeling of non-synaptic partners) for most methods.</li>
+</ul>
+</li>
+</ul>
+<h3 id="electrophysiological-and-optical-methods">Electrophysiological and optical methods.</h3>
+<ul>
+<li><strong>Simultaneous intracellular recordings</strong> can reveal synaptic connections between multiple neurons, as well as their sign and strength. <ul>
+<li>This method is mostly limited to in vitro preparations and is therefore mostly used to map local connectivity.</li>
+<li>However, channelrhodopsin (ChR2, 通道视紫红质)-assisted circuit mapping can map long-range connections between a specific input population (expressing ChR2) and its target neurons in a brain slice, as photo-stimulating ChR2+ axon terminals can often elicit responses in postsynaptic neurons. </li>
+<li><strong>Due to their low throughput, these electrophysiological and optical methods are mostly used to validate connections suggested by other methods</strong> and for detailed analysis of synaptic properties, rather than to reveal connectivity within or between neural regions de novo (从头).</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
