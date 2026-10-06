@@ -1,0 +1,3365 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../3.1_Brain_Modules/papers/02_Circuit_Architectures/">
+      
+      
+        <link rel="next" href="../../../Labs/NTU_MMLab/01_NTU_DynamicVLA/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>1 2014 Ventral Stream - CNN - NeuroAI Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../js/main.css">
+    
+      <link rel="stylesheet" href="../../../js/cv.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-2014-ventral-stream-cnn" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeuroAI Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 2014 Ventral Stream - CNN
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    NeuroAI Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeuroAI Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ricky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Creator (Ricky)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.1 Guiding Principles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0.1 Guiding Principles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 NeuroAI Hassabis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 Brain Evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/03_DL_framework_for_NS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2019 DL framework for NS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Neural Encoding I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/02_Neural_Encoding_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Neural Encoding II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/03_Neural_Decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Neural Decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/04_Information_Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Information Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/07_Network_Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Network Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/08_Plasticity_and_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Plasticity and Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Classical Conditioning and Reinforcement Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Representational Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 LLM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.1 LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 Qwen3-VL Technical Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 The Big LLM Architecture Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2024 DeepSeek-V3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 VLA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.2 VLA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_VLA/papers/01_pi_0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2024 \(\pi_0\)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 RL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.3 RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/01_PPO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 PPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2023 DreamerV3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.4 Spatial Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.4 Spatial Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.4_Spatial_Intelligence/papers/02_DeepMind_D4RT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2025 DeepMind D4RT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.4_Spatial_Intelligence/papers/04_Microsoft_TRELLIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2024 Microsoft TRELLIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.5 Generative Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.5 Generative Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.5_Generative_Flows/papers/01_DiT_Diffusion_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2022 DiT: Diffusion Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 Brain Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3.1 Brain Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Brain vs MPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_Brain_Modules/papers/02_Circuit_Architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 NeuroCircuit Architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 NeuroAI Map
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4.1 NeuroAI Map
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11_1" id="__nav_11_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2014 Ventral Stream - CNN
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2014 Ventral Stream - CNN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#significance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Significance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invariant-object-recognition-performance-strongly-correlates-with-it-neural-predictivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invariant Object Recognition Performance Strongly Correlates with IT Neural Predictivity.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#it-cortex-as-a-neural-performance-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IT Cortex as a Neural Performance Target.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructing-a-high-performing-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructing a High-Performing Model.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicting-neural-responses-in-individual-it-neural-sites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicting Neural Responses in Individual IT Neural Sites.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#population-representation-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population Representation Similarity.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicting-responses-in-v4-from-intermediate-model-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicting Responses in V4 from Intermediate Model Layers.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-basis-for-higher-visual-cortical-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generative Basis for Higher Visual Cortical Areas.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-features-do-good-models-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Features Do Good Models Share?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-down-approach-to-understanding-cortical-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-Down Approach to Understanding Cortical Circuits.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials and Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials and Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-electrophysiology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Array Electrophysiology.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-predictivity-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neural Predictivity Metric.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NTU MMLab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NTU MMLab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/01_NTU_DynamicVLA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2026 NTU DynamicVLA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/02_NTU_VLANeXt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2026 NTU VLANeXt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/03_NTU_SI_Survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2025 NTU SI Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/04_NTU_4RC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2026 NTU 4RC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/05_NTU_PhysX-Anything/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 NTU PhysX-Anything
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/06_NTU_STREAM3R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 NTU STREAM3R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Labs/NTU_MMLab/07_NTU_Puffin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2025 NTU Puffin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Abstract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#significance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Significance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invariant-object-recognition-performance-strongly-correlates-with-it-neural-predictivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invariant Object Recognition Performance Strongly Correlates with IT Neural Predictivity.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#it-cortex-as-a-neural-performance-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IT Cortex as a Neural Performance Target.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructing-a-high-performing-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructing a High-Performing Model.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicting-neural-responses-in-individual-it-neural-sites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicting Neural Responses in Individual IT Neural Sites.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#population-representation-similarity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Population Representation Similarity.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicting-responses-in-v4-from-intermediate-model-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predicting Responses in V4 from Intermediate Model Layers.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Discussion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Discussion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-basis-for-higher-visual-cortical-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generative Basis for Higher Visual Cortical Areas.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-features-do-good-models-share" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Features Do Good Models Share?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-down-approach-to-understanding-cortical-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-Down Approach to Understanding Cortical Circuits.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Materials and Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Materials and Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-electrophysiology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Array Electrophysiology.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-predictivity-metric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neural Predictivity Metric.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-2014-ventral-stream-cnn">1 2014 Ventral Stream - CNN</h1>
+<ul>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4060707/pdf/pnas.201403112.pdf">Performance-optimized hierarchical models predict neural responses in higher visual cortex</a></li>
+</ul>
+<p><img alt="" src="../../imgs/01_visual_field_split.svg" />
+<img alt="" src="../../imgs/01_visual_pathways.svg" /></p>
+<h2 id="abstract">Abstract</h2>
+<ul>
+<li>The ventral visual stream underlies key human visual object recognition abilities. <ul>
+<li>However, neural encoding in the higher areas of the ventral stream remains poorly understood. </li>
+<li>Here, we describe a modeling approach that yields a quantitatively accurate model of inferior temporal (IT) cortex, the highest ventral cortical area. </li>
+<li>Using high-throughput computational techniques, we discovered that, within a class of biologically plausible hierarchical neural network models, there is a strong correlation between a model’s categorization performance and its ability to predict individual IT neural unit response data. </li>
+<li>To pursue this idea, we then identified a high-performing neural network that matches human performance on a range of recognition tasks. </li>
+<li>Critically, even though we did not constrain this model to match neural data, its top output layer turns out to be highly predictive of IT spiking responses to complex naturalistic images at both the single site and population levels. </li>
+<li>Moreover, the model’s intermediate layers are highly predictive of neural responses in the V4 cortex, a mid-level visual area that provides the dominant cortical input to IT. </li>
+<li>These results show that performance optimization — applied in a biologically appropriate model class — can be used to build quantitative predictive models of neural processing.</li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li>
+<p>Retinal images of real-world objects vary drastically due to changes in object pose, size, position, lighting, nonrigid deformation, occlusion, and many other sources of noise and variation. </p>
+<ul>
+<li>Humans effortlessly recognize objects rapidly and accurately despite this enormous variation, an impressive computational feat. </li>
+<li>This ability is supported by a set of interconnected brain areas collectively called the ventral visual stream, with homologous areas in nonhuman primates. </li>
+<li>The ventral stream is thought to function as a series of hierarchical processing stages that encode image content (e.g., object identity and category) increasingly explicitly in successive cortical areas. <ul>
+<li>For example, neurons in the lowest area, V1, are well described by Gabor-like edge detectors that extract rough object outlines, although the V1 population does not show robust tolerance to complex image transformations. </li>
+<li>Conversely, rapidly evoked population activity in top-level inferior temporal (IT) cortex can directly support realtime, invariant object categorization over a wide range of tasks. </li>
+<li>Midlevel ventral areas — such as V4, the dominant cortical input to IT — exhibit intermediate levels of object selectivity and variation tolerance.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Significant progress has been made in understanding lower ventral areas such as V1, where conceptually compelling models have been discovered. </p>
+<ul>
+<li>These models are also quantitatively accurate and can predict response magnitudes of individual neuronal units to novel image stimuli. </li>
+<li>Higher ventral cortical areas, especially V4 and IT, have been much more difficult to understand. </li>
+<li>Although first principles-based models of higher ventral cortex have been proposed, these models fail to match important features of the higher ventral visual neural representation in both humans and macaques. </li>
+<li>Moreover, attempts to fit V4 and IT neural tuning curves on general image stimuli have shown only limited predictive success.</li>
+<li>Explaining the neural encoding in these higher ventral areas thus remains a fundamental open question in systems neuroscience.</li>
+</ul>
+</li>
+<li>
+<p>As with V1, models of higher ventral areas should be neurally predictive. </p>
+<ul>
+<li>However, because the higher ventral stream is also believed to underlie sophisticated behavioral object recognition capacities, models must also match IT on performance metrics, equalling (or exceeding) the decoding capacity of IT neurons on object recognition tasks. </li>
+<li>A model with perfect neural predictivity in IT will necessarily exhibit high performance, because IT itself does. </li>
+<li>Here we demonstrate that the converse is also true, within a biologically appropriate model class. </li>
+<li>Combining high-throughput computational and electrophysiology techniques, we explore a wide range of biologically plausible hierarchical neural network models and then assess them against measured IT and V4 neural response data. </li>
+<li>We show that there is a strong correlation between a model’s performance on a challenging high-variation object recognition task and its ability to predict individual IT neural unit responses.</li>
+</ul>
+</li>
+<li>
+<p>Extending this idea, we used optimization methods to identify a neural network model that matches human performance on a range of recognition tasks. </p>
+<ul>
+<li>We then show that even though this model was never explicitly constrained to match neural data, its output layer is highly predictive of neural responses in IT cortex — providing a first quantitatively accurate model of this highest ventral cortex area. </li>
+<li>Moreover, the middle layers of the model are highly predictive of V4 neural responses, suggesting top-down performance constraints directly shape intermediate visual representations.</li>
+</ul>
+</li>
+</ul>
+<h2 id="significance">Significance</h2>
+<ul>
+<li>Humans and monkeys easily recognize objects in scenes. <ul>
+<li>This ability is known to be supported by a network of hierarchically interconnected brain areas. </li>
+<li>However, understanding neurons in higher levels of this hierarchy has long remained a major challenge in visual systems neuroscience. </li>
+<li>We use computational techniques to identify a neural network model that matches human performance on challenging object categorization tasks. </li>
+<li>Although not explicitly constrained to match neural data, this model turns out to be highly predictive of neural responses in both the V4 and inferior temporal cortex, the top two layers of the ventral visual hierarchy. </li>
+<li>In addition to yielding greatly improved models of visual cortex, these results suggest that a process of biological performance optimization directly shaped neural mechanisms.</li>
+</ul>
+</li>
+</ul>
+<h2 id="results">Results</h2>
+<p><img alt="" src="../../imgs/01_IT-predictivity_vs_performance.png" /></p>
+<ul>
+<li>Fig. 1. <code>Performance</code> / <code>IT-predictivity</code> correlation. <ul>
+<li>(A) <strong>Object categorization performance vs. IT neural explained variance percentage (IT-predictivity) for CNN models in three independent high-throughput computational experiments (each point is a distinct neural network architecture).</strong> <ul>
+<li>The x axis shows performance (balanced accuracy, chance is 0.5) of the model output features on a high-variation categorization task; </li>
+<li>the y axis shows the median single site IT explained variance percentage (n=168 sites) of that model. </li>
+<li>Each dot corresponds to a distinct model selected from a large family of convolutional neural network architectures. </li>
+<li>Models were selected by <ul>
+<li>random draws from parameter space (green dots), </li>
+<li>object categorization performance-optimization (blue dots), or </li>
+<li>explicit IT predictivity optimization (orange dots). </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(B) Pursuing the correlation identified in A, a high-performing neural network was identified that matches human performance on a range of recognition tasks, the HMO model. <ul>
+<li>The object categorization performance vs. IT neural predictivity correlation extends across a variety of models exhibiting a wide range of performance levels. </li>
+<li>Black circles include controls and published models; </li>
+<li>red squares are models produced during the HMO optimization procedure. </li>
+<li>The category ideal observer (purple square) lies significantly off the main trend, but is not an actual image-computable model. </li>
+<li>The <span class="arithmatex">\(r\)</span> value is computed over red and black points. </li>
+<li>For reference, light blue circles indicate performance optimized models (blue dots) from A.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="invariant-object-recognition-performance-strongly-correlates-with-it-neural-predictivity">Invariant Object Recognition Performance Strongly Correlates with IT Neural Predictivity.</h3>
+<ul>
+<li>
+<p>We first measured IT neural responses on a benchmark testing image set that exposes key performance characteristics of visual representations. </p>
+<ul>
+<li>This image set consists of 5,760 images of photorealistic 3D objects drawn from eight natural categories (animals, boats, cars, chairs, faces, fruits, planes, and tables) and contains high levels of the object position, scale, and pose variation that make recognition difficult for artificial vision systems, but to which humans are robustly tolerant. </li>
+<li>The objects are placed on cluttered natural scenes that are randomly selected to ensure background content is uncorrelated with object identity (Fig. S1A).</li>
+</ul>
+</li>
+<li>
+<p><strong>Using multiple electrode arrays, we collected responses from 168 IT neurons to each image.</strong> </p>
+<ul>
+<li>We then used high-throughput computational methods to evaluate thousands of candidate neural network models on these same images, measuring object categorization performance as well as IT neural predictivity for each model (Fig. 1A; each point represents a distinct model).</li>
+<li><strong>To measure categorization performance, we trained support vector machine (SVM) linear classifiers on model output layer units and computed cross-validated testing accuracy for these trained classifiers.</strong> </li>
+<li><strong>To assess models’ neural predictivity, we used a standard linear regression methodology: for each target IT neural site, we identified a synthetic neuron composed of a linear weighting of model outputs that would best match that site on fixed sample images and then tested response predictions against actual neural site’s output on novel images (Materials and Methods and SI Text).</strong></li>
+</ul>
+</li>
+<li>
+<p>Models were drawn from a large parameter space of <strong>convolutional neural networks (CNNs)</strong> expressing an inclusive version of the hierarchical processing concept. </p>
+<ul>
+<li>CNNs approximate the general retinotopic organization of the ventral stream via spatial convolution, with computations in any one region of the visual field identical to those elsewhere. </li>
+<li>Each convolutional layer is composed of simple and neurally plausible basic operations, including <ul>
+<li>linear filtering, </li>
+<li>thresholding, </li>
+<li>pooling, and </li>
+<li>normalization (Fig. S2A). </li>
+</ul>
+</li>
+<li>These layers are stacked hierarchically to construct deep neural networks.</li>
+</ul>
+</li>
+<li>
+<p>Each model is specified by a set of 57 parameters controlling the number of layers and parameters at each layer, fan-in and fan-out, activation thresholds, pooling exponents, and local receptive field sizes at each layer. </p>
+<ul>
+<li><strong>Network depth ranged from one to three layers</strong>, and filter weights for each layer were chosen randomly from bounded uniform distributions whose bounds were model parameters (SI Text). </li>
+<li><strong>These models are consistent with the Hierarchical Linear-Nonlinear (HLN) hypothesis that higher level neurons (e.g., IT) output a linear weighting of inputs from intermediate-level (e.g., V4) neurons followed by simple additional nonlinearities.</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Models were selected for evaluation by one of three procedures</strong>: </p>
+<ul>
+<li>(i) <strong>random sampling</strong> of the uniform distribution over parameter space (Fig. 1A; n = 2,016, green dots); </li>
+<li>(ii) <strong>optimization for performance</strong> on the high-variation eight-way categorization task (n = 2,043, blue dots); and </li>
+<li>(iii) <strong>optimization directly for IT neural predictivity</strong> (n = 1,876, orange dots; also see SI Text and Fig. S3). </li>
+</ul>
+</li>
+<li>
+<p>In each case, we observed significant variation in both performance and IT predictivity across the parameter range. </p>
+<ul>
+<li>Thus, although the HLN hypothesis is consistent with a broad spectrum of particular neural network architectures, specific parameter choices have a large effect on a given model’s recognition performance and neural predictivity.</li>
+</ul>
+</li>
+<li>
+<p><strong>Performance was significantly correlated with neural predictivity in all three selection regimes. Models that performed better on the categorization task were also more likely to produce outputs more closely aligned to IT neural responses.</strong> </p>
+</li>
+<li>
+<p>Although the class of HLN-consistent architectures contains many neurally inconsistent architectures with low IT predictivity, performance provides a meaningful way to a priori rule out many of those inconsistent models. </p>
+<ul>
+<li><strong>No individual model parameters correlated nearly as strongly with IT predictivity as performance (Fig. S4), indicating that the performance/IT predictivity correlation cannot be explained by simpler mechanistic considerations (e.g., receptive field size of the top layer).</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Critically, directed optimization for performance significantly increased the correlation with IT predictivity compared with the random selection regime (<span class="arithmatex">\(r=0.78\)</span> vs. <span class="arithmatex">\(r=0.55\)</span>), even though neural data were not used in the optimization. Moreover, when optimizing for performance, the best-performing models predicted neural output as well as those models directly selected for neural predictivity, although the reverse is not true. Together, these results imply that, although the IT predictivity metric is a complex function of the model parameter landscape, performance optimization is an efficient means to identify regions in parameter space containing IT-like models.</strong></p>
+</li>
+</ul>
+<h3 id="it-cortex-as-a-neural-performance-target">IT Cortex as a Neural Performance Target.</h3>
+<p><img alt="" src="../../imgs/01_Neural-like_models_via_optimization.png" /></p>
+<ul>
+<li>
+<p>Fig. 2. Neural-like models via performance optimization. </p>
+<ul>
+<li>(A) <ul>
+<li>We (1) used high-throughput computational methods to optimize the parameters of a hierarchical CNN with linear-nonlinear (LN) layers for performance on a challenging invariant object recognition task. </li>
+<li>Using new test images distinct from those used to optimize the model, we then (2) compared output of each of the model’s layers to IT neural responses and the output of intermediate layers to V4 neural responses. </li>
+<li>To obtain neural data for comparison, we used chronically implanted multi-electrode arrays to record the responses of multiunit sites in IT and V4, obtaining the mean visually evoked response of each of 296 neural sites to ∼6,000 complex images. </li>
+</ul>
+</li>
+<li>(B) Object categorization performance results on the test images for eight-way object categorization at three increasing levels of object view variation (y axis units are 8-way categorization percent-correct, chance is 12.5%). <ul>
+<li>IT (green bars) and V4 (hatched green bars) neural responses, and computational models (gray and red bars) were collected on the same image set and used to train support vector machine (SVM) linear classifiers from which population performance accuracy was evaluated. </li>
+<li>Error bars are computed over train/test image splits. </li>
+<li>Human subject responses on the same tasks were collected via psychophysics experiments (black bars); error bars are due to inter-subject variation.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Fig. 1A suggests a next step toward improved encoding models of higher ventral cortex: drive models further to the right along the x axis — if the correlation holds, the models will also climb on the y axis. </p>
+<ul>
+<li>Ideally, this would involve identifying hierarchical neural networks that perform at or near human object recognition performance levels and validating them using rigorous tests against neural data (Fig. 2A). </li>
+<li>However, the difficulty of meeting the performance challenge itself can be seen in Fig. 2B. </li>
+<li>To obtain neural reference points on categorization performance, we trained linear classifiers on the IT neural population (Fig. 2B, green bars) and the V4 neural population (n=128, hatched green bars). </li>
+<li>To expose a key axis of recognition difficulty, we computed performance results at three levels of object view variation, from low (fixed orientation, size, and position) to high (180° rotations on all axes, 2.5× dilation, and full-frame translations; Fig. S1A). </li>
+<li>As a behavioral reference point, we also measured human performance on these tasks using web-based crowd-sourcing methods (black bars). </li>
+<li>A crucial observation is that at all levels of variation, the IT population tracks human performance levels, consistent with known results about IT’s high category decoding abilities.</li>
+<li>The V4 population matches IT and human performance at low levels of variation, but performance drops quickly at higher variation levels. (This V4-to-IT performance gap remains nearly as large even for images with no object translation variation, showing that the performance gap is not due just to IT’s larger receptive fields.)</li>
+</ul>
+</li>
+<li>
+<p>As a computational reference, we used the same procedure to evaluate a variety of published ventral stream models targeting several levels of the ventral hierarchy. </p>
+<ul>
+<li>To control for low-level confounds, we tested the (trivial) pixel model, as well as SIFT, a simple baseline computer vision model. </li>
+<li>We also evaluated <ul>
+<li>a V1-like Gabor-based model, </li>
+<li>a V2-like conjunction-of-Gabors model, and </li>
+<li>HMAX, a model targeted at explaining higher ventral cortex and that has receptive field sizes similar to those observed in IT. </li>
+</ul>
+</li>
+<li>The HMAX model can be trained in a domain-specific fashion, and to give it the best chance of success, we performed this training using the benchmark images themselves (see SI Text for more information on the comparison models). </li>
+<li>Like V4, the control models that we tested approach IT and human performance levels in the low-variation condition, but in the high-variation condition, all of them fail to match the performance of IT units by a large margin. </li>
+<li>It is not surprising that V1 and V2 models are not nearly as effective as IT, but it is instructive to note that the task is sufficiently difficult that the HMAX model performs less well than the V4 population sample, even when pretrained directly on the test dataset.</li>
+</ul>
+</li>
+</ul>
+<h3 id="constructing-a-high-performing-model">Constructing a High-Performing Model.</h3>
+<ul>
+<li>
+<p><strong>Although simple three-layer hierarchical CNNs can be effective at low-variation object recognition tasks, recent work has shown that they may be limited in their performance capacity for higher-variation tasks.</strong></p>
+<ul>
+<li>For this reason, we extended our model class to contain combinations (e.g., mixtures) of deeper CNN networks (Fig. S2B), which correspond intuitively to architecturally specialized subregions like those observed in the ventral visual stream.</li>
+<li>To address the significant computational challenge of finding especially high-performing architectures within this large space of possible networks, we used <strong>hierarchical modular optimization (HMO)</strong>. </li>
+<li>The HMO procedure embodies a conceptually simple hypothesis for how high-performing combinations of functionally specialized hierarchical architectures can be efficiently discovered and hierarchically combined, without needing to pre-specify the subtasks ahead of time. </li>
+<li><strong>Algorithmically, HMO is analogous to an adaptive boosting procedure interleaved with hyperparameter optimization (see SI Text and Fig. S2C).</strong></li>
+</ul>
+</li>
+<li>
+<p>As a pretraining step, we applied the HMO selection procedure on a screening task (Fig. S1B). </p>
+<ul>
+<li>Like the testing set, the screening set contained images of objects placed on randomly selected backgrounds, but used entirely different objects in totally non-overlapping semantic categories, with none of the same backgrounds and widely divergent lighting conditions and noise levels. </li>
+<li>Like any two samples of naturalistic images, the screening and testing images have high-level commonalities but quite different semantic content. </li>
+<li>For this reason, performance increases that transfer between them are likely to also transfer to other naturalistic image sets. </li>
+<li>Via this pretraining, the HMO procedure identified a <strong>four-layer CNN with 1,250 top-level outputs</strong> (Figs. S2B and S5), which we will refer to as the HMO model.</li>
+</ul>
+</li>
+<li>
+<p>Using the same classifier training protocol as with the neural data and control models, we then tested the HMO model to determine whether its performance transferred from the screening to the testing image set. </p>
+<ul>
+<li>In fact, the HMO model matched the object recognition performance of the IT neural sample (Fig. 2B, red bars), even when faced with large amounts of variation — a hallmark of human object recognition ability. </li>
+<li>These performance results are robust to the number of training examples and number of sampled model neurons, across a variety of distinct recognition tasks (Figs. S6 and S7).</li>
+</ul>
+</li>
+</ul>
+<h3 id="predicting-neural-responses-in-individual-it-neural-sites">Predicting Neural Responses in Individual IT Neural Sites.</h3>
+<ul>
+<li>
+<p>Given that the HMO model had plausible performance characteristics, we then measured its IT predictivity, both for the top layer and each of the three intermediate layers (Fig. 3, red lines/bars). </p>
+<ul>
+<li><strong>We found that each successive layer predicted IT units increasingly well, demonstrating that the trend identified in Fig. 1A continues to hold in higher performance regimes and across a wide range of model complexities (Fig. 1B).</strong> </li>
+<li>Qualitatively examining the specific predictions for individual images, the model layers show that category selectivity and tolerance to more drastic image transformations emerges gradually along the hierarchy (Fig. 3A, top four rows). </li>
+<li>At lower layers, model units predict IT responses only at a limited range of object poses and positions. </li>
+<li>At higher layers, variation tolerance grows while category selectivity develops, suggesting that as more explicit “untangled” object recognition features are generated at each stage, the representations become increasingly IT-like.</li>
+</ul>
+</li>
+<li>
+<p>Critically, we found that the top layer of the high-performing HMO model achieves high predictivity for individual IT neural sites, predicting <span class="arithmatex">\(48.5 \pm 1.3\%\)</span> of the explainable IT neuronal variance (Fig. 3 B and C). </p>
+<ul>
+<li>This represents a nearly 100% improvement over the best comparison models and is comparable to the prediction accuracy of state-of-the-art models of lower-level ventral areas such as V1 on complex stimuli. </li>
+<li>In comparison, although the HMAX model was better at predicting IT responses than baseline V1 or SIFT, it was not significantly different from the V2-like model.</li>
+</ul>
+</li>
+<li>
+<p>To control for how much neural predictivity should be expected from any algorithm with high categorization performance, we assessed semantic ideal observers, including a hypothetical model that has perfect access to all category labels. </p>
+<ul>
+<li>The ideal observers do predict IT units above chance level (Fig. 3C, left two bars), consistent with the observation that IT neurons are partially categorical. </li>
+<li>However, the ideal observers are significantly less predictive than the HMO model, showing that high IT predictivity does not automatically follow from category selectivity and that there is significant noncategorical structure in IT responses attributable to intrinsic aspects of hierarchical network structure (Fig. 3A, last row). </li>
+<li><strong>These results suggest that high categorization performance and the hierarchical model architecture class work in concert to produce IT-like populations, and neither of these constraints is sufficient on its own to do so.</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="population-representation-similarity">Population Representation Similarity.</h3>
+<ul>
+<li>
+<p>Characterizing the IT neural representation at the population level may be equally important for understanding object visual representation as individual IT neural sites. </p>
+<ul>
+<li>The representation dissimilarity matrix (RDM) is a convenient tool comparing two representations on a common stimulus set in a task-independent manner. </li>
+<li>Each entry in the RDM corresponds to one stimulus pair, with high/low values indicating that the population as a whole treats the pair stimuli as very different/similar. </li>
+<li>Taken over the whole stimulus set, the RDM characterizes the layout of the images in the high-dimensional neural population space. </li>
+<li>When images are ordered by category, the RDM for the measured IT neural population (Fig. 4A) exhibits clear block-diagonal structure — associated with IT’s exceptionally high categorization performance — as well as off-diagonal structure that characterizes the IT neural representation more finely than any single performance metric (Fig. 4A and Fig. S8). </li>
+<li>We found that the neural population predicted by the output layer of the HMO model had very high similarity to the actual IT population structure, close to the split-half noise ceiling of the IT population (Fig. 4B). </li>
+<li>This implies that much of the residual variance unexplained at the single-site level may not be relevant for object recognition in the IT population level code.</li>
+</ul>
+</li>
+<li>
+<p>We also performed two stronger tests of generalization: </p>
+<ul>
+<li>(i) object-level generalization, in which the regressor training set contained images of only 32 object exemplars (four in each of eight categories), with RDMs assessed only on the remaining 32 objects, and </li>
+<li>(ii) category-level generalization, in which the regressor sample set contained images of only half the categories but RDMs were assessed only on images of the other categories (see Figs. S8 and S9). </li>
+</ul>
+</li>
+<li>We found that the prediction generalizes robustly, capturing the IT population’s layout for images of completely novel objects and categories (Fig. 4 B and C and Fig. S8).</li>
+</ul>
+<h3 id="predicting-responses-in-v4-from-intermediate-model-layers">Predicting Responses in V4 from Intermediate Model Layers.</h3>
+<ul>
+<li>
+<p>Cortical area V4 is the dominant cortical input to IT, and the neural representation in V4 is known to be significantly less categorical than that of IT. </p>
+<ul>
+<li>Comparing a performance-optimized model to these data would provide a strong test both of its ability to predict the internal structure of the ventral stream, as well as to go beyond the direct consequences of category selectivity. </li>
+<li>We thus measured the HMO model’s neural predictivity for the V4 neural population (Fig. 5). </li>
+<li>We found that the HMO model’s penultimate layer is highly predictive of V4 neural responses (<span class="arithmatex">\(51.7\pm 2.3\%\)</span> explained V4 variance), providing a significantly better match to V4 than either the model’s top or bottom layers.</li>
+</ul>
+</li>
+<li>
+<p><strong>These results are strong evidence for the hypothesis that V4 corresponds to an intermediate layer in a hierarchical model whose top layer is an effective model of IT.</strong> </p>
+<ul>
+<li>Of the control models that we tested, the V2-like model predicts the most V4 variation (<span class="arithmatex">\(34.1 \pm 2.4\%\)</span>). </li>
+<li>Unlike the case of IT, semantic models explain effectively no variance in V4, consistent with V4’s lack of category selectivity. </li>
+<li><strong>Together these results suggest that performance optimization not only drives top-level output model layers to resemble IT, but also imposes biologically consistent constraints on the intermediate feature representations that can support downstream performance.</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="discussion">Discussion</h2>
+<ul>
+<li><strong>Here, we demonstrate a principled method for achieving greatly improved predictive models of neural responses in higher ventral cortex.</strong> <ul>
+<li><strong>Our approach operationalizes a hypothesis for how two biological constraints together shaped visual cortex:</strong><ul>
+<li><strong>(i) the functional constraint of recognition performance</strong> and</li>
+<li><strong>(ii) the structural constraint imposed by the hierarchical network architecture.</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="generative-basis-for-higher-visual-cortical-areas">Generative Basis for Higher Visual Cortical Areas.</h3>
+<ul>
+<li>Our modeling approach has common ground with existing work on neural response prediction, e.g., the HLN hypothesis. <ul>
+<li>However, in a departure from that line of work, we do not tune model parameters (the nonlinearities or the model filters) separately for each neural unit to be predicted. </li>
+<li>In fact, with the exception of the final linear weighting, we do not tune parameters using neural data at all. </li>
+<li>Instead, the parameters of our model were independently selected to optimize functional performance at the top level, and these choices create fixed bases from which any individual IT or V4 unit can be composed. </li>
+<li>This yields a generative model that allows the sampling of an arbitrary number of neurally consistent units. </li>
+<li>As a result, the size of the model does not scale with the number of neural sites to be predicted — and because the prediction results were assessed for a random sample of IT and V4 units, they are likely to generalize with similar levels of predictivity to any new sites that are measured.</li>
+</ul>
+</li>
+</ul>
+<h3 id="what-features-do-good-models-share">What Features Do Good Models Share?</h3>
+<ul>
+<li>Although the highest-performing models had certain commonalities (e.g., more hierarchical layers), many poor models also exhibited these features, and no one architectural parameter dominated performance variability (Fig. S3). <ul>
+<li>To gain further insight, we performed an exploratory analysis of the parameters of the learned HMO model, evaluating each parameter both for how sensitively it was tuned and how diverse it was between model mixture components.</li>
+<li>Two classes of model parameters were especially sensitive and diverse (SI Text and Figs. S10 and S11): <ul>
+<li>(i) filter statistics, including filter mean and spread, and </li>
+<li>(ii) the exponent trading off between max-pooling and average-pooling. </li>
+</ul>
+</li>
+<li>This observation hints at a computationally rigorous explanation for experimentally observed heterogeneities in higher ventral cortex areas, but much work remains to be done to confirm such a hypothesis.</li>
+</ul>
+</li>
+</ul>
+<h3 id="top-down-approach-to-understanding-cortical-circuits">Top-Down Approach to Understanding Cortical Circuits.</h3>
+<ul>
+<li>
+<p><strong>A common assumption in visual neuroscience is that understanding the tuning curves of neurons in lower cortical areas will be a necessary precursor to explaining higher visual cortex.</strong> </p>
+<ul>
+<li>For example, significant work has gone into assessing the extent to which V4 neurons can be understood as a curvature-selective shape representation. </li>
+<li><strong>Our results indicate that it is useful to complement this bottom-up approach with a top-down perspective characterizing IT as the product of an evolutionary/developmental process that selected for high performance on recognition on tasks like those used in our optimization.</strong> </li>
+<li><strong>V4 may in turn be characterized as having been selected precisely to support the downstream computation in IT.</strong> </li>
+<li>This type of explanation is qualitatively different from more traditional approaches that seek explicit descriptions of neural responses in terms of particular geometrical primitives. </li>
+<li>However, our results show functionally relevant constraints can be used to obtain quantitatively predictive models even when such explicit bottom-up primitives have not been identified.</li>
+</ul>
+</li>
+<li>
+<p><strong>Going forward, we will bridge these bottom-up and top-down explanations by building links to lower and intermediate visual cortex, especially in V1 and V2.</strong> </p>
+<ul>
+<li>We will also explore recent high-performing computer vision systems with architectures inspired by the ventral stream. </li>
+<li>Our results show that behaviorally driven computational approaches have an important role in understanding the details of visual processing and suggest that the overall approach may be applicable to other cortical areas and task domains.</li>
+</ul>
+</li>
+</ul>
+<h2 id="materials-and-methods">Materials and Methods</h2>
+<h3 id="array-electrophysiology">Array Electrophysiology.</h3>
+<p><img alt="" src="https://blackrockneurotech.com/wp-content/uploads/2023/04/1-NeuroPort_DAQ_Industry_Standard_1.png" /></p>
+<ul>
+<li>Neural data were collected in two awake behaving rhesus macaques (普通猕猴, Macaca mulatta, 7 and 9 kg) using parallel multi-electrode array electrophysiology systems (<a href="https://blackrockneurotech.com/products/cerebus/">Cerebus System; BlackRock Microsystems</a>).<ul>
+<li>All procedures were done in accordance with National Institutes of Health guidelines and approved by the Massachusetts Institute of Technology (MIT) Committee on Animal Care. </li>
+<li><strong>296 neural sites (168 in IT and 128 in V4) were selected as being visually driven.</strong> </li>
+<li><strong>Fixating animals were presented with testing images for 100 ms, and scalar firing rates were obtained from spike trains by averaging spike counts in the period 70–170 ms after stimulus presentation.</strong> </li>
+<li>See SI Text for additional details.</li>
+</ul>
+</li>
+</ul>
+<h3 id="neural-predictivity-metric">Neural Predictivity Metric.</h3>
+<ul>
+<li><strong>For each IT neural site, we used linear regression to identify a linear weighting of model output units (from the top or intermediate layers) that is most predictive of that site’s actual output on a fixed set of sample images.</strong> <ul>
+<li><strong>Using this “synthetic neuron,” we then produced per-image response predictions on novel images not used in the regression training and compared them to the actual neural site’s output for those images (Figs. 3A and 5A).</strong> </li>
+<li>We computed the goodness-of-fit <span class="arithmatex">\(r^2\)</span> value, normalized by the neural site’s trial-by-trial variability, to obtain the explained variance percentage for that site. </li>
+<li>The overall area predictivity of a model is the median explained variance over all measured sites in that area (Figs. 3 B and C and 5 B and C and see SI Text).</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
