@@ -504,17 +504,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rickys-critiques" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ricky's Critiques
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2822,17 +2811,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rickys-critiques" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ricky's Critiques
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3011,44 +2989,36 @@
 </ul>
 </li>
 </ul>
-<h2 id="rickys-critiques">Ricky's Critiques</h2>
-<blockquote>
-<p>The entire <code>Large-scale generative models as theories of the brain</code> section, especially: 
-However, the AI breakthrough, when it came, was not inspired by either RL or symbolic cognition.</p>
-</blockquote>
-<ul>
-<li>Ricky's critique:<ul>
-<li><code>Transformer / attention mechanism</code> are mainly for improving computation efficiency, instead of being the true source of intelligence. Switching <code>transformer</code> with <code>MLP</code> with same/larger amount of parameters can achieve the same abilities, only with much more compute.</li>
-<li>The intelligence really comes from the training:<ul>
-<li>Supervised pre-training (next token prediction) turns the model into a cold <code>statistical token prediction machine</code>, it remembers facts, but has no real intelligence.</li>
-<li>Intelligence really emerges from the RL phase when solving tasks.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>In their 2016 paper, the DeepMind team highlighted this capacity for "continual learning" as a key unsolved problem for AI. It remains unsolved today.
-In other words, like the renowned neuro-psychological patient HM, LLMs effectively have anterograde amnesia (顺行性遗忘症) during deployment — they are unable to encode new information into their long-term memory.</p>
-</blockquote>
-<ul>
-<li>Ricky's critique:<ul>
-<li>This is merely an engineering choice rather than "AI really lacks the ability of continual learning"</li>
-<li>Technically, we can do this: during the day, we let LLM talk with users and save those conversations. At night, just like humans' sleeping, we pause the LLM app and use new data collected in the day to train (aka fine-tune) the model</li>
-<li>Choosing not to do something doesn't mean it's "unsolved".</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>They learn from dynamic interactions with the environment rather than passive exposure to content, making them creative in their dealings with an open-ended world.</p>
-</blockquote>
-<ul>
-<li>Ricky's critique:<ul>
-<li>The remarkable abilities from today's AI are exactly a result of RL training, which lets them interact with the environment </li>
-</ul>
-</li>
-</ul>
-<hr />
+<!--
+## Ricky's Critiques
+
+> The entire `Large-scale generative models as theories of the brain` section, especially: 
+> However, the AI breakthrough, when it came, was not inspired by either RL or symbolic cognition.
+
+- Ricky's critique:
+    - `Transformer / attention mechanism` are mainly for improving computation efficiency, instead of being the true source of intelligence. Switching `transformer` with `MLP` with same/larger amount of parameters can achieve the same abilities, only with much more compute.
+    - The intelligence really comes from the training:
+        - Supervised pre-training (next token prediction) turns the model into a cold `statistical token prediction machine`, it remembers facts, but has no real intelligence.
+        - Intelligence really emerges from the RL phase when solving tasks.
+
+> In their 2016 paper, the DeepMind team highlighted this capacity for "continual learning" as a key unsolved problem for AI. It remains unsolved today.
+> In other words, like the renowned neuro-psychological patient HM, LLMs effectively have anterograde amnesia (顺行性遗忘症) during deployment — they are unable to encode new information into their long-term memory.
+
+- Ricky's critique:
+    - This is merely an engineering choice rather than "AI really lacks the ability of continual learning"
+    - Technically, we can do this: during the day, we let LLM talk with users and save those conversations. At night, just like humans' sleeping, we pause the LLM app and use new data collected in the day to train (aka fine-tune) the model
+    - Choosing not to do something doesn't mean it's "unsolved".
+
+> We argue that the shortcomings of current AI systems can be traced to their lack of the core functionalities that sustains natural intelligence. 
+> They (natural intelligence) learn from dynamic interactions with the environment rather than passive exposure to content, making them creative in their dealings with an open-ended world.
+> Future AI systems may need to incorporate these cognitive and computational principles to fulfill their promise of becoming generally intelligent assistants. 
+
+- Ricky's critique:
+    - The remarkable abilities from today's AI are exactly a result of RL training, which lets them interact with the environment 
+
+---
+-->
+
 <h2 id="summary">SUMMARY</h2>
 <ul>
 <li>Ten years ago, two landmark papers discussed open problems in AI research from the standpoint of neuroscience and cognitive science. <ul>
