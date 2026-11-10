@@ -1,0 +1,3541 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../NTU_MMLab/07_NTU_Puffin/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+    
+    
+      
+        <title>Thomas Yeo 实验室研究的第一性原理剖析：物理机制、生物学假设与计算解释极限 - NeuroAI Research</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../js/main.css">
+    
+      <link rel="stylesheet" href="../../../js/cv.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#thomas-yeo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeuroAI Research" class="md-header__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeuroAI Research
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Thomas Yeo 实验室研究的第一性原理剖析：物理机制、生物学假设与计算解释极限
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeuroAI Research" class="md-nav__button md-logo" aria-label="NeuroAI Research" data-md-component="logo">
+      
+  <img src="../../../logo.png" alt="logo">
+
+    </a>
+    NeuroAI Research
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeuroAI Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Ricky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Site Creator (Ricky)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.0 Ricky's Views
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0.0 Ricky's Views
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.0_Ricky%27s_Views/01_Transformer_Physics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2026 Transformer Physics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.1 Guiding Principles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    0.1 Guiding Principles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/01_NeuroAI_Hassabis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 NeuroAI Hassabis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/02_Brain_Evolution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 Brain Evolution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/03_DL_framework_for_NS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2019 DL framework for NS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/04_NeuroAI_Follow-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2026 NeuroAI Follow-up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../0.1_Guiding_Principles/papers/05_Sutton_Bitter_Lesson/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2019 Sutton's Bitter Lesson
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1.1 2005 Theoretical Neuroscience
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/01_Neural_Encoding_I/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 Neural Encoding I
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/02_Neural_Encoding_II/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 Neural Encoding II
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/03_Neural_Decoding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Neural Decoding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/04_Information_Theory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 Information Theory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/07_Network_Models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 Network Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/08_Plasticity_and_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 Plasticity and Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/09_Classical_Conditioning_and_Reinforcement_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9 Classical Conditioning and Reinforcement Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../1.1_2005_Theoretical_Neuroscience/10_Representational_Learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 Representational Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.1 LLM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.1 LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/01_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/02_ViT_Vision_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2020 ViT: Vision Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/03_CLIP_Contrastive_Language_Image_Pretraining/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2021 CLIP: Contrastive Language Image Pretraining
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/04_LLaVA_Large_Language_and_Vision_Assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2023 LLaVA: Large Language and Vision Assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/05_Qwen3-VL_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 Qwen3-VL Technical Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/06_The_Big_LLM_Architecture_Comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 The Big LLM Architecture Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.1_LLM/papers/07_DeepSeek-V3_Technical_Report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2024 DeepSeek-V3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.2 VLA
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.2 VLA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.2_VLA/papers/01_pi_0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2024 \(\pi_0\)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.3 RL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.3 RL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/01_PPO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 PPO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/02_SAC_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2018 SAC v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.3_RL/papers/03_DreamerV3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2023 DreamerV3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.4 Spatial Intelligence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.4 Spatial Intelligence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.4_Spatial_Intelligence/papers/02_DeepMind_D4RT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2025 DeepMind D4RT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.4_Spatial_Intelligence/papers/04_Microsoft_TRELLIS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2024 Microsoft TRELLIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2.5 Generative Flows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2.5 Generative Flows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2.5_Generative_Flows/papers/01_DiT_Diffusion_Transformer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2022 DiT: Diffusion Transformer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3.1 Brain Modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3.1 Brain Modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_1" id="__nav_11_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_Brain_Modules/papers/01_Brain_vs_MPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2017 Brain vs MPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3.1_Brain_Modules/papers/02_Circuit_Architectures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2021 NeuroCircuit Architectures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4.1 NeuroAI Map
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4.1 NeuroAI Map
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.1_NeuroAI_Map/02_Striatum-RL.TDAC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 1997 Striatum - RL.TDAC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.1_NeuroAI_Map/03_PFC-MetaRL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2018 PFC - MetaRL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Papers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.1_NeuroAI_Map/papers/01_Ventral_Stream-CNN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2014 Ventral Stream - CNN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.1_NeuroAI_Map/papers/03_PFC-MetaRL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2018 PFC - MetaRL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4.1_NeuroAI_Map/papers/04_Hippocampus-RL.SR/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2017 Hippocampus - RL.SR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_13_1" id="__nav_13_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NTU MMLab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NTU MMLab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NTU_MMLab/01_NTU_DynamicVLA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 2026 NTU DynamicVLA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NTU_MMLab/02_NTU_VLANeXt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 2026 NTU VLANeXt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NTU_MMLab/03_NTU_SI_Survey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 2025 NTU SI Survey
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NTU_MMLab/04_NTU_4RC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 2026 NTU 4RC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NTU_MMLab/05_NTU_PhysX-Anything/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 2025 NTU PhysX-Anything
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NTU_MMLab/06_NTU_STREAM3R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 2025 NTU STREAM3R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NTU_MMLab/07_NTU_Puffin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 2025 NTU Puffin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13_2" id="__nav_13_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NUS YeoLab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_13_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NUS YeoLab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thomas Yeo 实验室研究的第一性原理剖析：物理机制、生物学假设与计算解释极限
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thomas Yeo 实验室研究的第一性原理剖析：物理机制、生物学假设与计算解释极限
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 核心问题与逻辑链推演
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fmri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 物理层：fMRI 的底层物理与电磁学机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 物理层：fMRI 的底层物理与电磁学机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 氢质子自旋与进动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 射频激发与横向弛豫衰减
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 氧合与去氧血红蛋白的磁学转变
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 生理层：神经血管耦合与自发低频波动
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 生理层：神经血管耦合与自发低频波动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-bold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 神经血管耦合（BOLD 响应）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-resting-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 为什么静息态（Resting-state）数据能用来划分脑区？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-parcellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 图谱层：功能划分（Parcellation）的科学依据
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 图谱层：功能划分（Parcellation）的科学依据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-functional-homogeneity-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 功能均一性假说（Functional Homogeneity Hypothesis）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-yeo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 计算层：Yeo 划分的大脑网络如何对应计算机架构？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 严谨评判：这些划分帮助我们理解“神经计算”了吗？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 严谨评判：这些划分帮助我们理解“神经计算”了吗？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 真正的科学价值：它解决了什么？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 严谨的局限性：为什么说它对“具体神经计算算法”帮助有限？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 严谨的局限性：为什么说它对“具体神经计算算法”帮助有限？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. “红外热成像”与“电网功耗”隐喻
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-neural-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. 空间平均消解了精细神经编码（Neural Coding）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. 相关性不等于因果信息流
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 总结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 核心问题与逻辑链推演
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-fmri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 物理层：fMRI 的底层物理与电磁学机制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 物理层：fMRI 的底层物理与电磁学机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 氢质子自旋与进动
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 射频激发与横向弛豫衰减
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 氧合与去氧血红蛋白的磁学转变
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 生理层：神经血管耦合与自发低频波动
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 生理层：神经血管耦合与自发低频波动">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-bold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 神经血管耦合（BOLD 响应）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-resting-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 为什么静息态（Resting-state）数据能用来划分脑区？
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-parcellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 图谱层：功能划分（Parcellation）的科学依据
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 图谱层：功能划分（Parcellation）的科学依据">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-functional-homogeneity-hypothesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 功能均一性假说（Functional Homogeneity Hypothesis）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-yeo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 计算层：Yeo 划分的大脑网络如何对应计算机架构？
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 严谨评判：这些划分帮助我们理解“神经计算”了吗？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 严谨评判：这些划分帮助我们理解“神经计算”了吗？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 真正的科学价值：它解决了什么？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 严谨的局限性：为什么说它对“具体神经计算算法”帮助有限？
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 严谨的局限性：为什么说它对“具体神经计算算法”帮助有限？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A. “红外热成像”与“电网功耗”隐喻
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-neural-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B. 空间平均消解了精细神经编码（Neural Coding）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C. 相关性不等于因果信息流
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. 总结
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="thomas-yeo">Thomas Yeo 实验室研究的第一性原理剖析：物理机制、生物学假设与计算解释极限</h1>
+<hr />
+<h2 id="1">1. 核心问题与逻辑链推演</h2>
+<p>Thomas Yeo 实验室（CBIG, NUS）因绘制国际通用的皮层功能网络图谱（如经典 Yeo 2011 7/17 脑网络、Schaefer-Yeo 2018 分区图谱）而闻名。要理解这一系列工作的本质，不能仅停留在“使用了什么聚类或贝叶斯算法”，而必须回到最底层的科学第一性原理（First Principles）。</p>
+<p>整个研究体系建立在一条跨越<strong>量子物理 <span class="arithmatex">\(\to\)</span> 血液动力学 <span class="arithmatex">\(\to\)</span> 神经生理学 <span class="arithmatex">\(\to\)</span> 宏观拓扑结构 <span class="arithmatex">\(\to\)</span> 认知计算</strong>的因果链条之上：</p>
+<pre class="mermaid"><code>flowchart TD
+    P1["物理层：质子进动与 T2* 弛豫衰减"] --&gt; P2["生理层：神经血管耦合 (BOLD 效应)"]
+    P2 --&gt; P3["网络层：自发低频波动的内在共激活拓扑"]
+    P3 --&gt; P4["图谱划分：球面空间聚类与功能均匀性约束"]
+    P4 --&gt; P5["计算映射：大尺度信息流路由与状态调控 (非微电路算法)"]</code></pre>
+<hr />
+<h2 id="2-fmri">2. 物理层：fMRI 的底层物理与电磁学机制</h2>
+<p>功能磁共振成像（fMRI）所采集的信号并非神经元动作电位，而是基于<strong>血氧水平依赖（Blood Oxygenation Level Dependent, BOLD）</strong>效应。该效应的本质是原子核磁共振（NMR）与血液磁化率变化的相互作用。</p>
+<h3 id="21">2.1 氢质子自旋与进动</h3>
+<p>人体软组织和血液中富含水分子（<span class="arithmatex">\(^1\text{H}\)</span> 质子）。质子带有自旋角动量，在静磁场 <span class="arithmatex">\(B_0\)</span>（通常为 3T）中产生微观磁矩并发生拉莫尔进动（Larmor Precession）：</p>
+<div class="arithmatex">\[\omega_0 = \gamma B_0\]</div>
+<p>其中 <span class="arithmatex">\(\gamma\)</span> 为旋磁比（<span class="arithmatex">\(^1\text{H}\)</span> 约为 <span class="arithmatex">\(42.58 \text{ MHz/T}\)</span>）。此时宏观产生沿 <span class="arithmatex">\(B_0\)</span> 方向的净纵向磁化矢量 <span class="arithmatex">\(M_z\)</span>。</p>
+<h3 id="22">2.2 射频激发与横向弛豫衰减</h3>
+<p>当施加垂直于 <span class="arithmatex">\(B_0\)</span> 的共振射频脉冲（RF）后，质子磁矩被倾斜到横向平面（<span class="arithmatex">\(M_{xy}\)</span>），并在同相旋转中产生感应电动势。随后质子发生横向弛豫：自旋质子之间相互碰撞传递能量，以及局部微环境磁场不均匀性，导致质子自旋失去相位同步（Dephasing），横向信号按特征时间指数衰减：</p>
+<div class="arithmatex">\[M_{xy}(t) = M_{0} e^{-t / T_2^*}\]</div>
+<p>其中 <span class="arithmatex">\(T_2^*\)</span> 由固有自旋-自旋弛豫时间 <span class="arithmatex">\(T_2\)</span> 和局部场不均匀性导致的额外去相位项构成：</p>
+<div class="arithmatex">\[\frac{1}{T_2^*} = \frac{1}{T_2} + \gamma \Delta B_{local}\]</div>
+<h3 id="23">2.3 氧合与去氧血红蛋白的磁学转变</h3>
+<p>血红蛋白在分子尺度上具有特殊的磁学特性：</p>
+<ul>
+<li>
+<p><strong>氧合血红蛋白（<span class="arithmatex">\(\text{HbO}_2\)</span>）</strong>：反磁性（Diamagnetic），其磁化率与周围脑组织极其接近，对局部磁场分布几乎无扰动。</p>
+</li>
+<li>
+<p><strong>去氧血红蛋白（<span class="arithmatex">\(\text{dHb}\)</span>）</strong>：因铁离子未完全配位，具有未成对电子，呈现显著的<strong>顺磁性（Paramagnetic）</strong>。</p>
+</li>
+</ul>
+<p>当红细胞中的氧被消耗转化为 <span class="arithmatex">\(\text{dHb}\)</span> 时，毛细血管内外的微观磁场梯度发生严重畸变（局部 <span class="arithmatex">\(\Delta B_{local}\)</span> 骤增）。扩散经过血管旁的水分子质子感受到了不均匀磁场，其自旋进动频率产生弥散，快速失相，导致<strong>局部 <span class="arithmatex">\(T_2^*\)</span> 时间显著缩短，MR 信号在 <span class="arithmatex">\(T_2^*\)</span>-加权回波时间（TE）下发生严重衰减</strong>。</p>
+<hr />
+<h2 id="3">3. 生理层：神经血管耦合与自发低频波动</h2>
+<p>fMRI 能反映大脑功能的生物学前提是<strong>神经血管耦合（Neurovascular Coupling）</strong>机制。</p>
+<h3 id="31-bold">3.1 神经血管耦合（BOLD 响应）</h3>
+<p>当某一局部皮层的兴奋性神经元群激活并接受大量突触输入时：</p>
+<ol>
+<li>
+<p>突触后电位与递质（如谷氨酸）释放，激活局部星形胶质细胞（Astrocytes）终足；</p>
+</li>
+<li>
+<p>胶质细胞释放血管活性物质（如一氧化氮 NO、前列腺素），引起微小动脉与毛细血管主动舒张；</p>
+</li>
+<li>
+<p>局部<strong>脑血流量（CBF）与脑血容量（CBV）暴增</strong>，其血液补给量远超过该脑区实际耗氧速率（<span class="arithmatex">\(\text{CMRO}_2\)</span>）；</p>
+</li>
+<li>
+<p>过量新鲜氧合血液冲刷毛细血管床，使局部毛细血管和微静脉内的<strong>去氧血红蛋白浓度反而显著下降</strong>；</p>
+</li>
+<li>
+<p>局部顺磁性物质减少，局部微环境磁场更均匀，质子去相位变慢，<strong><span class="arithmatex">\(T_2^*\)</span> 延长，MR 回波信号出现小幅度增强（0.5% ~ 5%）</strong>。</p>
+</li>
+</ol>
+<p>这一过程被称为血液动力学响应函数（Hemodynamic Response Function, HRF）。从神经放电到 BOLD 峰值存在 <strong>4~6 秒的固有物理延迟</strong>。</p>
+<h3 id="32-resting-state">3.2 为什么静息态（Resting-state）数据能用来划分脑区？</h3>
+<p>Yeo 组所用的数据绝大多数属于<strong>静息态功能磁共振（rs-fMRI）</strong>——即被试在扫描仪内闭目、不执行任何认知任务。</p>
+<p>其背后的神经科学核心假说是：
+1.  <strong>自发低频脉动（Spontaneous Low-Frequency Fluctuations, 0.01~0.1 Hz）</strong>：大脑并非在无任务时休眠，而是持续消耗人体约 20% 的代谢能量，维持高强度的内在自发神经放电。</p>
+<ol>
+<li>
+<p><strong>赫布发育与解剖结构沉淀</strong>：长期共同激活的神经元群（"Neurons that fire together, wire together"）通过轴突白质纤维相互投射。千亿级突触连接的结构底座，对全脑自发慢波动力学施加了固有的拓扑约束。</p>
+</li>
+<li>
+<p><strong>功能连接的拓扑反映</strong>：两个空间分离的脑区如果属于同一个协同子系统，它们在毫秒级的脉冲发放具有内在相干性；经过星形胶质细胞低通滤波后，其在 0.01~0.1 Hz 的 BOLD 缓慢波动曲线依然表现出极高的<strong>时间序列相关性（Functional Connectivity, FC）</strong>。</p>
+</li>
+</ol>
+<p>因此，<strong>全脑功能连接矩阵反映的是宏观皮层在漫长发育中沉淀下来的“内在信息交互通道骨架”</strong>。</p>
+<hr />
+<h2 id="4-parcellation">4. 图谱层：功能划分（Parcellation）的科学依据</h2>
+<p>既然全脑皮层是由数百亿神经元构成的连续折叠结构，以什么标准将其离散化为若干个“区域”或“网络”？</p>
+<h3 id="41-functional-homogeneity-hypothesis">4.1 功能均一性假说（Functional Homogeneity Hypothesis）</h3>
+<p>划分区域的核心假设是：<strong>一个合理的“脑区（Area）”内部，其神经元群体对外的信息连接模式必须高度一致，而在其边界处，连接模式发生断裂或阶跃式转变。</strong></p>
+<p>对皮层表面任意顶点 <span class="arithmatex">\(v\)</span>，计算其与全脑参考顶点集合的时间序列 Pearson 线性相关：</p>
+<div class="arithmatex">\[\rho(v, u) = \frac{\sum_{t=1}^T (s_v(t) - \bar{s}_v)(s_u(t) - \bar{s}_u)}{\sqrt{\sum_{t=1}^T (s_v(t) - \bar{s}_v)^2}\sqrt{\sum_{t=1}^T (s_u(t) - \bar{s}_u)^2}}\]</div>
+<p>由此得到顶点 <span class="arithmatex">\(v\)</span> 的高维全脑连接模式特征向量 <span class="arithmatex">\(\mathbf{f}_v = [\rho(v, u_1), \dots, \rho(v, u_M)]^T\)</span>。</p>
+<p>Yeo 组的科学目标就是寻找一组空间不重叠的皮层子集（Parcels / Networks），使得：</p>
+<div class="arithmatex">\[\max \sum_{k} \sum_{v \in C_k} \text{Sim}(\mathbf{f}_v, \boldsymbol{\mu}_k)\]</div>
+<p>即同网络内的顶点与网络中心连接模式的角度余弦距离最小化。</p>
+<hr />
+<h2 id="5-yeo">5. 计算层：Yeo 划分的大脑网络如何对应计算机架构？</h2>
+<p>用户经常提出的类比是：在一台现代计算机中，我们可以清晰划分出 CPU、GPU、内存（Memory）、外存（SSD）与输入输出（I/O）。那么，Yeo 的宏观脑网络是否具有类似明确的“计算架构定义”？</p>
+<p>答案是：<strong>宏观脑网络反映的是分布式“总线拓扑、路由调度与注意力分配机制”，而非微观硬件单元；其对应关系是宏观职能层面的映射，不可机械等同于图灵机硬件部件。</strong></p>
+<p>下表对比了 Yeo 经典网络在大脑计算系统中的角色与现代计算机架构的对应隐喻：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">网络名称</th>
+<th style="text-align: left;">包含的核心脑区</th>
+<th style="text-align: left;">计算机硬件/系统级隐喻</th>
+<th style="text-align: left;">大脑中所承担的计算与控制机制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>视觉网 (Visual)</strong></td>
+<td style="text-align: left;">枕叶外侧与距状沟周围</td>
+<td style="text-align: left;"><strong>Video Capture / Display I/O</strong></td>
+<td style="text-align: left;">视网膜空间拓扑保角映射，底层边缘/纹理到高层物体表征的流式前馈编码。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>躯体运动网 (Somatomotor)</strong></td>
+<td style="text-align: left;">中央前后回、辅助运动区</td>
+<td style="text-align: left;"><strong>Motor Controllers &amp; Sensor I/O</strong></td>
+<td style="text-align: left;">本体感觉实时采样，运动指令的末端伺服输出，与环境闭环交互的物理总线。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>背侧注意力网 (Dorsal Attention, DAN)</strong></td>
+<td style="text-align: left;">额叶眼动区 (FEF)、顶间沟 (IPS)</td>
+<td style="text-align: left;"><strong>Top-Down Hardware Arbiter (定向总线仲裁)</strong></td>
+<td style="text-align: left;"><strong>自上而下（Top-down）的目标驱动筛选</strong>：根据当前任务设定空间过滤掩码，分配有限的感觉带宽。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>腹侧注意力网/突显网 (Ventral Attention / Salience)</strong></td>
+<td style="text-align: left;">前脑岛 (dAI)、背前背侧前扣带回 (dACC)</td>
+<td style="text-align: left;"><strong>Interrupt Handler (突发中断控制器)</strong></td>
+<td style="text-align: left;"><strong>自下而上（Bottom-up）的显著事件捕获</strong>：监控外部环境异常或内部生理稳态违规，强制打断当前进程。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>额顶控制网 (Frontoparietal Control, FPN)</strong></td>
+<td style="text-align: left;">背外侧前额叶 (dlPFC)、顶下小叶 (IPL)</td>
+<td style="text-align: left;"><strong>CPU Control Unit &amp; OS Process Scheduler</strong></td>
+<td style="text-align: left;"><strong>任务规则装载与进程切换</strong>：在不同的认知目标之间动态切换，负责工作记忆更新、策略推演与规则编排。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>默认模式网络 (Default Mode Network, DMN)</strong></td>
+<td style="text-align: left;">内侧前额叶 (mPFC)、后扣带回 (PCC)、角回</td>
+<td style="text-align: left;"><strong>Offline Simulator &amp; Cold Storage Query Engine</strong></td>
+<td style="text-align: left;"><strong>内部先验模型生成与语义检索</strong>：脱离外界实时输入，运行情景记忆重放、心理理论推断、未来情境推演。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>边缘网 (Limbic)</strong></td>
+<td style="text-align: left;">眶额皮层、颞极内侧</td>
+<td style="text-align: left;"><strong>Value Metric / Utility Evaluator</strong></td>
+<td style="text-align: left;"><strong>目标效用函数计算</strong>：计算当前输入与动作的奖惩预期，为整个系统的多任务决策赋予权重系数。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 严谨评判：这些划分帮助我们理解“神经计算”了吗？</h2>
+<p>必须基于第一性原理，客观审视宏观脑图谱在计算神经科学中的<strong>里程碑意义</strong>与<strong>理论局限性</strong>。</p>
+<h3 id="61">6.1 真正的科学价值：它解决了什么？</h3>
+<ol>
+<li>
+<p><strong>宏观维度的“对齐坐标系”与降维</strong>：
+    人类大脑皮层有约 <span class="arithmatex">\(10^{10}\)</span> 个神经元，单个被试在 fMRI 表面网格上有约 16 万个顶点。直接在高维非线性空间建模极易过拟合。Yeo 图谱将 16 万个顶点压缩为 100~400 个均一 parcel，给神经影像学提供了标准化的宏观“解剖-功能对齐坐标系”。</p>
+</li>
+<li>
+<p><strong>揭示了宏观信息流动的主轴（Cortical Gradient）</strong>：
+    Yeo 的 7/17 网络分布并非随机，后续研究（如 Margulies et al., PNAS 2016）基于其图谱揭示了大尺度“单峰皮层（感觉/运动 I/O） <span class="arithmatex">\(\to\)</span> 跨模态整合皮层 <span class="arithmatex">\(\to\)</span> 跨距最远的异峰皮层（DMN 抽象推理）”的<strong>空间分层渐变拓扑</strong>，量化了信息从具象物理刺激到抽象语义表征的层级跃迁。</p>
+</li>
+<li>
+<p><strong>个体化精准表型映射（MS-HBM）</strong>：
+    通过分离跨被试真性差异与单被试扫描会话噪声，Yeo 团队证明了高阶联合皮层（FPN, DMN）在个体间的拓扑形变是预测人类智商、阅读能力、人格特质的核心生物学标志。</p>
+</li>
+</ol>
+<h3 id="62">6.2 严谨的局限性：为什么说它对“具体神经计算算法”帮助有限？</h3>
+<p>如果我们的目标是理解“大脑运行了何种深度计算模型、神经元如何编码信息”，Yeo 组的宏观划分存在以下物理与理论不可逾越的鸿沟：</p>
+<h4 id="a">A. “红外热成像”与“电网功耗”隐喻</h4>
+<p>fMRI 的 BOLD 信号在时间上是秒级的（延迟 4~6 秒），在空间上一个体素（<span class="arithmatex">\(\approx 2\times 2\times 2 \text{ mm}^3\)</span>）内包含数十万个神经元、数亿个突触。</p>
+<blockquote>
+<p><strong>局限性</strong>：依靠 fMRI 划分脑区，本质上是在用<strong>超低帧率的红外热成像仪</strong>观察一台正在全速运行的现代计算机。你确实能观察到：
+*   “显卡”区域在处理图形渲染时发热协同一致；
+*   “CPU”与“内存总线”在复杂计算时同步发热；</p>
+<p>但你<strong>完全无法推断</strong>其逻辑门电路的架构、寄存器的比特翻转逻辑、内存中的汇编指令集是什么。</p>
+</blockquote>
+<h4 id="b-neural-coding">B. 空间平均消解了精细神经编码（Neural Coding）</h4>
+<p>大脑皮层呈现高度局部的柱状结构（Cortical Columns，约几百微米）。同一个 parcel 内部数百万个神经元之间存在着精密的侧向抑制、递归兴奋与时序编码（Spike-timing-dependent plasticity, STDP）。由于 BOLD 信号在毫米尺度上做了空间平均，<strong>微电路计算细节（Microcircuit Computation）在数据获取的第一步就已经被不可逆地平滑抹除</strong>。</p>
+<h4 id="c">C. 相关性不等于因果信息流</h4>
+<p>静息态功能连接 <span class="arithmatex">\(\rho(u, v)\)</span> 计算的是两个区域 BOLD 信号的<strong>无向皮尔逊相关系数</strong>。高相关性既可能是由于直接突触单向投射，也可能是由皮层下中继核团（如丘脑 Thalamus）通过第三方起搏器同时驱动两个皮层区域所导致的共振伪影。</p>
+<hr />
+<h2 id="7">7. 总结</h2>
+<p>Thomas Yeo 实验室工作的科学内核在于：</p>
+<ol>
+<li>
+<p><strong>物理与生理前提</strong>：严密遵循核磁共振中顺磁性去氧血红蛋白对 <span class="arithmatex">\(T_2^*\)</span> 横向弛豫的影响，借助神经血管耦合捕捉大脑千亿突触长期塑形沉淀下来的内在低频协同信号。</p>
+</li>
+<li>
+<p><strong>方法学贡献</strong>：利用球面流形几何与层级贝叶斯统计物理，在极高噪声背景下提取出了人类大脑在宏观尺度上的<strong>全局总线拓扑图与调度网络骨架</strong>。</p>
+</li>
+<li>
+<p><strong>计算科学认知定位</strong>：Yeo 的图谱绘制出了大脑宏观维度的<strong>系统模块蓝图与进程拓扑</strong>（类似知道了计算机的 I/O 总线、中断系统、调度进程和离线模拟器在物理主板上的宏观空间分布），但它并未提供底层微电路的“汇编代码与微架构算法”；后者必须依赖侵入式电生理、双光子钙成像与计算理论神经科学（如脉冲神经网络、吸引子动力学）的协同突破。</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
